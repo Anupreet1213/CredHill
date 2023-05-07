@@ -1,0 +1,85 @@
+#whyInvoicer {
+  font-family: "Inter", sans-serif;
+  color: white;
+  background: url("./bgImage.jpg");
+  background-size: cover;
+  /* background-image: 100% 100%; */
+  /* background-image: 100% 100%; */
+  /* background-repeat: no-repeat; */
+  /* width: 100%; */
+  background-position: center center;
+
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-between;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.whyInvoicerLeft {
+  /* flex: 0.6; */
+  /* padding-top: 20%; */
+  display: flex;
+  flex-direction: column;
+  /* padding-left: 4%; */
+  /* align-items: center; */
+  /* text-align: left; */
+}
+
+.whyInvoicerLeft h1 {
+  margin-bottom: 10%;
+  font-size: 2rem;
+}
+.whyInvoicerLeft p {
+  width: 30vw;
+  font-size: 1.2rem;
+}
+
+.whyInvoicerRight {
+  position: relative;
+}
+
+.whyInvoicerCircle1 {
+  border-radius: 50%;
+  height: 25rem;
+  width: clamp(15rem, 25rem, 30rem);
+  max-width: 25rem;
+  border: 5px solid #def9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.whyInvoicerCircle2 {
+  border-radius: 50%;
+  height: 14rem;
+  width: 14rem;
+  border: 2px solid #def9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.whyInvoicerCircle3 {
+  border-radius: 50%;
+  height: 7rem;
+  width: 7rem;
+  border: 1px solid #def9fa;
+}
+.whyInvoicerCDiv {
+  width: 15rem;
+  height: 15rem;
+  background: linear-gradient(
+    121.51deg,
+    #3b4a97 -264.89%,
+    #4c529f -243.86%,
+    #ac52ba -77.96%,
+    #130b5a 80.93%
+  );
+  backdrop-filter: blur(5px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

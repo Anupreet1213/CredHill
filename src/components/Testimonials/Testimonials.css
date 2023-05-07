@@ -1,0 +1,12 @@
+#testimonial {
+  font-family: "Inter", sans-serif;
+  color: white;
+  background: url("./bgImage.jpg");
+  background-size: cover;
+  /* background-image: 100% 100%; */
+  /* background-image: 100% 100%; */
+  /* background-repeat: no-repeat; */
+  /* width: 100%; */
+  background-position: center center;
+  height: 100vh;
+}
