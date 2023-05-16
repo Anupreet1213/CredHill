@@ -25,7 +25,6 @@ export function HamburgerMenu() {
     <HamburgerMenuContainer>
       <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
       <MenuContainer
-        style={{ backgroundColor: "white" }}
         initial={false}
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
@@ -62,6 +61,7 @@ const MenuContainer = styled(motion.div)`
   transform: translateX(4em);
   user-select: none;
   padding: 1em 2.5em;
+  background-color: #0a1644;
 `;
 
 const TopContainer = styled.div`

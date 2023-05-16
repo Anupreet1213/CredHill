@@ -9,6 +9,7 @@ const NavMenuContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  // background-color: #0a1644;
 `;
 
 const NavList = styled.ul`
@@ -75,7 +76,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
             style={{
               cursor: "pointer",
               fontSize: "1.2rem",
-              color: "black",
+              color: "white",
             }}
             to={"projects"}
             spy={true}
@@ -104,7 +105,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
           }}
         >
           <Link
-            style={{ color: "black" }}
+            style={{ color: "white" }}
             to={"experience"}
             spy={true}
             smooth={true}
@@ -132,7 +133,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
           }}
         >
           <Link
-            style={{ color: "black" }}
+            style={{ color: "white" }}
             to="techStackNav"
             spy={true}
             smooth={true}
@@ -161,7 +162,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
           }}
         >
           <Link
-            style={{ color: "black" }}
+            style={{ color: "white" }}
             to={"contactMe"}
             spy={true}
             smooth={true}

@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+#features {
+  font-family: "Inter", sans-serif;
+  background: url("./bgImage.jpg");
+  background-size: cover;
+  background-image: 100% 100%;
+  background-position: center center;
+
+  /* Remember to remove the height ⬇️ */
+  height: 100vh;
+
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  align-items: center;
+  color: white;
+}
+
+.featuresLeft {
+  /* display: flex;
+  flex-direction: column; */
+  /* flex: 0.3; */
+  /* width: 30vw; */
+  padding: 5%;
+}
+
+.featuresRight {
+  /* display: flex; */
+}
+
+.featuresRightChild1 {
+  display: flex;
+}

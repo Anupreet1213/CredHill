@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { SVGProps } from "react";
 import styled from "styled-components";
 
 const Button = styled.div`
@@ -63,18 +62,18 @@ export function MenuToggle({ toggle, isOpen }: MenuToggleProps) {
           variants={{
             closed: {
               d: "M 2 2.5 L 20 2.5",
-              stroke: "hsl(0, 0%, 0%)",
+              stroke: "hsl(0, 100%, 100%)",
             },
             open: {
               d: "M 3 16.5 L 17 2.5",
-              stroke: "hsl(0, 0%, 0%)",
+              stroke: "hsl(0, 100%, 100%)",
             },
           }}
           transition={transition}
         />
         <Path
           d="M 2 9.423 L 20 9.423"
-          stroke={"hsl(0, 0%, 0%)"}
+          stroke={"hsl(0, 100%, 100%)"}
           animate={isOpen ? "open" : "closed"}
           initial="closed"
           variants={{
@@ -89,11 +88,11 @@ export function MenuToggle({ toggle, isOpen }: MenuToggleProps) {
           variants={{
             closed: {
               d: "M 2 16.346 L 20 16.346",
-              stroke: "hsl(0, 0%, 0%)",
+              stroke: "hsl(0, 100%, 100%)",
             },
             open: {
               d: "M 3 2.5 L 17 16.346",
-              stroke: "hsl(0, 0%, 0%)",
+              stroke: "hsl(0, 100%, 100%)",
             },
           }}
           transition={transition}
