@@ -11,6 +11,7 @@
   height: 100vh;
 
   display: flex;
+  padding-left: 7%;
   /* flex-direction: column; */
   /* justify-content: center; */
   align-items: center;
@@ -22,13 +23,132 @@
   flex-direction: column; */
   /* flex: 0.3; */
   /* width: 30vw; */
-  padding: 5%;
+  /* padding: 5%; */
+  flex: 0.6;
+}
+
+.featuresLeft h2 {
+  font-size: 2rem;
+  width: 40vw;
+  margin-bottom: 4%;
+}
+
+.featuresLeft p {
+  width: 35vw;
+  margin-bottom: 4%;
+  opacity: 0.7;
+}
+
+.featuresLeftButton {
+  padding: 1% 2%;
+  background-color: #17225a;
+  width: 20%;
+  border-radius: 30px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.featuresLeftButton:hover {
+  background-color: #c970e2;
+  color: black;
+  transition: all 0.3s ease-in;
 }
 
 .featuresRight {
-  /* display: flex; */
+  /* padding: 3%; */
+  flex: 0.3;
 }
 
-.featuresRightChild1 {
+.featureRightChild1 {
   display: flex;
+  gap: 10%;
+  margin-bottom: 4%;
+  /* padding: 2% 8% 2% 3%; */
+  padding: 4%;
+  /* width: 150%; */
+}
+
+.featureRightChild1-1 {
+  display: flex;
+  align-items: center;
+}
+
+.featureRightChild1-2 h4 {
+  margin-bottom: 2%;
+}
+.featureRightChild1-2 p {
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.featureRightChild1-1 img {
+  width: 80%;
+}
+
+.featureRightChild1:hover {
+  background: linear-gradient(153.47deg, #bb86ff -341.94%, #00103c 95.11%);
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.featureRightChild2 {
+  display: flex;
+  gap: 10%;
+  margin-bottom: 4%;
+  padding: 4%;
+}
+.featureRightChild2:hover {
+  background: linear-gradient(153.47deg, #bb86ff -341.94%, #00103c 95.11%);
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.featureRightChild2-1 {
+  display: flex;
+  align-items: center;
+}
+
+.featureRightChild2-2 h4 {
+  margin-bottom: 2%;
+}
+
+.featureRightChild2-2 p {
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.featureRightChild2-1 img {
+  width: 80%;
+}
+
+.featureRightChild3 {
+  display: flex;
+  gap: 10%;
+  padding: 4%;
+}
+.featureRightChild3:hover {
+  background: linear-gradient(153.47deg, #bb86ff -341.94%, #00103c 95.11%);
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.featureRightChild3-1 {
+  display: flex;
+  align-items: center;
+}
+
+.featureRightChild3-2 h4 {
+  margin-bottom: 2%;
+}
+
+.featureRightChild3-2 p {
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.featureRightChild3-1 img {
+  width: 70%;
 }
