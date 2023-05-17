@@ -3,12 +3,7 @@
   color: white;
   background: url("./bgImage.jpg");
   background-size: cover;
-  /* background-image: 100% 100%; */
-  /* background-image: 100% 100%; */
-  /* background-repeat: no-repeat; */
-  /* width: 100%; */
   background-position: center center;
-
   display: flex;
   align-items: center;
   height: 100vh;
@@ -22,9 +17,6 @@
   /* padding-top: 20%; */
   display: flex;
   flex-direction: column;
-  /* padding-left: 4%; */
-  /* align-items: center; */
-  /* text-align: left; */
 }
 
 .whyInvoicerLeft h1 {
@@ -43,8 +35,8 @@
 .whyInvoicerCircle1 {
   border-radius: 50%;
   height: 25rem;
-  width: clamp(15rem, 25rem, 30rem);
-  max-width: 25rem;
+  /* width: clamp(15rem, 25rem, 30rem); */
+  width: 25rem;
   border: 5px solid #def9fa;
   display: flex;
   justify-content: center;
@@ -66,8 +58,11 @@
   border: 1px solid #def9fa;
 }
 .whyInvoicerCDiv {
-  width: 15rem;
-  height: 15rem;
+  position: absolute;
+  top:-2rem;
+  right: -2rem;
+  width: 13rem;
+  aspect-ratio: 1;
   background: linear-gradient(
     121.51deg,
     #3b4a97 -264.89%,
@@ -77,9 +72,78 @@
   );
   backdrop-filter: blur(5px);
   /* Note: backdrop-filter has minimal browser support */
-
   border-radius: 20px;
+}
+.whyInvoicerCDiv2 {
   position: absolute;
-  top: 0;
-  right: 0;
+  top:2rem;
+  left: -2rem;
+  width: 13rem;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    121.51deg,
+    #3b4a97 -264.89%,
+    #4c529f -243.86%,
+    #ac52ba -77.96%,
+    #130b5a 80.93%
+  );
+  backdrop-filter: blur(5px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 20px;
+}
+.whyInvoicerCDiv3 {
+  position: absolute;
+  bottom:-2rem;
+  right: 1rem;
+  width: 13rem;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    121.51deg,
+    #3b4a97 -264.89%,
+    #4c529f -243.86%,
+    #ac52ba -77.96%,
+    #130b5a 80.93%
+  );
+  backdrop-filter: blur(5px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 20px;
+}
+
+@media screen and (max-width:800px) {
+
+  .whyInvoicerLeft{
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10%;
+  }
+  .whyInvoicerLeft p {
+    width: 70vw;
+    font-size: 1.1rem;
+    opacity: 0.7;
+  }
+  #whyInvoicer{
+    flex-direction: column;
+    justify-content:flex-start;
+  }
+  .whyInvoicerCircle1{
+    height:18rem;
+    width:18rem;
+  }
+  .whyInvoicerCircle2{
+    width:12rem;
+    height:12rem;
+  }
+  .whyInvoicerCircle3{
+    width:6rem;
+    height:6rem;
+  }
+  .whyInvoicerCDiv3{
+    width: 8rem;
+  }
+  .whyInvoicerCDiv2{
+    width: 10rem;
+  }
+  .whyInvoicerCDiv{
+    width: 10rem;
+  }
 }

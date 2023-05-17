@@ -12,12 +12,14 @@ const WhyInvoicer: React.FC = () => {
         </p>
       </div>
       <div className="whyInvoicerRight">
-        {/* <div className="whyInvoicerCircle1">
+        <div className="whyInvoicerCircle1">
           <div className="whyInvoicerCircle2">
             <div className="whyInvoicerCircle3"></div>
           </div>
         </div>
-        <div className="whyInvoicerCDiv"></div> */}
+        <div className="whyInvoicerCDiv"></div>
+        <div className="whyInvoicerCDiv2"></div>
+        <div className="whyInvoicerCDiv3"></div>
       </div>
     </section>
   );
