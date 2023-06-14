@@ -1,0 +1,21 @@
+.testDiv {
+  display: flex;
+}
+
+.navbar {
+  z-index: 10;
+  /* transition: ${theme.transitions.create(["width", "margin"], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }) */
+
+  /* Styles when open prop is true */
+  &.open {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    /* transition: ${theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    })}; */
+  }
+}

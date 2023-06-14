@@ -1,0 +1,19 @@
+.asideChild1-3 {
+  /* margin-inline-end: -0.85rem; */
+  font-size: 1.25rem;
+  cursor: pointer;
+  /* block-size: 1em;
+  inline-size: 1em; */
+}
+
+.testMainChild.sidebarOpen {
+  /* Apply styles when sidebarOpen is true */
+  /* Example: increase the width of the sidebar */
+  width: 250px;
+}
+
+.asideChild1-3.active {
+  /* Apply styles when active class is present */
+  /* Example: change the color of the active element */
+  color: red;
+}
