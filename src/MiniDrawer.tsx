@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { useState, useRef } from "react";
+import { styled, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
@@ -10,8 +10,8 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+// import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+// import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -95,16 +95,16 @@ export default function MiniDrawer() {
   const svgRef = useRef<SVGPathElement | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const theme = useTheme();
+  // const theme = useTheme();
   const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
 
   const handleClick = (): void => {
     if (svgRef.current !== null && loading) {
@@ -116,7 +116,7 @@ export default function MiniDrawer() {
     }
   };
 
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  // const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleMouseEnter = (): void => {
     // setSidebarOpen(true);

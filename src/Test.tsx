@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "./Test.css";
 
 const Test: React.FC = () => {
