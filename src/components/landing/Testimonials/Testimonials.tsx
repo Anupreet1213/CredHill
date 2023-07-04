@@ -1,7 +1,7 @@
 import "./Testimonials.css";
 import CommentImg from "./testimonialImg.svg";
 
-const Testimonials: React.FC = () => {
+const Testimonials = () => {
   return (
     <section id="testimonial">
       <div className="testimonial-child1">

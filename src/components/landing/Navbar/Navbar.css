@@ -37,6 +37,14 @@
   color: red;
   transition: all 0.4s ease-in;
 }
+.navRightChildLink{
+  color: white;
+  text-decoration: none;
+}
+.navRightChildLink:hover{
+  color: red;
+  transition: all 0.4s ease-in;
+}
 /* 
   .nav li {
     margin-left: 2%;
