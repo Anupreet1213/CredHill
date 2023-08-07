@@ -1,5 +1,5 @@
 import "./MiniDrawer.css";
-import { useState, useRef, RefObject } from "react";
+import { useState, useRef, RefObject, Dispatch, SetStateAction } from "react";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
@@ -93,9 +93,10 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 interface DashboardProps {
   dashContentRef: RefObject<HTMLDivElement>;
+  setDashContent: Dispatch<SetStateAction<number>>
 }
  
-const Dashboard: React.FC<DashboardProps> = ({dashContentRef}) => {
+const Dashboard: React.FC<DashboardProps> = ({dashContentRef, setDashContent}) => {
   const svgRef = useRef<SVGPathElement | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -197,13 +198,14 @@ const Dashboard: React.FC<DashboardProps> = ({dashContentRef}) => {
         <Divider />
         <List className="dash_sidebar_text">
           {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+            <ListItem key={text} disablePadding sx={{ display: "block" }} className="sidebar_cell">
               <ListItemButton
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
+                onClick={() => (index === 0 ? setDashContent(0) : index === 1 ? setDashContent(1) : setDashContent(2))}
               >
                 <ListItemIcon
                   sx={{

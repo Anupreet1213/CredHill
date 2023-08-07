@@ -2,6 +2,7 @@
   /* margin-inline-end: -0.85rem; */
   font-size: 1.25rem;
   cursor: pointer;
+  color: white;
   /* block-size: 1em;
   inline-size: 1em; */
 }
@@ -35,3 +36,7 @@
 .dash_sidebar_text{
   color: rgb(255, 255, 255);
 }
+
+/* .sidebar_cell{
+  background-color: blue;
+} */
