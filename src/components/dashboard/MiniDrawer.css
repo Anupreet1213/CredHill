@@ -17,3 +17,21 @@
   /* Example: change the color of the active element */
   color: red;
 }
+
+.dashboard{
+  background-color: #25293C;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dashboard_drawer{
+  background-color: "#2F3349";
+}
+
+.test{
+  color: red;
+}
+
+.dash_sidebar_text{
+  color: rgb(255, 255, 255);
+}
