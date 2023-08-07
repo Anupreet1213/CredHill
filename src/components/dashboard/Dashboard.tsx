@@ -16,6 +16,10 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
+interface AppBarProps extends MuiAppBarProps {
+  open?: boolean;
+}
+
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
@@ -35,7 +39,7 @@ const Drawer = styled(MuiDrawer, {
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
-})<MuiAppBarProps>(({ theme, open }) => ({
+})<AppBarProps>(({ theme, open}) => ({
   zIndex: theme.zIndex.drawer + 1,
   backgroundColor: "#2F3248",
   transition: theme.transitions.create(["width", "margin"], {
