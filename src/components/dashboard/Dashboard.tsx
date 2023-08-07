@@ -1,5 +1,5 @@
 import "./MiniDrawer.css";
-import { useState, useRef } from "react";
+import { useState, useRef, RefObject } from "react";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
@@ -90,8 +90,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
+
+interface DashboardProps {
+  dashContentRef: RefObject<HTMLDivElement>;
+}
  
-const Dashboard = ({dashContentRef}) => {
+const Dashboard: React.FC<DashboardProps> = ({dashContentRef}) => {
   const svgRef = useRef<SVGPathElement | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -112,13 +116,17 @@ const Dashboard = ({dashContentRef}) => {
   };
 
   const handleClick = (): void => {
-    if (svgRef.current !== null && loading) {
+    if (svgRef.current && loading) {
       svgRef.current.style.display = "none";
-      dashContentRef.current.style.width = "90vw";
+      if (dashContentRef.current) {
+        dashContentRef.current.style.width = "90vw";
+      }
       setLoading(!loading);
-    } else if (svgRef.current !== null && !loading) {
+    } else if (svgRef.current && !loading) {
       svgRef.current.style.display = "block";
-      dashContentRef.current.style.width = "80vw";
+      if (dashContentRef.current) {
+        dashContentRef.current.style.width = "80vw";
+      }
       setLoading(!loading);
     }
   };
