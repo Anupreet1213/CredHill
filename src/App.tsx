@@ -1,22 +1,22 @@
-import Hero from "./components/Hero/Hero";
-import "./styles.css";
-import Testimonials from "./components/Testimonials/Testimonials";
-import WhyInvoicer from "./components/WhyInvoicer/WhyInvoicer";
-import Navbar from "./components/Navbar/Navbar";
-import Features from "./components/Features/Features";
-import AboutUs from "./components/AboutUs/AboutUs";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+// import Dashboard from './pages/Dashboard';
+import { lazy, Suspense } from 'react';
 
-function App() {
+const DashboardPage = lazy(() => import('./pages/DashboardPage'));
+const App = () => {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <WhyInvoicer />
-      <Testimonials />
-      <Features />
-      <AboutUs />
-    </>
+    <Router>
+       <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Routes>
+      </Suspense>
+    </Router>
+
+    // <LandingPage />
   );
-}
+};
 
 export default App;
