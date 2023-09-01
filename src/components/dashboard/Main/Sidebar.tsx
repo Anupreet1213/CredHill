@@ -1,6 +1,6 @@
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
-import { useState, useRef, RefObject, Dispatch, SetStateAction } from "react";
+import { useRef, RefObject, Dispatch, SetStateAction } from "react";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
@@ -32,12 +32,13 @@ const Drawer = styled(MuiDrawer, {
 const DrawerHeader = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
+    justifyContent: "space-between",
+    padding: theme.spacing(0, 1, 0, 3),
     backgroundColor: "#2F3349",
+    color: "white",
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-  }));
+}));
 
 
 
@@ -66,16 +67,17 @@ const closedMixin = (theme: Theme): CSSObject => ({
 
 interface DashboardProps {
     dashContentRef: RefObject<HTMLDivElement>;
+    dashContentRef2: RefObject<HTMLDivElement>;
     setDashContent: Dispatch<SetStateAction<number>>;
     open: boolean;
-    setOpen: React.Dispatch<React.SetStateAction<boolean>>
+    setOpen: Dispatch<SetStateAction<boolean>>
     loading: boolean;
-    setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+    setLoading: Dispatch<SetStateAction<boolean>>;
 }
 
 const drawerWidth = 240;
 
-const Sidebar: React.FC<DashboardProps> = ({ dashContentRef, setDashContent, open, setOpen, loading, setLoading}) => {
+const Sidebar: React.FC<DashboardProps> = ({ dashContentRef, dashContentRef2, setDashContent, open, setOpen, loading, setLoading }) => {
 
     const svgRef = useRef<SVGPathElement | null>(null);
 
@@ -98,11 +100,17 @@ const Sidebar: React.FC<DashboardProps> = ({ dashContentRef, setDashContent, ope
             if (dashContentRef.current) {
                 dashContentRef.current.style.width = "90vw";
             }
+            if (dashContentRef2.current) {
+                dashContentRef2.current.style.width = "90vw";
+            }
             setLoading(!loading);
         } else if (svgRef.current && !loading) {
             svgRef.current.style.display = "block";
             if (dashContentRef.current) {
                 dashContentRef.current.style.width = "80vw";
+            }
+            if (dashContentRef2.current) {
+                dashContentRef2.current.style.width = "80vw";
             }
             setLoading(!loading);
         }
@@ -117,12 +125,13 @@ const Sidebar: React.FC<DashboardProps> = ({ dashContentRef, setDashContent, ope
         // className={`testMainChild ${sidebarOpen ? "sidebarOpen" : ""}`}
         >
             <DrawerHeader>
+                <div className={open ? "drawer_header" : "drawer_header_close"}>INVOICER</div>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     role="button"
                     //   tag="i"
-                    className="asideChild1-3"
+                    className={open ? "asideChild1-3" : "asideChild1-3_active"}
                     width="1em"
                     height="1em"
                     viewBox="0 0 24 24"

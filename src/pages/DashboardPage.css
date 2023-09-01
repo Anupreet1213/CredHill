@@ -1,23 +1,32 @@
-.Dashboard2_main{
+.dashboard_main{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
 
-.dashboard2_child1{
+.dashboard_child1{
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
     background-color: #25293C;
+    gap: 2%;
 }
 
-.dashboard2_child2{
+.dashboard_child1_1{
+    width: 80vw;
+    height: 7vh;
+    background-color: #2F3248;
+    border-radius: 10px;
+}
+
+.dashboard_child1_2{
     background-color: #2F3248;
     width: 80vw;
     height: 85vh;
-    margin-top: 4%;
+    /* margin-top: 4%; */
     border-radius: 10px;
 }

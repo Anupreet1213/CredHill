@@ -13,10 +13,10 @@
   width: 250px;
 }
 
-.asideChild1-3.active {
+.asideChild1-3_active {
   /* Apply styles when active class is present */
   /* Example: change the color of the active element */
-  color: red;
+  display: none;
 }
 
 .dashboard{
@@ -27,6 +27,13 @@
 
 .dashboard_drawer{
   background-color: "#2F3349";
+}
+
+.drawer_header{
+  display: block;
+}
+.drawer_header_close{
+  display: none;
 }
 
 .test{

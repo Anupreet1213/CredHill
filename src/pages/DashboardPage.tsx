@@ -1,30 +1,64 @@
 import "./DashboardPage.css";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Sidebar from "../components/dashboard/Main/Sidebar";
-import Navbar from "../components/dashboard/Main/Navbar";
+import MobileSidebar from "../components/dashboard/Main/MobileSidebar";
+// import Navbar from "../components/dashboard/Main/Navbar";
 
 const DashboardPage: React.FC = () => {
   const dashContentRef = useRef(null);
+  const dashContentRef2 = useRef(null);
   
   const [dashContent, setDashContent] = useState(0);
   const [open, setOpen] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(true); 
 
+  //Sidebar open toggle for mobile
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+      if (window.innerWidth >= 640) {
+        setMobileOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div className="Dashboard2_main">
-      <Sidebar dashContentRef={dashContentRef} setDashContent={setDashContent} open={open} setOpen={setOpen} loading={loading} setLoading={setLoading}/>
-      <Navbar open={open} loading={loading}/>
-      <div className="dashboard2_child1">
+    <div className="dashboard_main">
+      {
+        screenWidth > 640 
+        ?
+        <Sidebar dashContentRef={dashContentRef} dashContentRef2={dashContentRef2} setDashContent={setDashContent} open={open} setOpen={setOpen} loading={loading} setLoading={setLoading}/>
+        :
+        <MobileSidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle}/>
+      }
+      <div className="dashboard_child1">
+        {/* <Navbar open={open} loading={loading}/> */}
+        <div className="dashboard_child1_1" ref={dashContentRef2}>
+          <div onClick={handleDrawerToggle}>Heeeeelo</div>
+        </div>
         {
           dashContent === 0
             ?
-            <div className="dashboard2_child2" ref={dashContentRef}>Hii 0</div>
+            <div className="dashboard_child1_2" ref={dashContentRef}>Hii 0</div>
             :
             dashContent === 1
               ?
-              <div className="dashboard2_child2" ref={dashContentRef}>Hii 1</div>
+              <div className="dashboard_child1_2" ref={dashContentRef}>Hii 1</div>
               :
-              <div className="dashboard2_child2" ref={dashContentRef}>Hii 2</div>
+              <div className="dashboard_child1_2" ref={dashContentRef}>Hii 2</div>
         }
       </div>
     </div>
