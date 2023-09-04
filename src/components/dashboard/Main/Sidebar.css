@@ -19,31 +19,64 @@
   display: none;
 }
 
-.dashboard{
+.dashboard {
   background-color: #25293C;
   height: 100vh;
   width: 100vw;
 }
 
-.dashboard_drawer{
+.dashboard_drawer {
   background-color: "#2F3349";
 }
 
-.drawer_header{
+.drawer_header {
   display: block;
 }
-.drawer_header_close{
+
+.drawer_header_close {
   display: none;
 }
 
-.test{
+.test {
   color: red;
 }
 
-.dash_sidebar_text{
+.dash_sidebar_text {
   color: rgb(255, 255, 255);
 }
 
 /* .sidebar_cell{
   background-color: blue;
 } */
+
+
+
+
+/* ------------------------------------------sidebar----------------------------------------------------- */
+
+.dashboard_sidebar_open {
+  width: 17vw;
+  height: 100vh;
+  transition-duration: 400ms;
+  background-color: #2F3248;
+  color: white;
+}
+
+.dashboard_sidebar_close {
+  width: 4vw;
+  height: 100vh;
+  transition-duration: 400ms;
+  background-color: #2F3248;
+  color: white;
+}
+
+.sidebar_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7% 4% 0 6%;
+  margin-bottom: 10%;
+  background-color: #2F3349;
+  color: white;
+
+}
