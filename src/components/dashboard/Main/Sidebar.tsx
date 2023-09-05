@@ -1,33 +1,14 @@
-import { styled } from "@mui/material/styles";
 import { useRef, Dispatch, SetStateAction } from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import "./Sidebar.css";
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: theme.spacing(0, 1, 0, 3),
-    backgroundColor: "#2F3349",
-    color: "white",
-    ...theme.mixins.toolbar,
-}));
-
 interface DashboardProps {
-    setDashContent: Dispatch<SetStateAction<number>>;
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>
     loading: boolean;
     setLoading: Dispatch<SetStateAction<boolean>>;
 }
 
-const Sidebar: React.FC<DashboardProps> = ({ setDashContent, open, setOpen, loading, setLoading }) => {
+const Sidebar: React.FC<DashboardProps> = ({  open, setOpen, loading, setLoading }) => {
 
     const svgRef = useRef<SVGPathElement | null>(null);
 
