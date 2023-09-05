@@ -18,19 +18,19 @@ const Sidebar: React.FC<DashboardProps> = ({ open, setOpen, loading, setLoading 
     const handleMouseEnter = (): void => {
         if (timer !== undefined) {
             clearTimeout(timer);
-          }
-          timer = setTimeout(() => {
+        }
+        timer = setTimeout(() => {
             !loading ? setOpen(true) : "";
-          }, 100);
+        }, 100);
     };
 
     const handleMouseLeave = (): void => {
         if (timer !== undefined) {
             clearTimeout(timer);
-          }
-          timer = setTimeout(() => {
+        }
+        timer = setTimeout(() => {
             !loading ? setOpen(false) : "";
-          }, 100);
+        }, 100);
     };
 
     const handleClick = (): void => {
@@ -75,24 +75,26 @@ const Sidebar: React.FC<DashboardProps> = ({ open, setOpen, loading, setLoading 
             </div>
 
             <div className="sidebar_dashboard">
-                <HomeIcon />
-                {
-                    open
-                    ?
-                    <h3>Dashboard</h3>
-                    :
-                    <></>
-                }
-            </div>
-            <div className="sidebar_analytics">
-                <EqualizerIcon />
-                {
-                    open
-                    ?
-                    <h3>Analytics</h3>
-                    :
-                    <></>
-                }
+                <div className={open ? "sidebar_dashboard_child_open" : "sidebar_dashboard_child_close"}>
+                    <HomeIcon />
+                    {
+                        open
+                            ?
+                            <h3>Dashboard</h3>
+                            :
+                            <></>
+                    }
+                </div>
+                <div className={open ? "sidebar_analytics_child_open" : "sidebar_analytics_child_close"}>
+                    <EqualizerIcon />
+                    {
+                        open
+                            ?
+                            <h3>Analytics</h3>
+                            :
+                            <></>
+                    }
+                </div>
             </div>
             {/* <List className="dash_sidebar_text">
                 {["Inbox", "Starred", "Send", "Drafts"].map((text, index) => (
