@@ -61,7 +61,7 @@ const MobileSidebar = (props: Props) => {
             <CssBaseline />
             <Box
                 component="nav"
-                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+                sx={{ width: { md: drawerWidth }}}
                 aria-label="mailbox folders"
             >
                 <Drawer
@@ -73,13 +73,13 @@ const MobileSidebar = (props: Props) => {
                         keepMounted: true,
                     }}
                     sx={{
-                        display: { xs: 'block', sm: 'none' },
+                        display: {  xs: 'block', sm: 'block', md: 'none', lg: 'none' },
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                 >
                     {drawer}
                 </Drawer>
-                <Drawer
+                {/* <Drawer
                     variant="permanent"
                     sx={{
                         display: { xs: 'none', sm: 'block' },
@@ -88,7 +88,7 @@ const MobileSidebar = (props: Props) => {
                     open
                 >
                     {drawer}
-                </Drawer>
+                </Drawer> */}
             </Box>
         </Box>
     );

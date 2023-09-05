@@ -8,21 +8,27 @@ interface DashboardProps {
     setLoading: Dispatch<SetStateAction<boolean>>;
 }
 
-const Sidebar: React.FC<DashboardProps> = ({  open, setOpen, loading, setLoading }) => {
+const Sidebar: React.FC<DashboardProps> = ({ open, setOpen, loading, setLoading }) => {
 
     const svgRef = useRef<SVGPathElement | null>(null);
+    let timer: ReturnType<typeof setTimeout> | undefined;
 
     const handleMouseEnter = (): void => {
-        // setSidebarOpen(true);
-        !loading ? setOpen(true) : "";
-        // dashContentRef.current.style.width = "80vw";
+        if (timer !== undefined) {
+            clearTimeout(timer);
+          }
+          timer = setTimeout(() => {
+            !loading ? setOpen(true) : "";
+          }, 100);
     };
 
     const handleMouseLeave = (): void => {
-        // setSidebarOpen(false);
-        !loading ? setOpen(false) : "";
-        // dashContentRef.current.style.width = "90vw";
-        // setOpen(false);
+        if (timer !== undefined) {
+            clearTimeout(timer);
+          }
+          timer = setTimeout(() => {
+            !loading ? setOpen(false) : "";
+          }, 100);
     };
 
     const handleClick = (): void => {
@@ -37,7 +43,7 @@ const Sidebar: React.FC<DashboardProps> = ({  open, setOpen, loading, setLoading
 
     };
     return (
-       
+
         <div className={open ? "dashboard_sidebar_open" : "dashboard_sidebar_close"} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 
             <div className="sidebar_header">

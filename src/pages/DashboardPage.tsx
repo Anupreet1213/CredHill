@@ -20,7 +20,7 @@ const DashboardPage: React.FC = () => {
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
-      if (window.innerWidth >= 640) {
+      if (window.innerWidth >= 896) {
         setMobileOpen(false);
       }
     };
@@ -44,7 +44,7 @@ const DashboardPage: React.FC = () => {
   
     <div className="dashboard_main">
       {
-        screenWidth > 840
+        screenWidth > 896
         ?
         <Sidebar open={open} setOpen={setOpen} loading={loading} setLoading={setLoading}/>
         :
