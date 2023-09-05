@@ -80,7 +80,10 @@ const DashboardPage: React.FC = () => {
         {
           dashContent === 0
           ?
-          <div className="dashboard_right_second">right wala main</div>
+          <div className="dashboard_right_second">
+            <div>Heelu Heelu dlflkjdfs</div>
+           
+          </div>
           :
           <div className="dashboard_right_second">right wala main 2</div>
         }

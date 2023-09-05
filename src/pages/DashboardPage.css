@@ -42,6 +42,7 @@
 .dashboard_right{
     flex: 1;
     height: 100vh;
+    overflow-y: scroll ;
     background-color: #25293C;
     padding-top: 1%;
     display: flex;
@@ -50,7 +51,7 @@
 }
 
 .dashboard_navbar{
-    background-color: #2F3248;
+    background-color: #121632;
     height: 7vh;
     border-radius: 8px;
 }
