@@ -1,5 +1,7 @@
 import { useRef, Dispatch, SetStateAction } from "react";
 import "./Sidebar.css";
+import HomeIcon from '@mui/icons-material/Home';
+import EqualizerIcon from '@mui/icons-material/Equalizer';
 
 interface DashboardProps {
     open: boolean;
@@ -66,8 +68,25 @@ const Sidebar: React.FC<DashboardProps> = ({  open, setOpen, loading, setLoading
                 </svg>
             </div>
 
-            <div className="">
-
+            <div className="sidebar_dashboard">
+                <HomeIcon />
+                {
+                    open
+                    ?
+                    <h3>Dashboard</h3>
+                    :
+                    <></>
+                }
+            </div>
+            <div className="sidebar_analytics">
+                <EqualizerIcon />
+                {
+                    open
+                    ?
+                    <h3>Analytics</h3>
+                    :
+                    <></>
+                }
             </div>
             {/* <List className="dash_sidebar_text">
                 {["Inbox", "Starred", "Send", "Drafts"].map((text, index) => (
