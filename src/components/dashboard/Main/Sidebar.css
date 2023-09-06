@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
 .asideChild1-3 {
   font-size: 1.25rem;
   cursor: pointer;
@@ -11,8 +13,12 @@
 }
 
 .drawer_header {
+  font-family: 'Public Sans', sans-serif;
+  color: #9DC4FF;
+  font-size: 1.2rem;
   transition-duration: 400ms;
   display: block;
+  padding: 4% 2% 2% 2%;
 }
 
 .drawer_header_close {
@@ -23,6 +29,7 @@
 
 
 .dashboard_sidebar_open {
+  font-family: 'Public Sans', sans-serif;
   width: 18vw;
   height: 100vh;
   transition-duration: 400ms;
@@ -44,13 +51,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 6% 4% 6% 6%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   background-color: #121632;
   color: white;
 }
 
 .sidebar_dashboard{
-  padding: 2% 5% 2% 5%;
+  padding: 0% 5% 2% 5%;
 }
 
 .sidebar_dashboard_child_open{
@@ -112,4 +119,73 @@
   background-color: rgba(170, 62, 255, 0.4);
   /* opacity: 20%; */
   cursor: pointer;
+}
+.apps_and_pages_invoice_wrapper{
+  margin-bottom: 4%;
+}
+
+
+.apps_and_pages_invoice_wrapper_heading{
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar_apps_and_pages{
+  margin-top: 10%;
+  padding-left: 6%;
+}
+
+
+.sidebar_apps_and_pages p{
+  padding: 4% 2 ;
+  font-size: 19px;
+  color: #63699E;
+  margin-bottom: 2%;
+  
+}
+
+
+.apps_and_pages_invoice_wrapper_calender{
+  padding: 2% 6%;
+}
+.apps_and_pages_invoice_wrapper_heading h3{
+  
+  padding: 2% 6%;
+  margin-bottom: 1%;
+}
+.sidebar_invoice_dropdown ul{
+  list-style-type: none;
+  padding-left: 8%;
+}
+
+
+
+.sidebar_invoice_dropdown {
+  transform: translateY(0%);
+  opacity: 0;
+  max-height: 0;
+}
+
+/* Shown state */
+.sidebar_invoice_dropdown.open {
+  max-height: 2500px;
+  transform: translateY(8%);
+  opacity: 1;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+
+.sidebar_profile_settings{
+  margin-top: 10%;
+  padding-left: 6%;
+}
+.sidebar_profile_settings p{
+  padding: 4% 2 ;
+  font-size: 19px;
+  color: #63699E;
+  margin-bottom: 2%;
+}
+.apps_and_pages_invoice_wrapper h3{
+  padding: 2% 6%;
 }
