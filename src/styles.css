@@ -8,3 +8,13 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+:root {
+  --background-color: #121632;
+  --text-color: #ffffff;
+}
+
+.light-mode {
+  --background-color: #fafafa;
+  --text-color: #000000;
+}

@@ -2,6 +2,7 @@ import { useRef, Dispatch, SetStateAction } from "react";
 import "./Sidebar.css";
 import HomeIcon from '@mui/icons-material/Home';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
+import { useTheme } from "../../../contexts/ThemeContext";
 
 interface DashboardProps {
     open: boolean;
@@ -41,12 +42,14 @@ const Sidebar: React.FC<DashboardProps> = ({ open, setOpen, loading, setLoading 
             svgRef.current.style.display = "block";
             setLoading(!loading);
         }
-
-
     };
+
+
+    const {isDarkMode} = useTheme();
+
     return (
 
-        <div className={open ? "dashboard_sidebar_open" : "dashboard_sidebar_close"} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div className={`${open ? "dashboard_sidebar_open" : "dashboard_sidebar_close"} ${isDarkMode ? "" : "light-mode"}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 
             <div className="sidebar_header">
                 <div className={open ? "drawer_header" : "drawer_header_close"}>INVOICER</div>
