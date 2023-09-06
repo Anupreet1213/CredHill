@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../components/dashboard/Main/Sidebar";
 import MobileSidebar from "../components/dashboard/Main/MobileSidebar";
 import { useTheme } from "../contexts/ThemeContext";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesome for icons
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 // import Navbar from "../components/dashboard/Main/Navbar";
 

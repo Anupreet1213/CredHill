@@ -1,18 +1,24 @@
-import { useRef, Dispatch, SetStateAction } from "react";
+import { useRef, Dispatch, SetStateAction, useState } from "react";
 import "./Sidebar.css";
-import HomeIcon from '@mui/icons-material/Home';
-import EqualizerIcon from '@mui/icons-material/Equalizer';
 import { useTheme } from "../../../contexts/ThemeContext";
+import HomeIcon from "@mui/icons-material/Home";
+import EqualizerIcon from "@mui/icons-material/Equalizer";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+// import InsightsIcon from '@mui/icons-material/Insights';
 
 interface DashboardProps {
     open: boolean;
-    setOpen: Dispatch<SetStateAction<boolean>>
+    setOpen: Dispatch<SetStateAction<boolean>>;
     loading: boolean;
     setLoading: Dispatch<SetStateAction<boolean>>;
 }
 
-const Sidebar: React.FC<DashboardProps> = ({ open, setOpen, loading, setLoading }) => {
-
+const Sidebar: React.FC<DashboardProps> = ({
+    open,
+    setOpen,
+    loading,
+    setLoading,
+}) => {
     const svgRef = useRef<SVGPathElement | null>(null);
     let timer: ReturnType<typeof setTimeout> | undefined;
 
@@ -44,8 +50,14 @@ const Sidebar: React.FC<DashboardProps> = ({ open, setOpen, loading, setLoading 
         }
     };
 
+    const [dropdown, setdropdown] = useState<boolean>(false);
 
-    const {isDarkMode} = useTheme();
+    const handleClick1 = (): void => {
+        setdropdown(!dropdown);
+        // console.log(stateVariable);
+      };
+
+    const { isDarkMode } = useTheme();
 
     return (
 
@@ -78,55 +90,57 @@ const Sidebar: React.FC<DashboardProps> = ({ open, setOpen, loading, setLoading 
             </div>
 
             <div className="sidebar_dashboard">
-                <div className={open ? "sidebar_dashboard_child_open" : "sidebar_dashboard_child_close"}>
+                <div
+                    className={
+                        open
+                            ? "sidebar_dashboard_child_open"
+                            : "sidebar_dashboard_child_close"
+                    }
+                >
                     <HomeIcon />
-                    {
-                        open
-                            ?
-                            <h3>Dashboard</h3>
-                            :
-                            <></>
-                    }
+                    {open ? <h3>Dashboard</h3> : <></>}
                 </div>
-                <div className={open ? "sidebar_analytics_child_open" : "sidebar_analytics_child_close"}>
-                    <EqualizerIcon />
-                    {
+                <div
+                    className={
                         open
-                            ?
-                            <h3>Analytics</h3>
-                            :
-                            <></>
+                            ? "sidebar_analytics_child_open"
+                            : "sidebar_analytics_child_close"
                     }
+                >
+                    <EqualizerIcon />
+                    {open ? <h3>Analytics</h3> : <></>}
                 </div>
             </div>
-            {/* <List className="dash_sidebar_text">
-                {["Inbox", "Starred", "Send", "Drafts"].map((text, index) => (
-                    <ListItem key={text} disablePadding sx={{ display: "block" }} className="sidebar_cell">
-                        <ListItemButton
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? "initial" : "center",
-                                px: 2.5,
-                            }}
-                            onClick={() => (index === 0 ? setDashContent(0) : index === 1 ? setDashContent(1) : setDashContent(2))}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : "auto",
-                                    justifyContent: "center",
-                                    color: "rgb(255, 255, 255)",
-                                }}
-                            >
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List> */}
+            <div className="sidebar_apps_and_pages">
+                <p>APPS AND PAGES</p>
+                <div className="apps_and_pages_invoice_wrapper">
+                    <h3 className="apps_and_pages_invoice_wrapper_calender">Calender</h3>
+                    <div className="apps_and_pages_invoice_wrapper_heading">
+                        <h3>Invoice</h3>
+                        <KeyboardArrowDownIcon onClick={handleClick1} />
+                    </div>
+
+                    <div className={`sidebar_invoice_dropdown ${dropdown ? "open" : ""}`}>
+                        <ul>
+                            <li>Create</li>
+                            <li>List</li>
+                            <li>Invoice S.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className="sidebar_profile_settings">
+                <p>PROFILE SETTINGS</p>
+                <div className="apps_and_pages_invoice_wrapper">
+                    <h3>View Profile</h3>
+                    <h3>Edit Profile</h3>
+                    <h3>Manage Clients</h3>
+                </div>
+            </div>
+
         </div>
-    )
-}
+
+  );
+};
 
 export default Sidebar;
