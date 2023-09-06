@@ -17,12 +17,22 @@
   color: #9DC4FF;
   font-size: 1.2rem;
   transition-duration: 400ms;
-  display: block;
+  display: flex;
+  gap: 3%;
   padding: 4% 2% 2% 2%;
 }
 
 .drawer_header_close {
-  display: none;
+  font-family: 'Public Sans', sans-serif;
+  color: #9DC4FF;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transition-duration: 400ms; */
+  /* display: block; */
+  padding: 20% 25%;
+  /* display: none; */
 }
 
 /* ------------------------------------------sidebar----------------------------------------------------- */
@@ -63,19 +73,16 @@
 .sidebar_dashboard_child_open{
   /* width:90%; */
   display:flex;
-  /* padding-left: 7%; */
   padding: 4% 2%;
   align-items: center;
   gap:5%;
   border-radius: 8px;
-  /* background-color: red; */
-  /* justify-content: center; */
+
 }
 
 .sidebar_dashboard_child_close{
   /* width:90%; */
   display:flex;
-  /* padding-left: 7%; */
   padding: 4% 2%;
   align-items: center;
   gap:5%;
@@ -94,18 +101,15 @@
 
 .sidebar_analytics_child_open{
   display:flex;
-  /* padding-left: 7%; */
   align-items: center;
   padding: 4% 2%;
   gap:5%;
-  /* width:90%; */
-  /* margin-top: 4%; */
   border-radius: 8px;
 }
 
+
 .sidebar_analytics_child_close{
   display:flex;
-  /* padding-left: 7%; */
   align-items: center;
   gap:5%;
   /* width:90%; */
@@ -147,9 +151,10 @@
 
 .apps_and_pages_invoice_wrapper_calender{
   padding: 2% 6%;
+  font-weight: 200;
 }
 .apps_and_pages_invoice_wrapper_heading h3{
-  
+  font-weight: 200;
   padding: 2% 6%;
   margin-bottom: 1%;
 }
@@ -188,4 +193,5 @@
 }
 .apps_and_pages_invoice_wrapper h3{
   padding: 2% 6%;
+  font-weight: 200;
 }
