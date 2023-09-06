@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import HomeIcon from "@mui/icons-material/Home";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import InsightsIcon from '@mui/icons-material/Insights';
+// import InsightsIcon from '@mui/icons-material/Insights';
 
 interface DashboardProps {
   open: boolean;
