@@ -73,10 +73,9 @@
 .lifetime_data_content{
     flex:0.65;
 }
-.lifetime_data_content p{
-    margin-top: 5%;
-    margin-bottom: 8%;
-    /* margin-left: 3%; */
+.lifetime_data_content_heading{
+    font-size: 1.2rem;
+    margin:8% 0 12% 0%;
 }
 
 .lifetime_data_content_grid{
@@ -85,10 +84,10 @@
     grid-template-rows: 1fr 1.4fr;
     margin-top: 2%;
     font-size: 0.8rem;
-    row-gap: 10%;
+    row-gap: 20%;
 }
 .lifetime_data_image {
-    flex: 0.35;
+    flex: 0.45;
     display: flex;
     align-items: center;
 }
@@ -97,17 +96,17 @@
 }
 .total_invoice{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 .amount_due{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 .invoice_due{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -123,25 +122,18 @@
 
 .dashboard_graph{
     background-color: rgba(101,118,134,0.2);
+}
+.dashboard_graph_chart_heading{
+    padding: 5%;
     display: flex;
-    flex-direction: column;
-    /* grid-column: span 1; */
+    align-items: center;
 }
-
-.dashboard_graph_chart{
-    /* max-height: 40%; */
-}
-
-
-
-
 
 
 .dashboard_QOD{
-    /* background-color: rgba(6, 57, 686, 0.2); */
     background-color: rgba(101,118,134,0.2);
-
     padding: 6%;
+    overflow-y: scroll;
    
 }
 .dashboard_QOD_heading{
