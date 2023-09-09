@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
 .dashboard_main{
     display: flex;
     background-color: #25293C;
@@ -39,11 +41,97 @@
     border-radius: 8px;
 }
 
+
+                            /* <---------------------------Dashboard Right Second--------------------------> */
+
+
 .dashboard_right_second{
-    /* background-color: #2F3248; */
-    background-color: var(--background-color);
+    font-family: 'Public Sans', sans-serif;
+    /* background-color: #2F3248;  */
+    /* background-color: var(--background-color); */
+    background: transparent;
     color: var(--text-color);
-    flex: 1;
-    border-radius: 8px;
+    /* flex: 1; */
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1.5fr;
+    gap:1.2rem;
+    /* border-radius: 8px; */
+}
+.dashboard_right_second div{
+    border-radius: 10px;
+}
+.lifetime_data{
+    background-color: rgba(170,62,255,0.2);
+    color:white;
+    display: flex;
+    padding: 3%;
+    /* font-size: 0.7rem; */
+    /* gap:10%; */
+    /* justify-content: center; */
+    /* flex: 0.5; */
+    /* grid-column: span 1; */
 }
 
+
+.lifetime_data_content{
+    flex:0.65;
+}
+.lifetime_data_content p{
+    margin-top: 5%;
+    margin-bottom: 8%;
+    /* margin-left: 3%; */
+}
+
+.lifetime_data_content_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.4fr;
+    margin-top: 2%;
+    font-size: 0.8rem;
+    row-gap: 10%;
+}
+.lifetime_data_image {
+    flex: 0.35;
+    display: flex;
+    align-items: center;
+}
+.lifetime_data_image img{
+    width: 100%;
+}
+.total_invoice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.amount_due{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.invoice_due{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+.dashboard_graph{
+    background-color: #512B81;
+    /* grid-column: span 1; */
+}
+.dashboard_QOD{
+    background-color: #4477CE;
+    /* grid-column: span 1; */
+}
+.dashboard_main_part{
+    grid-column: span 3;
+    background-color: #8CABFF;
+}
