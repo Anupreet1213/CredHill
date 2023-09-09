@@ -5,6 +5,9 @@ import HomeIcon from "@mui/icons-material/Home";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import InsightsIcon from '@mui/icons-material/Insights';
+import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import LinearScaleIcon from '@mui/icons-material/LinearScale';
 
 interface DashboardProps {
     open: boolean;
@@ -55,20 +58,20 @@ const Sidebar: React.FC<DashboardProps> = ({
     const handleClick1 = (): void => {
         setdropdown(!dropdown);
         // console.log(stateVariable);
-      };
+    };
 
     const { isDarkMode } = useTheme();
 
     return (
 
 
-     
+
         <div className={`${open ? "dashboard_sidebar_open" : "dashboard_sidebar_close"} ${isDarkMode ? "" : "light-mode"}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 
-            <div className="sidebar_header">
+            <div className={open ? "sidebar_header" : "sidebar_header_close"}>
                 <div className={open ? "drawer_header" : "drawer_header_close"}>
-                <InsightsIcon/>
-          {open ? <h3>Invoicer</h3> : <></>}
+                    <InsightsIcon />
+                    {open ? <h3>Invoicer</h3> : <></>}
                 </div>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -116,34 +119,158 @@ const Sidebar: React.FC<DashboardProps> = ({
                     {open ? <h3>Analytics</h3> : <></>}
                 </div>
             </div>
-            <div className="sidebar_apps_and_pages">
-                <p>APPS AND PAGES</p>
-                <div className="apps_and_pages_invoice_wrapper">
-                    <h3 className="apps_and_pages_invoice_wrapper_calender">Calender</h3>
-                    <div className="apps_and_pages_invoice_wrapper_heading">
-                        <h3>Invoice</h3>
-                        <KeyboardArrowDownIcon onClick={handleClick1} />
-                    </div>
+            {/* <div className="sidebar_apps_and_pages"> */}
+            <div className={open ? "apps_and_pages_invoice_wrapper" : "apps_and_pages_invoice_wrapper_close"}>
+                {
+                    open
+                        ?
+                        <p className="dashboard_heading">APPS AND PAGES</p>
+                        :
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true"
+                            role="img"
+                            key="Apps & Pages"
+                            scale="global"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                            className="dashboard_hr_1"
+                        >
+                            <path
+                                fill="none"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="1.5"
+                                d="M3 12v.01M7 12h10m4 0v.01"
+                            />
+                        </svg>
+                }
+                <div
+                    className={
+                        open
+                            ? "sidebar_calender_child_open"
+                            : "sidebar_calender_child_close"
+                    }
+                >
+                    {/* <KeyboardArrowDownIcon /> */}
+                    <HomeIcon />
+                    {open ? <h3>Calender</h3> : <></>}
+                </div>
+                <div
+                    className={
+                        open
+                            ? "sidebar_invoice_child_open"
+                            : "sidebar_invoice_child_close"
+                    }
+                    onClick={handleClick1}
+                >
+                    <HomeIcon />
+                    {open ? <h3>Invoice</h3> : <></>}
+                    {dropdown ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}
+                </div>
 
-                    <div className={`sidebar_invoice_dropdown ${dropdown ? "open" : ""}`}>
-                        <ul>
-                            <li>Create</li>
-                            <li>List</li>
-                            <li>Invoice S.</li>
-                        </ul>
-                    </div>
+                <div className={`sidebar_invoice_dropdown ${dropdown ? "open" : ""}`}>
+                    <ul>
+                        <li className={
+                            open
+                                ? "sidebar_dashboard_child_open"
+                                : "sidebar_dashboard_child_close"
+                        }>
+                            <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
+                            {open ? <h3>Create</h3> : <></>}
+                        </li>
+                        <li className={
+                            open
+                                ? "sidebar_dashboard_child_open"
+                                : "sidebar_dashboard_child_close"
+                        }>
+                            <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
+                            {open ? <h3>List</h3> : <></>}
+                        </li>
+                        <li className={
+                            open
+                                ? "sidebar_dashboard_child_open"
+                                : "sidebar_dashboard_child_close"
+                        }>
+                            <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
+                            {open ? <h3>Invoice S.</h3> : <></>}
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div className="sidebar_profile_settings">
-                <p>PROFILE SETTINGS</p>
-                <div className="apps_and_pages_invoice_wrapper">
-                    <h3>View Profile</h3>
-                    <h3>Edit Profile</h3>
-                    <h3>Manage Clients</h3>
+
+            {/* </div> */}
+            {/* <div className="sidebar_profile_settings"> */}
+            <div className={open ? "profile_setting_wrapper" : "profile_setting_wrapper_close"}>
+                {
+                    open
+                        ?
+                        <p className="dashboard_heading">PROFILE SETTINGS</p>
+                        :
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true"
+                            role="img"
+                            key="Apps & Pages"
+                            scale="global"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                            className="dashboard_hr_1"
+                        >
+                            <path
+                                fill="none"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="1.5"
+                                d="M3 12v.01M7 12h10m4 0v.01"
+                            />
+                        </svg>
+                }
+                <div
+                    className={
+                        open
+                            ? "sidebar_view_profile_child_open"
+                            : "sidebar_view_profile_child_close"
+                    }
+                >
+                    <HomeIcon />
+                    {open ? <h3>View Profile</h3> : <></>}
                 </div>
+                <div
+                    className={
+                        open
+                            ? "sidebar_dashboard_child_open"
+                            : "sidebar_dashboard_child_close"
+                    }
+                >
+                    <HomeIcon />
+                    {open ? <h3>Edit Profile</h3> : <></>}
+                </div>
+                <div
+                    className={
+                        open
+                            ? "sidebar_dashboard_child_open"
+                            : "sidebar_dashboard_child_close"
+                    }
+                >
+                    <HomeIcon />
+                    {open ? <h3>Manage Clients</h3> : <></>}
+                </div>
+                {/* <h3>View Profile</h3>
+                <h3>Edit Profile</h3>
+                <h3>Manage Clients</h3> */}
             </div>
 
-  </div>
+
+            {/* </div> */}
+
+        </div>
     )
 
 };
