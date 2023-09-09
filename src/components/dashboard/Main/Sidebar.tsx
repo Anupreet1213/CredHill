@@ -7,7 +7,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import InsightsIcon from '@mui/icons-material/Insights';
 import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import LinearScaleIcon from '@mui/icons-material/LinearScale';
+// import LinearScaleIcon from '@mui/icons-material/LinearScale';
 
 interface DashboardProps {
     open: boolean;
