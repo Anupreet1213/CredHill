@@ -6,7 +6,7 @@ import { useTheme } from "../contexts/ThemeContext";
 import lifetime_data_image from "./image 1.png";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import axios from 'axios';
-import Chart from "react-apexcharts";
+// import Chart from "react-apexcharts";
 
 const DashboardPage: React.FC = () => {
   const [open, setOpen] = useState<boolean>(true);
@@ -41,21 +41,21 @@ const DashboardPage: React.FC = () => {
 
 
 
-  const [chartOptions, setChartOptions] = useState({
-    chart: {
-      id: "basic-area"
-    },
-    xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996]
-    }
-  });
+  // const [chartOptions, setChartOptions] = useState({
+  //   chart: {
+  //     id: "basic-area"
+  //   },
+  //   xaxis: {
+  //     categories: [1991, 1992, 1993, 1994, 1995, 1996]
+  //   }
+  // });
 
-  const [chartSeries, setChartSeries] = useState([
-    {
-      name: "series-1",
-      data: [30, 40, 45, 50, 49, 60]
-    }
-  ]);
+  // const [chartSeries, setChartSeries] = useState([
+  //   {
+  //     name: "series-1",
+  //     data: [30, 40, 45, 50, 49, 60]
+  //   }
+  // ]);
 
 
 
