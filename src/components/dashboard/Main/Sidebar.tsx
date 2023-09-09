@@ -7,6 +7,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import InsightsIcon from '@mui/icons-material/Insights';
 import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import LinearScaleIcon from '@mui/icons-material/LinearScale';
 
 interface DashboardProps {
     open: boolean;
@@ -66,7 +67,7 @@ const Sidebar: React.FC<DashboardProps> = ({
 
 
         <div className={`${open ? "dashboard_sidebar_open" : "dashboard_sidebar_close"} ${isDarkMode ? "" : "light-mode"}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
- 
+
             <div className={open ? "sidebar_header" : "sidebar_header_close"}>
                 <div className={open ? "drawer_header" : "drawer_header_close"}>
                     <InsightsIcon />
@@ -122,10 +123,30 @@ const Sidebar: React.FC<DashboardProps> = ({
             <div className={open ? "apps_and_pages_invoice_wrapper" : "apps_and_pages_invoice_wrapper_close"}>
                 {
                     open
-                    ?
-                    <p className="dashboard_heading">APPS AND PAGES</p>
-                    :
-                    <></>
+                        ?
+                        <p className="dashboard_heading">APPS AND PAGES</p>
+                        :
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true"
+                            role="img"
+                            key="Apps & Pages"
+                            scale="global"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                            className="dashboard_hr_1"
+                        >
+                            <path
+                                fill="none"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="1.5"
+                                d="M3 12v.01M7 12h10m4 0v.01"
+                            />
+                        </svg>
                 }
                 <div
                     className={
@@ -180,16 +201,36 @@ const Sidebar: React.FC<DashboardProps> = ({
                     </ul>
                 </div>
             </div>
-            
+
             {/* </div> */}
             {/* <div className="sidebar_profile_settings"> */}
             <div className={open ? "profile_setting_wrapper" : "profile_setting_wrapper_close"}>
                 {
                     open
-                    ?
-                    <p className="dashboard_heading">PROFILE SETTINGS</p>
-                    :
-                    <></>
+                        ?
+                        <p className="dashboard_heading">PROFILE SETTINGS</p>
+                        :
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true"
+                            role="img"
+                            key="Apps & Pages"
+                            scale="global"
+                            width="1em"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                            className="dashboard_hr_1"
+                        >
+                            <path
+                                fill="none"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="1.5"
+                                d="M3 12v.01M7 12h10m4 0v.01"
+                            />
+                        </svg>
                 }
                 <div
                     className={
@@ -226,7 +267,7 @@ const Sidebar: React.FC<DashboardProps> = ({
                 <h3>Manage Clients</h3> */}
             </div>
 
-            
+
             {/* </div> */}
 
         </div>

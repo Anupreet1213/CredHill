@@ -28,9 +28,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50%;
   /* transition-duration: 400ms; */
   /* display: block; */
-  padding: 20% 25%;
+  /* padding: 30% 0%; */
   /* display: none; */
 }
 
@@ -54,6 +55,9 @@
   transition-duration: 400ms;
   color: var(--text-color);
   background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* background-color: #121632; */
   /* color: white; */
 }
@@ -146,11 +150,17 @@
   /* width:90%; */
   display: flex;
   padding: 4% 2%;
+  padding-top: 50%;
   align-items: center;
   gap: 5%;
   border-radius: 8px;
   justify-content: center;
 }
+
+/* .dashboard_hr_1{
+  margin-left: 50%;
+  margin-right: 50%;
+} */
 
 .sidebar_calender_child_open:hover {
   background-color: rgba(170, 62, 255, 0.4);
@@ -200,6 +210,7 @@
   /* width:90%; */
   display: flex;
   padding: 4% 2%;
+  padding-top: 120%;
   align-items: center;
   gap: 5%;
   border-radius: 8px;
@@ -228,8 +239,12 @@
 }
 
 .apps_and_pages_invoice_wrapper_close {
-  margin-top: 100%;
+  margin-top: 40%;
+  margin-bottom: 40%;
   padding: 0% 5% 2% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile_setting_wrapper {
@@ -240,6 +255,9 @@
 .profile_setting_wrapper_close {
   margin-top: 10%;
   padding: 0% 5% 2% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -261,7 +279,10 @@
   font-size: 0.9rem;
   color: #63699E;
   margin-bottom: 2%;
+}
 
+.dashboard_hr_1{
+  /* padding-bottom: 20%; */
 }
 
 
