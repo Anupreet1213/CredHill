@@ -89,6 +89,7 @@
 .dashboard_QOD{
     background-color: rgba(101,118,134,0.2);
     padding: 6%;
+    max-height: 13.24875rem;
     overflow-y: scroll;
    
 }
