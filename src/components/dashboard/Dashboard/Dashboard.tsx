@@ -45,6 +45,9 @@ const Dashboard: React.FC = () => {
         dataLabels: {
             enabled: false,
         },
+        // stroke:{
+        //     show:false
+        // },
         grid: {
             show: false,
         },
@@ -55,6 +58,12 @@ const Dashboard: React.FC = () => {
             categories: [1991, 1992, 1993, 1994, 1995, 1996],
             labels: {
                 show: false
+            },
+            axisBorder: {
+                show: false 
+            },
+            axisTicks:{
+                show:false
             }
         },
         yaxis: {
@@ -76,7 +85,7 @@ const Dashboard: React.FC = () => {
             className={`${isDarkMode ? "" : "light-mode"} dashboard_right_second`}
             onClick={toggleTheme}
         >
-            <div className="lifetime_data">
+            <div className={`${isDarkMode ? "lifetime_data" : "lifetime_data_light"}`}>
                 <div className="lifetime_data_content">
                     <p className="lifetime_data_content_heading"> Lifetime Data</p>
                     <div className="lifetime_data_content_grid">

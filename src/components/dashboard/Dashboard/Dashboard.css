@@ -21,7 +21,14 @@
     border-radius: 10px;
 }
 .lifetime_data{
-    background-color: rgba(170,62,255,0.2);
+    /* background-color: rgba(170,62,255,0.2); */
+    background-color: rgb(114,92,207);
+    color:white;
+    display: flex;
+    padding: 3%;
+}
+.lifetime_data_light{
+    background-color: rgb(114,92,207);
     color:white;
     display: flex;
     padding: 3%;
