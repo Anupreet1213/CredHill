@@ -4,7 +4,7 @@ import Sidebar from "../components/dashboard/Main/Sidebar";
 import MobileSidebar from "../components/dashboard/Main/MobileSidebar";
 import Navbar from "../components/dashboard/Main/Navbar";
 import Dashboard from "../components/dashboard/Dashboard/Dashboard";
-// import { useTheme } from "../contexts/ThemeContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 
 const DashboardPage: React.FC = () => {
@@ -15,6 +15,8 @@ const DashboardPage: React.FC = () => {
   //Sidebar open toggle for mobile
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const { isDarkMode } = useTheme();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -36,7 +38,7 @@ const DashboardPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="dashboard_main">
+    <div className={`dashboard_main ${isDarkMode ? "" : "light-mode"}`}>
       {screenWidth > 896 ? (
         <Sidebar
           open={open}

@@ -2,7 +2,7 @@
 
 .dashboard_main{
     display: flex;
-    background-color: #25293C;
+    background-color: var(--parent-bg-color);
     gap: 2%;
     padding-right: 2%;
     /* align-items: center;
@@ -26,7 +26,7 @@
     flex: 1;
     height: 100vh;
     overflow-y: scroll ;
-    background-color: #25293C;
+    background-color: var(--parent-bg-color);
     padding-top: 1%;
     display: flex;
     flex-direction: column;
