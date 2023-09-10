@@ -2,8 +2,8 @@ import "./DashboardPage.css";
 import React, { useState, useEffect } from "react";
 import Sidebar from "../components/dashboard/Main/Sidebar";
 import MobileSidebar from "../components/dashboard/Main/MobileSidebar";
-import Dashboard from "../components/dashboard/Dashboard/dashboard";
 import Navbar from "../components/dashboard/Main/Navbar";
+import Dashboard from "../components/dashboard/Dashboard/dashboard";
 // import { useTheme } from "../contexts/ThemeContext";
 
 
