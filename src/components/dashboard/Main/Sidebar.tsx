@@ -7,20 +7,27 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import InsightsIcon from '@mui/icons-material/Insights';
 import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import DescriptionIcon from '@mui/icons-material/Description';
+import Person2Icon from '@mui/icons-material/Person2';
 // import LinearScaleIcon from '@mui/icons-material/LinearScale';
 
-interface DashboardProps {
+interface SidebarProps {
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>;
     loading: boolean;
     setLoading: Dispatch<SetStateAction<boolean>>;
+    rightComponent: number;
+    setRightComponent: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Sidebar: React.FC<DashboardProps> = ({
+const Sidebar: React.FC<SidebarProps> = ({
     open,
     setOpen,
     loading,
     setLoading,
+    rightComponent,
+    setRightComponent
 }) => {
     const svgRef = useRef<SVGPathElement | null>(null);
     let timer: ReturnType<typeof setTimeout> | undefined;
@@ -60,6 +67,13 @@ const Sidebar: React.FC<DashboardProps> = ({
         // console.log(stateVariable);
     };
 
+    const handleRightComponent = (): void => {
+        setRightComponent(0);
+    };
+    const handleRightComponent2 = (): void => {
+        setRightComponent(1);
+    };
+
     const { isDarkMode } = useTheme();
 
     return (
@@ -97,15 +111,16 @@ const Sidebar: React.FC<DashboardProps> = ({
                 </svg>
             </div>
 
-            <div className="sidebar_dashboard">
+            <div className={open ? "sidebar_dashboard" : "sidebar_dashboard_close"}>
                 <div
                     className={
                         open
-                            ? "sidebar_dashboard_child_open"
+                            ?(rightComponent == 0 ? "sidebar_dashboard_child_open_selected" : "sidebar_dashboard_child_open")
                             : "sidebar_dashboard_child_close"
                     }
+                    onClick={handleRightComponent}
                 >
-                    <HomeIcon />
+                    <HomeIcon fontSize={open ? "medium" : "medium"} />
                     {open ? <h3>Dashboard</h3> : <></>}
                 </div>
                 <div
@@ -114,8 +129,9 @@ const Sidebar: React.FC<DashboardProps> = ({
                             ? "sidebar_analytics_child_open"
                             : "sidebar_analytics_child_close"
                     }
+                    onClick={handleRightComponent2}
                 >
-                    <EqualizerIcon />
+                    <EqualizerIcon fontSize={open ? "medium" : "medium"} />
                     {open ? <h3>Analytics</h3> : <></>}
                 </div>
             </div>
@@ -156,7 +172,7 @@ const Sidebar: React.FC<DashboardProps> = ({
                     }
                 >
                     {/* <KeyboardArrowDownIcon /> */}
-                    <HomeIcon />
+                    <CalendarMonthIcon fontSize={open ? "medium" : "medium"} />
                     {open ? <h3>Calender</h3> : <></>}
                 </div>
                 <div
@@ -167,39 +183,48 @@ const Sidebar: React.FC<DashboardProps> = ({
                     }
                     onClick={handleClick1}
                 >
-                    <HomeIcon />
+                    <DescriptionIcon fontSize={open ? "medium" : "medium"} />
                     {open ? <h3>Invoice</h3> : <></>}
-                    {dropdown ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}
+                    {
+                        open ? (dropdown ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />) : null
+                    }
+
                 </div>
 
-                <div className={`sidebar_invoice_dropdown ${dropdown ? "open" : ""}`}>
-                    <ul>
-                        <li className={
-                            open
-                                ? "sidebar_dashboard_child_open"
-                                : "sidebar_dashboard_child_close"
-                        }>
-                            <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
-                            {open ? <h3>Create</h3> : <></>}
-                        </li>
-                        <li className={
-                            open
-                                ? "sidebar_dashboard_child_open"
-                                : "sidebar_dashboard_child_close"
-                        }>
-                            <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
-                            {open ? <h3>List</h3> : <></>}
-                        </li>
-                        <li className={
-                            open
-                                ? "sidebar_dashboard_child_open"
-                                : "sidebar_dashboard_child_close"
-                        }>
-                            <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
-                            {open ? <h3>Invoice S.</h3> : <></>}
-                        </li>
-                    </ul>
-                </div>
+                {
+                    open
+                        ?
+                        <div className={`sidebar_invoice_dropdown ${dropdown ? "open" : ""}`}>
+                            <ul>
+                                <li className={
+                                    open
+                                        ? "sidebar_dashboard_child_open"
+                                        : "sidebar_dashboard_child_close"
+                                }>
+                                    <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
+                                    {open ? <h3>Create</h3> : <></>}
+                                </li>
+                                <li className={
+                                    open
+                                        ? "sidebar_dashboard_child_open"
+                                        : "sidebar_dashboard_child_close"
+                                }>
+                                    <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
+                                    {open ? <h3>List</h3> : <></>}
+                                </li>
+                                <li className={
+                                    open
+                                        ? "sidebar_dashboard_child_open"
+                                        : "sidebar_dashboard_child_close"
+                                }>
+                                    <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
+                                    {open ? <h3>Invoice S.</h3> : <></>}
+                                </li>
+                            </ul>
+                        </div>
+                        :
+                        <></>
+                }
             </div>
 
             {/* </div> */}
@@ -239,7 +264,7 @@ const Sidebar: React.FC<DashboardProps> = ({
                             : "sidebar_view_profile_child_close"
                     }
                 >
-                    <HomeIcon />
+                    <Person2Icon fontSize={open ? "medium" : "medium"} />
                     {open ? <h3>View Profile</h3> : <></>}
                 </div>
                 <div
@@ -249,7 +274,7 @@ const Sidebar: React.FC<DashboardProps> = ({
                             : "sidebar_dashboard_child_close"
                     }
                 >
-                    <HomeIcon />
+                    <HomeIcon fontSize={open ? "medium" : "medium"} />
                     {open ? <h3>Edit Profile</h3> : <></>}
                 </div>
                 <div
@@ -259,7 +284,7 @@ const Sidebar: React.FC<DashboardProps> = ({
                             : "sidebar_dashboard_child_close"
                     }
                 >
-                    <HomeIcon />
+                    <HomeIcon fontSize={open ? "medium" : "medium"} />
                     {open ? <h3>Manage Clients</h3> : <></>}
                 </div>
                 {/* <h3>View Profile</h3>
