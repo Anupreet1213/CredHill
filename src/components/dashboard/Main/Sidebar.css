@@ -101,12 +101,15 @@
   align-items: center;
   gap: 5%;
   border-radius: 8px;
-  background-color: rgba(170, 62, 255, 0.4);
+  /* background-color: rgba(170, 62, 255, 0.4); */
+  /* background-color: rgba(101,118,134,0.2); */
+  background-color: #7367F0;
+  color: #ffffff;
 }
 .sidebar_dashboard_child_open {
   /* width:90%; */
   display: flex;
-  padding: 4% 2%;
+  padding: 4% 3%;
   align-items: center;
   gap: 5%;
   border-radius: 8px;

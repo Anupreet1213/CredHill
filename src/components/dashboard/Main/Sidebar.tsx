@@ -121,7 +121,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     onClick={handleRightComponent}
                 >
                     <HomeIcon fontSize={open ? "medium" : "medium"} />
-                    {open ? <h3>Dashboard</h3> : <></>}
+                    {open ? <span>Dashboard</span> : <></>}
                 </div>
                 <div
                     className={
@@ -132,7 +132,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     onClick={handleRightComponent2}
                 >
                     <EqualizerIcon fontSize={open ? "medium" : "medium"} />
-                    {open ? <h3>Analytics</h3> : <></>}
+                    {open ? <span>Analytics</span> : <></>}
                 </div>
             </div>
             {/* <div className="sidebar_apps_and_pages"> */}
@@ -173,7 +173,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 >
                     {/* <KeyboardArrowDownIcon /> */}
                     <CalendarMonthIcon fontSize={open ? "medium" : "medium"} />
-                    {open ? <h3>Calender</h3> : <></>}
+                    {open ? <span>Calender</span> : <></>}
                 </div>
                 <div
                     className={
@@ -184,7 +184,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     onClick={handleClick1}
                 >
                     <DescriptionIcon fontSize={open ? "medium" : "medium"} />
-                    {open ? <h3>Invoice</h3> : <></>}
+                    {open ? <span>Invoice</span> : <></>}
                     {
                         open ? (dropdown ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />) : null
                     }
@@ -202,7 +202,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                                         : "sidebar_dashboard_child_close"
                                 }>
                                     <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
-                                    {open ? <h3>Create</h3> : <></>}
+                                    {open ? <span>Create</span> : <></>}
                                 </li>
                                 <li className={
                                     open
@@ -210,7 +210,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                                         : "sidebar_dashboard_child_close"
                                 }>
                                     <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
-                                    {open ? <h3>List</h3> : <></>}
+                                    {open ? <span>List</span> : <></>}
                                 </li>
                                 <li className={
                                     open
@@ -218,7 +218,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                                         : "sidebar_dashboard_child_close"
                                 }>
                                     <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
-                                    {open ? <h3>Invoice S.</h3> : <></>}
+                                    {open ? <span>Invoice S.</span> : <></>}
                                 </li>
                             </ul>
                         </div>
@@ -265,7 +265,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     }
                 >
                     <Person2Icon fontSize={open ? "medium" : "medium"} />
-                    {open ? <h3>View Profile</h3> : <></>}
+                    {open ? <span>View Profile</span> : <></>}
                 </div>
                 <div
                     className={
@@ -275,7 +275,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     }
                 >
                     <HomeIcon fontSize={open ? "medium" : "medium"} />
-                    {open ? <h3>Edit Profile</h3> : <></>}
+                    {open ? <span>Edit Profile</span> : <></>}
                 </div>
                 <div
                     className={
@@ -285,7 +285,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     }
                 >
                     <HomeIcon fontSize={open ? "medium" : "medium"} />
-                    {open ? <h3>Manage Clients</h3> : <></>}
+                    {open ? <span>Manage Clients</span> : <></>}
                 </div>
                 {/* <h3>View Profile</h3>
                 <h3>Edit Profile</h3>

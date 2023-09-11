@@ -22,13 +22,15 @@
 }
 .lifetime_data{
     /* background-color: rgba(170,62,255,0.2); */
-    background-color: rgb(114,92,207);
+    /* background-color: rgb(114,92,207); */
+    background-color: #7367F0;
     color:white;
     display: flex;
     padding: 3%;
 }
 .lifetime_data_light{
-    background-color: rgb(114,92,207);
+    background-color: #7367F0;
+    /* background-color: rgb(114,92,207); */
     color:white;
     display: flex;
     padding: 3%;
@@ -97,19 +99,31 @@
     background-color: rgba(101,118,134,0.2);
     padding: 6%;
     max-height: 13.24875rem;
+    /* max-height: 80%; */
     overflow-y: scroll;
-   
+    /* word-break: break-word; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    
 }
 .dashboard_QOD_heading{
     color: #3FFFFF;
 }
 .dashboard_QOD_quote{
     margin-top: 8%;
+    /* flex-grow: 1;
+    overflow-y: scroll;
+    word-break: break-word; */
+    /* overflow-y: auto;  */
+    /* word-break: break-word; */
+    /* overflow-y: hidden; */
 }
 
 .dashboard_main_part{
     grid-column: span 3;
-    background-color: #8CABFF;
+    background-color: rgba(101,118,134,0.2);
+    /* background-color: #8CABFF; */
+    /* background-color: #2F3349; */
 }
 
 

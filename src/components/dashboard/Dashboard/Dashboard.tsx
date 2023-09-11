@@ -60,10 +60,10 @@ const Dashboard: React.FC = () => {
                 show: false
             },
             axisBorder: {
-                show: false 
+                show: false
             },
-            axisTicks:{
-                show:false
+            axisTicks: {
+                show: false
             }
         },
         yaxis: {
@@ -106,7 +106,7 @@ const Dashboard: React.FC = () => {
                         <div className="invoice_due">
                             <DateRangeSharpIcon fontSize="large" />
                             <div>
-                                <p style={{ color: "#C0C0C0" }}>Invoice Due</p>
+                                <p style={{ color: "#C0C0C0" }}>Invoice Duee</p>
                                 <p>0</p>
                             </div>
                         </div>
@@ -115,7 +115,6 @@ const Dashboard: React.FC = () => {
                 </div>
 
                 <div className="lifetime_data_image">
-
                     <img src={lifetime_data_image} alt="" />
                 </div>
             </div>
@@ -143,6 +142,7 @@ const Dashboard: React.FC = () => {
             <div className="dashboard_QOD">
                 <p className="dashboard_QOD_heading">Quote of the Day</p>
                 <p className="dashboard_QOD_quote">{quote}</p>
+                {/* <p className="dashboard_QOD_quote">cbsdjkasdfchfksdvbcfdvcsdfbckjdcdcbdhckjdscscvc vmcvbfghngfbfghbfnbfdhbfdbfdkgnfdnb  bbg bbvjbvhbfhdbnkfdbjfdghdfjgbgbnbfbngfbhngfjbnvcjbncvbncvnbjbdbjdhgjdbgdnbngdjbnjbjgnbjkdnbfnbdbjgjjgkbjndggfhnfbfdjvfbkgj bgb gbgbggbbn gfnbkfnfvdvfdbgfbdgfdsgfdngsdndsfrmjef rjkvgrgt,fgflkermfslef,jgbngkb,nghnghngkgbnmglbfkgbmlbkhbhlkmglmltgblbgmbblm</p> */}
             </div>
             <div className="dashboard_main_part"></div>
         </div>
