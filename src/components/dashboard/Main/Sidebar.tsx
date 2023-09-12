@@ -126,8 +126,8 @@ const Sidebar: React.FC<SidebarProps> = ({
                 <div
                     className={
                         open
-                            ? "sidebar_analytics_child_open"
-                            : "sidebar_analytics_child_close"
+                        ?(rightComponent == 1 ? "sidebar_analytics_child_open_selected" : "sidebar_analytics_child_open")
+                        : "sidebar_analytics_child_close"
                     }
                     onClick={handleRightComponent2}
                 >
