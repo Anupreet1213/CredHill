@@ -183,10 +183,10 @@ const Sidebar: React.FC<SidebarProps> = ({
                     }
                     onClick={handleClick1}
                 >
-                    <DescriptionIcon fontSize={open ? "medium" : "medium"} />
-                    {open ? <span>Invoice</span> : <></>}
+                    <DescriptionIcon className="sidebar_invoice_child_1" fontSize={open ? "medium" : "medium"} />
+                    {open ? <span className="sidebar_invoice_child_2">Invoice</span> : <></>}
                     {
-                        open ? (dropdown ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />) : null
+                        open ? (dropdown ? <KeyboardArrowDownIcon className="sidebar_invoice_child_3"/> : <KeyboardArrowRightIcon className="sidebar_invoice_child_3"/>) : null
                     }
 
                 </div>

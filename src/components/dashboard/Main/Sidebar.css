@@ -199,7 +199,17 @@
   padding: 4% 2%;
   align-items: center;
   gap: 5%;
+  justify-content: space-around;
   border-radius: 8px;
+}
+
+.sidebar_invoice_child_1, .sidebar_invoice_child_2{
+  flex: 0 0 auto;
+}
+
+.sidebar_invoice_child_3{
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 .sidebar_invoice_child_close {
