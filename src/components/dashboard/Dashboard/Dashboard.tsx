@@ -41,13 +41,12 @@ const Dashboard: React.FC = () => {
             toolbar: {
                 show: false,
             },
+          
         },
         dataLabels: {
             enabled: false,
         },
-        // stroke:{
-        //     show:false
-        // },
+
         grid: {
             show: false,
         },
@@ -67,9 +66,7 @@ const Dashboard: React.FC = () => {
             }
         },
         yaxis: {
-            labels: {
-                show: false
-            }
+            show:false
         }
     });
 
