@@ -9,7 +9,7 @@ import axios from "axios";
 import "./Dashboard.css";
 
 const Dashboard: React.FC = () => {
-    const { isDarkMode, toggleTheme } = useTheme();
+    const { isDarkMode } = useTheme();
     const [quote, setQuote] = useState("");
 
     const options = {
@@ -80,7 +80,6 @@ const Dashboard: React.FC = () => {
     return (
         <div
             className={`${isDarkMode ? "" : "light-mode"} dashboard_right_second`}
-            onClick={toggleTheme}
         >
             <div className={`${isDarkMode ? "lifetime_data" : "lifetime_data_light"}`}>
                 <div className="lifetime_data_content">
