@@ -13,14 +13,14 @@
 :root {
   --background-color: #1c2034;
   /* --parent-bg-color: #1c2034; */
-  --parent-bg-color: #121632;
+  --parent-dash-bg-color: #121632;
   --text-color: #9EA2BD;
   --box-shadow: 40, 43, 46;
 }
 
 .light-mode {
   --background-color: #fafafa;
-  --parent-bg-color: #F4F3F6;
+  --parent-dash-bg-color: #F4F3F6;
   --text-color: #706D7A;
   --box-shadow: 15, 20, 34;
 }

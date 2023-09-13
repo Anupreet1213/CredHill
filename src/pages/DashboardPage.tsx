@@ -8,20 +8,29 @@ import { useTheme } from "../contexts/ThemeContext";
 
 
 const DashboardPage: React.FC = () => {
+  // Tells whether sidebar is open or close on desktop
   const [open, setOpen] = useState<boolean>(true);
-  const [loading, setLoading] = useState<boolean>(true);
+
+  // Enables sidebar close and open on hover
+  const [sidebarMovement, setSidebarMovement] = useState<boolean>(true);
+
+  // Set the component on right side of dashboard (Eg. Dashboard, Analytics, Edit Invoice, etc.)
   const [rightComponent, setRightComponent] = useState<number>(0);
 
-  //Sidebar open toggle for mobile
+  // Helps to toggle between sidebar of desktop and mobile
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  //Sidebar open toggle for mobile
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const { isDarkMode } = useTheme();
 
+  // Toggle sidebar open and close for mobile's sidebar
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  // To detect phone screen size and toggle between desktop and mobile sidebar
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -38,13 +47,13 @@ const DashboardPage: React.FC = () => {
   }, []);
 
   return (
-    <div className={`dashboard_main ${isDarkMode ? "" : "light-mode"}`}>
+    <div className={`dashboard_page_main ${isDarkMode ? "" : "light-mode"}`}>
       {screenWidth > 896 ? (
         <Sidebar
           open={open}
           setOpen={setOpen}
-          loading={loading}
-          setLoading={setLoading}
+          sidebarMovement={sidebarMovement}
+          setSidebarMovement={setSidebarMovement}
           rightComponent={rightComponent}
           setRightComponent={setRightComponent}
         />
@@ -54,7 +63,7 @@ const DashboardPage: React.FC = () => {
           handleDrawerToggle={handleDrawerToggle}
         />
       )}
-      <div className="dashboard_right">
+      <div className="dashboard_page_right">
         <Navbar handleDrawerToggle={handleDrawerToggle} />
 
         {

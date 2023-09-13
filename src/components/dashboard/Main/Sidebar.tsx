@@ -15,8 +15,8 @@ import Person2Icon from '@mui/icons-material/Person2';
 interface SidebarProps {
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>;
-    loading: boolean;
-    setLoading: Dispatch<SetStateAction<boolean>>;
+    sidebarMovement: boolean;
+    setSidebarMovement: Dispatch<SetStateAction<boolean>>;
     rightComponent: number;
     setRightComponent: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -24,8 +24,8 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({
     open,
     setOpen,
-    loading,
-    setLoading,
+    sidebarMovement,
+    setSidebarMovement,
     rightComponent,
     setRightComponent
 }) => {
@@ -37,7 +37,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             clearTimeout(timer);
         }
         timer = setTimeout(() => {
-            !loading ? setOpen(true) : "";
+            !sidebarMovement ? setOpen(true) : "";
         }, 100);
     };
 
@@ -46,17 +46,17 @@ const Sidebar: React.FC<SidebarProps> = ({
             clearTimeout(timer);
         }
         timer = setTimeout(() => {
-            !loading ? setOpen(false) : "";
+            !sidebarMovement ? setOpen(false) : "";
         }, 100);
     };
 
     const handleClick = (): void => {
-        if (svgRef.current && loading) {
+        if (svgRef.current && sidebarMovement) {
             svgRef.current.style.display = "none";
-            setLoading(!loading);
-        } else if (svgRef.current && !loading) {
+            setSidebarMovement(!sidebarMovement);
+        } else if (svgRef.current && !sidebarMovement) {
             svgRef.current.style.display = "block";
-            setLoading(!loading);
+            setSidebarMovement(!sidebarMovement);
         }
     };
 

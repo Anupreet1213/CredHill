@@ -1,32 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
-
-.dashboard_main{
+.dashboard_page_main{
     display: flex;
-    background-color: var(--parent-bg-color);
+    background-color: var(--parent-dash-bg-color);
     gap: 2%;
     padding-right: 2%;
-    /* align-items: center;
-    justify-content: center; */
-    /* height: 100vh; */
 }
 
-.dashboard_child1{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    background-color: #25293C;
-    gap: 2%;
-}
-
-
-.dashboard_right{
+.dashboard_page_right{
     flex: 1;
-    height: 100vh;
     overflow-y: scroll ;
-    background-color: var(--parent-bg-color);
+    background-color: var(--parent-dash-bg-color);
     padding-top: 1%;
     display: flex;
     flex-direction: column;
