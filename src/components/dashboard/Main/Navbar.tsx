@@ -30,8 +30,6 @@ const Navbar: React.FC<NavbarProps> = ({handleDrawerToggle}) => {
             className={`${isDarkMode ? "" : "light-mode"} dashboard_navbar`}
             onClick={() => {
                 handleDrawerToggle();
-                toggleSound();
-                playClickSound();
             }}
             
         >
@@ -39,9 +37,19 @@ const Navbar: React.FC<NavbarProps> = ({handleDrawerToggle}) => {
             {
                 isDarkMode 
                 ?
-                <DarkModeIcon onClick={toggleTheme}/>
+                <DarkModeIcon onClick={()=>{
+                    toggleTheme();
+                    toggleSound();
+                    playClickSound();
+
+                }}/>
                 :
-                <LightModeIcon onClick={toggleTheme}/>
+                <LightModeIcon onClick={()=>{
+                    toggleTheme();
+                    toggleSound();
+                    playClickSound();
+
+                }}/>
             }
         </div>
     )
