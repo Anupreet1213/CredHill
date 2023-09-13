@@ -138,6 +138,8 @@ const Dashboard: React.FC = () => {
             <div className="dashboard_QOD">
                 <p className="dashboard_QOD_heading">Quote of the Day</p>
                 <p className="dashboard_QOD_quote">{quote}</p>
+             
+                
                 {/* <p className="dashboard_QOD_quote">cbsdjkasdfchfksdvbcfdvcsdfbckjdcdcbdhckjdscscvc vmcvbfghngfbfghbfnbfdhbfdbfdkgnfdnb  bbg bbvjbvhbfhdbnkfdbjfdghdfjgbgbnbfbngfbhngfjbnvcjbncvbncvnbjbdbjdhgjdbgdnbngdjbnjbjgnbjkdnbfnbdbjgjjgkbjndggfhnfbfdjvfbkgj bgb gbgbggbbn gfnbkfnfvdvfdbgfbdgfdsgfdngsdndsfrmjef rjkvgrgt,fgflkermfslef,jgbngkb,nghnghngkgbnmglbfkgbmlbkhbhlkmglmltgblbgmbblm</p> */}
             </div>
             <div className="dashboard_main_part"></div>

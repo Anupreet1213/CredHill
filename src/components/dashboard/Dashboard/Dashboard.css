@@ -9,6 +9,7 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     grid-template-rows:    35vh 52.5vh;
+    /* grid-template-rows: 1fr 1.5fr; */
     gap:1.2rem;
 }
 
@@ -97,7 +98,7 @@
 
 .dashboard_QOD{
     background-color: rgba(101,118,134,0.2);
-    padding: 6%;
+    /* padding: 6%; */
     /* max-height: 13.24875rem; */
     /* max-height: 80%; */
     overflow-y: scroll;
@@ -108,12 +109,21 @@
     
 }
 .dashboard_QOD_heading{
+    padding: 8% 6% 4% 6%;
+    background-color: #222a43;
     color: #3FFFFF;
+    position: sticky;
+    top:0;
 }
 .dashboard_QOD_quote{
-    margin-top: 8%;
+    /* padding: 6%; */
+    padding-left: 6%;
+    padding-right: 6%;
+    margin-top: 2%;
+    /* overflow: hidden; */
     /* flex-grow: 1;
     overflow-y: scroll;
+    
     word-break: break-word; */
     /* overflow-y: auto;  */
     /* word-break: break-word; */
