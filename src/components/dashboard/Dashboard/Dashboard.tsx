@@ -1,4 +1,4 @@
-import lifetime_data_image from "./image 1.png";
+import lifetime_data_image from "../assets/images/image1.png";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import AttachMoneySharpIcon from '@mui/icons-material/AttachMoneySharp';
 import DateRangeSharpIcon from '@mui/icons-material/AttachMoneySharp';
