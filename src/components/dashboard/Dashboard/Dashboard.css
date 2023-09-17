@@ -101,8 +101,10 @@
     /* padding: 6%; */
     /* max-height: 13.24875rem; */
     /* max-height: 80%; */
-    overflow-y: scroll;
-    max-height: 34vh;
+    /* overflow-y: scroll; */
+    /* max-height: 30vh; */
+    /* overflow-y: auto; */
+    word-break: break-word;
     /* overflow-y: ; */
     /* word-break: break-word; */
     /* display: flex; */

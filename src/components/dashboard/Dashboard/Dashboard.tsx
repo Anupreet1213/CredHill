@@ -12,20 +12,42 @@ const Dashboard: React.FC = () => {
     const { isDarkMode } = useTheme();
     const [quote, setQuote] = useState("");
 
+    // const options = {
+    //     method: "GET",
+    //     url: "https://quotes15.p.rapidapi.com/quotes/random/",
+    //     headers: {
+    //         "X-RapidAPI-Key": "0ef2dc056cmshebff74aae91ff26p17dd9cjsn62c90cd53d63",
+    //         "X-RapidAPI-Host": "quotes15.p.rapidapi.com",
+    //     },
+    // };
+    // const options = {
+    //     method: 'POST',
+    //     url: 'https://pquotes.p.rapidapi.com/api/quote',
+    //     headers: {
+    //       'content-type': 'application/json',
+    //       'X-RapidAPI-Key': '8f37eceeb3mshbb6f8daefc3d4a8p17f595jsn76bdef89f611',
+    //       'X-RapidAPI-Host': 'pquotes.p.rapidapi.com'
+    //     },
+    //     data: {topic: 'motivation'}
+    //   };
     const options = {
-        method: "GET",
-        url: "https://quotes15.p.rapidapi.com/quotes/random/",
-        headers: {
-            "X-RapidAPI-Key": "0ef2dc056cmshebff74aae91ff26p17dd9cjsn62c90cd53d63",
-            "X-RapidAPI-Host": "quotes15.p.rapidapi.com",
+        method: 'GET',
+        url: 'https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote',
+        params: {
+            token: 'ipworld.info'
         },
+        headers: {
+            'X-RapidAPI-Key': '8f37eceeb3mshbb6f8daefc3d4a8p17f595jsn76bdef89f611',
+            'X-RapidAPI-Host': 'quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com'
+        }
     };
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.request(options);
-                const new_quote = response.data.content;
+                const new_quote = response.data.text;
+                // console.log(new_quote);
                 setQuote(new_quote);
             } catch (error) {
                 console.error(error);
@@ -41,7 +63,7 @@ const Dashboard: React.FC = () => {
             toolbar: {
                 show: false,
             },
-          
+
         },
         dataLabels: {
             enabled: false,
@@ -66,7 +88,7 @@ const Dashboard: React.FC = () => {
             }
         },
         yaxis: {
-            show:false
+            show: false
         }
     });
 
@@ -138,8 +160,11 @@ const Dashboard: React.FC = () => {
             <div className="dashboard_QOD">
                 <p className="dashboard_QOD_heading">Quote of the Day</p>
                 <p className="dashboard_QOD_quote">{quote}</p>
-                
-                {/* <p className="dashboard_QOD_quote">cbsdjkasdfchfksdvbcfdvcsdfbckjdcdcbdhckjdscscvc vmcvbfghngfbfghbfnbfdhbfdbfdkgnfdnb  bbg bbvjbvhbfhdbnkfdbjfdghdfjgbgbnbfbngfbhngfjbnvcjbncvbncvnbjbdbjdhgjdbgdnbngdjbnjbjgnbjkdnbfnbdbjgjjgkbjndggfhnfbfdjvfbkgj bgb gbgbggbbn gfnbkfnfvdvfdbgfbdgfdsgfdngsdndsfrmjef rjkvgrgt,fgflkermfslef,jgbngkb,nghnghngkgbnmglbfkgbmlbkhbhlkmglmltgblbgmbblm</p> */}
+
+                {/* <p className="dashboard_QOD_quote">cbsdjkasdfchfksdvbcfdvcsdfbckjdcdcbdhckjdscscvc vmcvbfghngfbfgh
+                bfnbfdhbfdbfdkgnfdnb  bbg bbvjbvhbfhdbnkfdbjfdghdfjgbgbnbfbngfbhngfjbnvcjbncvbncvnbjbdbjdhgjdbgdnbngdjbnjbj
+                gnbjkdnbfnbdbjgjjgkbjndggfhnfbfdjvfbkgj bgb gbgbggbbn gfnbkfnfvdvfdbgfbdgfdsgfdngsdndsfrmjef rjkvgrgt,fgf
+                lkermfslef,jgbngkb,nghnghngkgbnmglbfkgbmlbkhbhlkmglmltgblbgmbblm</p> */}
             </div>
             <div className="dashboard_main_part"></div>
         </div>
