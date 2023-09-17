@@ -138,7 +138,7 @@ const Dashboard: React.FC = () => {
             </div>
 
             <div className="dashboard_graph">
-                <div className="dashboard_graph_chart">
+                {/* <div className="dashboard_graph_chart"> */}
                     <div className="dashboard_graph_chart_heading">
                         <AttachMoneySharpIcon fontSize="large" />
                         <div>
@@ -155,7 +155,7 @@ const Dashboard: React.FC = () => {
                             height="100%"
                         />
                     </div>
-                </div>
+                {/* </div> */}
             </div>
             <div className="dashboard_QOD">
                 <p className="dashboard_QOD_heading">Quote of the Day</p>
