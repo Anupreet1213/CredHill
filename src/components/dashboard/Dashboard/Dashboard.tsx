@@ -7,7 +7,11 @@ import axios from "axios";
 import "./Dashboard.css";
 
 const Dashboard: React.FC = () => {
+
+  //Import the theme prop and destructured it
   const { isDarkMode } = useTheme();
+
+  // State updating quote everyday through Rapid API
   const [quote, setQuote] = useState("");
 
   const options = {
@@ -23,6 +27,8 @@ const Dashboard: React.FC = () => {
     },
   };
 
+
+  //UseEffect is used to fetch data from RAPID API when the browser loads
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -37,6 +43,8 @@ const Dashboard: React.FC = () => {
     fetchData();
   }, []);
 
+
+  //Apex Chart Configurations :
   const [chartOptions] = useState({
     chart: {
       id: "basic-area",
@@ -71,6 +79,8 @@ const Dashboard: React.FC = () => {
     },
   });
 
+
+  //Chart Data :
   const [chartSeries] = useState([
     {
       name: "series-1",
@@ -78,6 +88,7 @@ const Dashboard: React.FC = () => {
     },
   ]);
 
+  
   return (
     <div className={`${isDarkMode ? "" : "light-mode"} dashboard_right_second`}>
       <div
