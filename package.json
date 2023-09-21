@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "react-scripts test",
+    "coverage": "yarn test --coverage --watchAll --collectCoverageFrom='src/components/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -16,7 +18,13 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
     "@types/react-scroll": "^1.8.7",
+    "@types/trusted-types": "^2.0.4",
     "apexcharts": "^3.42.0",
     "axios": "^1.5.0",
     "framer-motion": "^10.12.8",
@@ -24,6 +32,7 @@
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.1",
+    "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.9",
     "styled-components": "^6.0.0-rc.1"
   },
