@@ -7,7 +7,7 @@
     color: var(--text-color);
     /* height: 100vh; */
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.8fr 1fr 1fr;
     /* grid-template-rows:    34vh 52.5vh; */
     grid-template-rows: 1fr 1.5fr;
     gap:1.2rem;
@@ -19,7 +19,7 @@
 
 
 .dashboard_right_second div{
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .lifetime_data{
     /* background-color: rgba(170,62,255,0.2); */
@@ -28,6 +28,7 @@
     color:white;
     display: flex;
     padding: 3%;
+    padding-left: 0%;
 }
 .lifetime_data_light{
     background-color: #7367F0;
@@ -35,45 +36,65 @@
     color:white;
     display: flex;
     padding: 3%;
+    padding-left: 0%;
 }
+
+
 
 
 .lifetime_data_content{
-    flex:0.65;
+    flex:0.75;
 }
 .lifetime_data_content_heading{
     font-size: 1.2rem;
-    margin:8% 0 12% 0%;
+    margin:4% 0 8% 3%;
 }
 
 .lifetime_data_content_grid{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1.4fr;
+    grid-template-columns: 1.3fr 1.3fr;
+    grid-template-rows: 1fr 1fr;
     margin-top: 2rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    height: 14vh;
     row-gap: 20%;
 }
 .lifetime_data_image {
-    flex: 0.45;
+    flex: 0.25;
     display: flex;
     align-items: center;
+    justify-content: center;
 
 }
 .lifetime_data_image img{
     width: 100%;
 }
+.left_side{
+    /* width: 5rem; */
+    background-color: #675dcf;
+    padding: 0.3rem 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .total_invoice{
     display: flex;
     align-items: center;
+    /* justify-content: center; */
+    justify-content: space-evenly;
+    /* gap: 0.5rem; */
 }
 .amount_due{
     display: flex;
     align-items: center;
+    gap:0.5rem;
+    /* justify-content: space-evenly; */
 }
 .invoice_due{
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 
