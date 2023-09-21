@@ -83,37 +83,75 @@ const Dashboard: React.FC = () => {
       <div
         className={`${isDarkMode ? "lifetime_data" : "lifetime_data_light"}`}
       >
-        <div className="lifetime_data_content">
-          <p className="lifetime_data_content_heading"> Lifetime Data</p>
-          <div className="lifetime_data_content_grid">
-            <div className="total_invoice">
-              <div className="left_side">1.5k</div>
-              <div>
-                <p>Total Invoice</p>
+        <div className={"test"}>
+          <div className="test2">
+            <div className="test3">
+              {/* <div className="lifetime_data_content">
+                <p className="lifetime_data_content_heading"> Lifetime Data</p>
+                <div className="lifetime_data_content_grid">
+                  <div className="total_invoice">
+                    <div className="left_side">1.5k</div>
+                    <div>
+                      <p>Total Invoice</p>
+                    </div>
+                  </div>
+                  <div className="amount_due">
+                    <div className="left_side">1.5k</div>
+                    <div>
+                      <p>Amount Due</p>
+                    </div>
+                  </div>
+                  <div className="invoice_due">
+                    <div className="left_side">1.5k</div>
+                    <div>
+                      <p>Invoice Due</p>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
+
+              <div className="test4">
+                <h5 className="test5">Website Analytics</h5>
+                <p className="test6">Total 28.5% Conversion Rate</p>
               </div>
-            </div>
-            <div className="amount_due">
-              <div className="left_side">1.5k</div>
-              <div>
-                <p>Amount Due</p>
+
+              <div className="test7">
+                <div className="test8">
+                  <div className="test9">
+                    {/* <p className="test10">Spending</p> */}
+                  </div>
+                  <div className="test11">
+                    <span className="test12">12h</span>
+                    <span>Spend</span>
+                  </div>
+                  <div className="test11">
+                    <span className="test12">12h</span>
+                    <span>Spend</span>
+                  </div>
+                  <div className="test11">
+                    <span className="test12">12h</span>
+                    <span>Spend</span>
+                  </div>
+                  <div className="test11">
+                    <span className="test12">12h</span>
+                    <span>Spend</span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="invoice_due">
-              <div className="left_side">1.5k</div>
-              <div>
-                <p>Invoice Due</p>
+
+              <div className="test13">
+                <img src={lifetime_data_image} alt="" className="test14" />
               </div>
+
+              {/* <div className="lifetime_data_image">
+                <img src={lifetime_data_image} alt="" />
+              </div> */}
             </div>
           </div>
-        </div>
-
-        <div className="lifetime_data_image">
-          <img src={lifetime_data_image} alt="" />
         </div>
       </div>
 
       <div className="dashboard_graph">
-   
         <div className="dashboard_graph_chart_heading">
           <AttachMoneySharpIcon fontSize="large" />
           <div>

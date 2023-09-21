@@ -21,15 +21,150 @@
 .dashboard_right_second div{
     border-radius: 5px;
 }
-.lifetime_data{
-    /* background-color: rgba(170,62,255,0.2); */
-    /* background-color: rgb(114,92,207); */
+/* .lifetime_data{
     background-color: #7367F0;
     color:white;
     display: flex;
     padding: 3%;
     padding-left: 0%;
+} */
+.lifetime_data{
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    position: relative;
+    transition: .3s cubic-bezier(.25,.8,.5,1);
+    background-color: #7367F0;
 }
+.test{
+    /* margin-inline-start: -100%; */
+    flex: 1 0 0px;
+    max-width: 100%;
+}
+.test2{
+    line-height: 1.5;
+    font-size: .9375rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    padding: 24px;
+    text-transform: none;
+}
+.test3{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex: 1 1 auto; */
+    margin: -12px;
+}
+.test4{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.test5{
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    padding: 12px 0 0 12px;
+    letter-spacing: normal;
+    font-family: Public Sans,sans-serif,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol;
+    text-transform: none;
+    margin-bottom: 4px;
+    color: #ffffff;
+}
+.test6{
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    padding-left: 12px;
+    color: #ffffff;
+}
+.test7{
+    width: 100%;
+    padding: 12px;
+}
+.test8{
+    display: flex;
+    flex-wrap: wrap;
+    margin: -12px;
+}
+.test9{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-top: 4px;
+    width: 100%;
+    padding: 12px;
+}
+.test10{
+    font-weight: 500;
+    margin-bottom: 4px;
+    /* margin-block-end: 1rem; */
+    color: #ffffff;
+}
+.test11{
+    flex: 0 0 50%;
+    max-width: 50%;
+    width: 100%;
+    padding: 12px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 0.7rem;
+    padding-bottom: 8px;
+}
+.test12{
+    background-color: rgb(104, 94, 216);
+    height: 30px;
+    font-size: .9375rem;
+    padding-left: 9px;
+    padding-right: 12px;
+    box-shadow: 0 0 0 0 rgba(15, 20, 34, 1),0 0 transparent,0 0 transparent;
+
+    align-items: center;
+    cursor: default;
+    display: inline-flex;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-color: rgba(208, 212, 241, 0.16);
+    border-style: solid;
+    border-width: 0;
+    color: #ffffff;
+    border-radius: 6px;
+}
+.test13{
+    width: 100%;
+    padding: 12px;
+    position: relative;
+    text-align: center;
+}
+.test14{
+    block-size: 150px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 0px 4px 40px);
+}
+@media (min-width: 600px){
+    .test7{
+        flex: 0 0 50%;
+        max-width: 50%;
+        order: 1;
+    }
+    .test13{
+        flex: 0 0 50%;
+        max-width: 50%;
+        order: 2;
+    }
+    .test14{
+        position: absolute;
+        margin: auto;
+        inset-block-end: 20px;
+        inset-block-start: -1rem;
+        inset-inline-end: 1rem;
+    }
+}
+
+
+
 .lifetime_data_light{
     background-color: #7367F0;
     /* background-color: rgb(114,92,207); */
