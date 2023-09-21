@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { HamburgerMenu } from "./HamburgerMenu";
 import "./Navbar.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -23,13 +23,17 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`nav ${scrolled ? "scrolled" : ""}`}>
+    <div className={`nav ${scrolled ? "scrolled" : ""}`} data-testid="navbar">
       <div>Logo</div>
       <ul className="navRight">
         <li className="navRightChild">Home</li>
         <li className="navRightChild">Features</li>
         <li className="navRightChild">Contact Us</li>
-        <li className="navRightChild"><Link to="/dashboard" className="navRightChildLink">Dashboard</Link></li>
+        <li className="navRightChild">
+          <Link to="/dashboard" className="navRightChildLink">
+            Dashboard
+          </Link>
+        </li>
         <HamburgerMenu />
       </ul>
     </div>
