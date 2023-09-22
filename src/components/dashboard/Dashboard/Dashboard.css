@@ -88,9 +88,9 @@
 .test9{
     flex: 0 0 100%;
     max-width: 100%;
+    padding: 12px;
     padding-top: 4px;
     width: 100%;
-    padding: 12px;
 }
 .test10{
     font-weight: 500;
@@ -101,14 +101,16 @@
 .test11{
     flex: 0 0 50%;
     max-width: 50%;
-    width: 100%;
-    padding: 12px;
-    white-space: nowrap;
+    /* width: 100%; */
+    padding: 10px;
+    padding-left: 2px;
+
+    /* white-space: nowrap; */
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
-    gap: 0.7rem;
-    padding-bottom: 8px;
+    gap: 0.2rem;
+    /* padding-bottom: 8px; */
 }
 .test12{
     background-color: rgb(104, 94, 216);
@@ -121,8 +123,8 @@
     align-items: center;
     cursor: default;
     display: inline-flex;
-    max-width: 100%;
-    overflow: hidden;
+  
+    /* overflow: hidden; */
     position: relative;
     text-decoration: none;
     white-space: nowrap;
