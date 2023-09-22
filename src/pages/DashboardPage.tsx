@@ -5,6 +5,7 @@ import MobileSidebar from "../components/dashboard/Main/MobileSidebar";
 import Navbar from "../components/dashboard/Main/Navbar";
 import Dashboard from "../components/dashboard/Dashboard/Dashboard";
 import { useTheme } from "../contexts/ThemeContext";
+import Create from "../components/invoice/Create/Create";
 
 
 const DashboardPage: React.FC = () => {
@@ -71,7 +72,11 @@ const DashboardPage: React.FC = () => {
           ?
           <Dashboard />
           :
+          rightComponent == 1 
+          ?
           <div>heeelu</div>
+          :
+          <Create /> 
         }
       </div>
     </div>

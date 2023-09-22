@@ -73,6 +73,9 @@ const Sidebar: React.FC<SidebarProps> = ({
     const handleRightComponent2 = (): void => {
         setRightComponent(1);
     };
+    const handleRightComponent3 = (): void => {
+        setRightComponent(2);
+    };
 
     const { isDarkMode } = useTheme();
 
@@ -200,7 +203,8 @@ const Sidebar: React.FC<SidebarProps> = ({
                                     open
                                         ? "sidebar_dashboard_child_open"
                                         : "sidebar_dashboard_child_close"
-                                }>
+                                }
+                                onClick={handleRightComponent3}>
                                     <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
                                     {open ? <span>Create</span> : <></>}
                                 </li>
