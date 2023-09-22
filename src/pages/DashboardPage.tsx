@@ -6,7 +6,7 @@ import Navbar from "../components/dashboard/Main/Navbar";
 import Dashboard from "../components/dashboard/Dashboard/Dashboard";
 import { useTheme } from "../contexts/ThemeContext";
 import Create from "../components/invoice/Create/Create";
-
+import List from "../components/invoice/List/List";
 
 const DashboardPage: React.FC = () => {
   // Tells whether sidebar is open or close on desktop
@@ -67,17 +67,15 @@ const DashboardPage: React.FC = () => {
       <div className="dashboard_page_right">
         <Navbar handleDrawerToggle={handleDrawerToggle} />
 
-        {
-          rightComponent == 0
-          ?
+        {rightComponent == 0 ? (
           <Dashboard />
-          :
-          rightComponent == 1 
-          ?
+        ) : rightComponent == 1 ? (
           <div>heeelu</div>
-          :
-          <Create /> 
-        }
+        ) : rightComponent == 2 ? (
+          <Create />
+        ) : (
+          <List />
+        )}
       </div>
     </div>
   );
