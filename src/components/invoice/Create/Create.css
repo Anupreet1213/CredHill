@@ -1,4 +1,68 @@
+.create-invoice{
+    font-family: 'Public Sans', sans-serif;
+    display: flex;
+    gap:1rem;
+    color: var(--text-color);
+    
+}
+
+
+.create-invoice-right{
+    background-color: #222A43;
+    border-radius: 5px;
+    width: 25%;
+}
 .create-invoice-left{
+    border-radius: 5px;
     width: 75%;
     background-color: #222A43;
+}
+
+.create-invoice-details{
+    padding: 3rem 2rem ;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.create-invoice-user-details-brand{
+    display: flex;
+    gap:1rem;
+    font-size: 22px;
+    margin-bottom: 1.5rem;
+}
+
+.create-invoice-bill-details-invoice-number{
+    display: flex;
+    /* gap:1rem; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.create-invoice-bill-details-invoice-number input{
+    /* appearance: textfield;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield; */
+    width: 50%;
+    border: 0.5px solid #43475E ;
+    color : var(--text-color);
+    border-radius: 5px;
+    outline: none;
+    padding: 4%;
+    background-color: transparent; 
+}
+
+.create-invoice-bill-details-invoice-number input::-webkit-inner-spin-button,
+.create-invoice-bill-details-invoice-number input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+
+
+
+.create-invoice-user-details p{
+    margin-top: 0.5rem;
+    /* line-height: 1.4; */
 }
