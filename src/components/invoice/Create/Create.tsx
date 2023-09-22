@@ -9,7 +9,7 @@ const Create = () => {
         <div className="create-invoice-details">
           <div className="create-invoice-user-details">
             <div className="create-invoice-user-details-brand">
-              <InsightsIcon fontSize="large" />
+              <InsightsIcon fontSize="large" style={{color:"#9DC4FF"}} />
               <h3>Invoicer</h3>
             </div>
             <p>Office 149, 450 South Brand Brooklyn</p>
