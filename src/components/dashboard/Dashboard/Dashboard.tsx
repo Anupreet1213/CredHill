@@ -94,32 +94,9 @@ const Dashboard: React.FC = () => {
       <div
         className={`${isDarkMode ? "lifetime_data" : "lifetime_data_light"}`}
       >
-        <div className={"test"}>
+        {/* <div className={"test"}> */}
           <div className="test2">
             <div className="test3">
-              {/* <div className="lifetime_data_content">
-                <p className="lifetime_data_content_heading"> Lifetime Data</p>
-                <div className="lifetime_data_content_grid">
-                  <div className="total_invoice">
-                    <div className="left_side">1.5k</div>
-                    <div>
-                      <p>Total Invoice</p>
-                    </div>
-                  </div>
-                  <div className="amount_due">
-                    <div className="left_side">1.5k</div>
-                    <div>
-                      <p>Amount Due</p>
-                    </div>
-                  </div>
-                  <div className="invoice_due">
-                    <div className="left_side">1.5k</div>
-                    <div>
-                      <p>Invoice Due</p>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
 
               <div className="test4">
                 <h5 className="test5">Website Analytics</h5>
@@ -159,7 +136,7 @@ const Dashboard: React.FC = () => {
               </div> */}
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
 
       <div className="dashboard_graph">

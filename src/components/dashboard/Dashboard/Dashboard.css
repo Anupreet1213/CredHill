@@ -31,16 +31,16 @@
 .lifetime_data{
     display: flex;
     flex-direction: column;
-    height: inherit;
-    position: relative;
-    transition: .3s cubic-bezier(.25,.8,.5,1);
+    /* height: inherit; */
+    /* position: relative; */
+    /* transition: .3s cubic-bezier(.25,.8,.5,1); */
     background-color: #7367F0;
 }
-.test{
-    /* margin-inline-start: -100%; */
+/* .test{
+    margin-inline-start: -100%;
     flex: 1 0 0px;
     max-width: 100%;
-}
+} */
 .test2{
     line-height: 1.5;
     font-size: .9375rem;
