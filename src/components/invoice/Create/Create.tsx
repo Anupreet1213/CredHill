@@ -89,12 +89,15 @@ const Create = () => {
             </div>
           </div>
           <div className="create-invoice-user-details create-invoice-invoice-to-right">
-            <div className="create-invoice-user-details-brand"></div>
             <p>Office 149, 450 South Brand Brooklyn</p>
             <p>San Diego County, CA 91905, USA</p>
             <p>+1 (123) 456 7891, +44 (876) 543 2198</p>
           </div>
         </div>
+        <hr />
+
+
+        
       </div>
       <div className="create-invoice-right">Heelu</div>
     </div>
