@@ -11,6 +11,10 @@ import image from "./UserAvatar.jpg";
 // import { Select } from "@mui/material";
 import CustomSelectComp from "./CustomSelectComp";
 // import InputBase from "@mui/material/InputBase";
+import MovingIcon from "@mui/icons-material/Moving";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 
 const List = () => {
   // const [age, setAge] = useState<number | "">("");
@@ -118,6 +122,11 @@ const List = () => {
                 </th>
                 <th className="invoice-list-main-th-two">
                   <div className="invoice-list-main-th-two-child">
+                    <MovingIcon />
+                  </div>
+                </th>
+                <th className="invoice-list-main-th-three">
+                  <div className="invoice-list-main-th-three-child">
                     <span>Client</span>
                     <span
                       style={{
@@ -131,8 +140,8 @@ const List = () => {
                     </span>
                   </div>
                 </th>
-                <th className="invoice-list-main-th-three">
-                  <div className="invoice-list-main-th-three-child">
+                <th className="invoice-list-main-th-four">
+                  <div className="invoice-list-main-th-four-child">
                     <span>Total</span>
                     <span
                       style={{
@@ -144,8 +153,8 @@ const List = () => {
                     </span>
                   </div>
                 </th>
-                <th className="invoice-list-main-th-four">
-                  <div className="invoice-list-main-th-four-child">
+                <th className="invoice-list-main-th-five">
+                  <div className="invoice-list-main-th-five-child">
                     <span>Issued Date</span>
                     <span
                       style={{
@@ -157,8 +166,8 @@ const List = () => {
                     </span>
                   </div>
                 </th>
-                <th className="invoice-list-main-th-five">
-                  <div className="invoice-list-main-th-five-child">
+                <th className="invoice-list-main-th-six">
+                  <div className="invoice-list-main-th-six-child">
                     <span>Balance</span>
                     <span
                       style={{
@@ -170,8 +179,8 @@ const List = () => {
                     </span>
                   </div>
                 </th>
-                <th className="invoice-list-main-th-six">
-                  <div className="invoice-list-main-th-six-child">
+                <th className="invoice-list-main-th-seven">
+                  <div className="invoice-list-main-th-seven-child">
                     <span>Actions</span>
                     <span
                       style={{
@@ -193,12 +202,55 @@ const List = () => {
                 </td>
                 <td className="invoice-list-td-two">
                   <div className="invoice-list-td-two-child">
+                    <svg
+                      aria-hidden="true"
+                      role="img"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 24 24"
+                      style={{
+                        fontSize: "20px",
+                        height: "20px",
+                        width: "20px",
+                      }}
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                      >
+                        <path d="M10 3.2A9 9 0 1 0 20.8 14a1 1 0 0 0-1-1H13a2 2 0 0 1-2-2V4a.9.9 0 0 0-1-.8"></path>
+                        <path d="M15 3.5A9 9 0 0 1 20.5 9H16a1 1 0 0 1-1-1V3.5"></path>
+                      </g>
+                    </svg>
+                  </div>
+                </td>
+                <td className="invoice-list-td-three">
+                  <div className="invoice-list-td-three-child">
                     <img
                       src={image}
                       alt="user-avatar"
-                      className="invoice-list-td-two-img"
+                      className="invoice-list-td-three-img"
                     />
                     <h4>Cute Kanya</h4>
+                  </div>
+                </td>
+                <td className="invoice-list-td-four">
+                  <span className="invoice-list-td-four-child">$3171</span>
+                </td>
+                <td className="invoice-list-td-five">
+                  <span className="invoice-list-td-five-child">2023-09-19</span>
+                </td>
+                <td className="invoice-list-td-six">
+                  <span className="invoice-list-td-six-child">$205</span>
+                </td>
+                <td className="invoice-list-td-seven">
+                  <div className="invoice-list-td-seven-child">
+                    <DeleteOutlineOutlinedIcon />
+                    <VisibilityOutlinedIcon />
+                    <MoreVertOutlinedIcon />
                   </div>
                 </td>
               </tr>

@@ -89,7 +89,8 @@
 .invoice-list-main-th-three,
 .invoice-list-main-th-four,
 .invoice-list-main-th-five,
-.invoice-list-main-th-six {
+.invoice-list-main-th-six,
+.invoice-list-main-th-seven {
   /* background: rgb(47, 51, 73); */
   height: 3rem;
   font-weight: 500;
@@ -108,18 +109,21 @@
   width: 5vw;
 }
 .invoice-list-main-th-two {
-  width: 25vw;
-}
-.invoice-list-main-th-three {
   width: 5vw;
 }
+.invoice-list-main-th-three {
+  width: 30vw;
+}
 .invoice-list-main-th-four {
-  width: 15vw;
+  width: 8vw;
 }
 .invoice-list-main-th-five {
-  width: 20vw;
+  width: 12vw;
 }
 .invoice-list-main-th-six {
+  width: 10vw;
+}
+.invoice-list-main-th-seven {
   width: 20vw;
 }
 
@@ -128,14 +132,20 @@
 .invoice-list-main-th-three-child,
 .invoice-list-main-th-four-child,
 .invoice-list-main-th-five-child,
-.invoice-list-main-th-six-child {
+.invoice-list-main-th-six-child,
+.invoice-list-main-th-seven-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .invoice-list-td-one,
-.invoice-list-td-two {
+.invoice-list-td-two,
+.invoice-list-td-three,
+.invoice-list-td-four,
+.invoice-list-td-five,
+.invoice-list-td-six,
+.invoice-list-td-seven {
   border-bottom: thin solid rgba(208, 212, 241, 0.16);
   height: 56px;
   padding: 0 16px;
@@ -148,21 +158,36 @@
   line-height: 1.5;
 }
 
-.invoice-list-td-two-child {
+.invoice-list-td-three-child {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.invoice-list-td-two-img {
+.invoice-list-td-three-img {
   width: 2.6rem;
   border-radius: 50%;
 }
 
-.custom-select-menu {
-  background-color: red;
+.invoice-list-td-four-child,
+.invoice-list-td-five-child,
+.invoice-list-td-six-child {
+  line-height: 1.5;
 }
 
-body.MuiPopover-root {
-  background-color: transparent !important;
+.invoice-list-td-two-child {
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  line-height: normal;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+
+  color: rgb(255, 159, 67);
+  background-color: #504448;
 }
