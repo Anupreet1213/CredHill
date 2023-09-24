@@ -1,48 +1,45 @@
 import lifetime_data_image from "../assets/images/image1.png";
 import AttachMoneySharpIcon from "@mui/icons-material/AttachMoneySharp";
 import Chart from "react-apexcharts";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useTheme } from "../../../contexts/ThemeContext";
-import axios from "axios";
+// import axios from "axios";
 import "./Dashboard.css";
 
 const Dashboard: React.FC = () => {
-
   //Import the theme prop and destructured it
   const { isDarkMode } = useTheme();
 
   // State updating quote everyday through Rapid API
-  const [quote, setQuote] = useState("");
+  // const [quote, setQuote] = useState("");
 
-  const options = {
-    method: "GET",
-    url: "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote",
-    params: {
-      token: "ipworld.info",
-    },
-    headers: {
-      "X-RapidAPI-Key": "8f37eceeb3mshbb6f8daefc3d4a8p17f595jsn76bdef89f611",
-      "X-RapidAPI-Host":
-        "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
-    },
-  };
-
+  // const options = {
+  //   method: "GET",
+  //   url: "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote",
+  //   params: {
+  //     token: "ipworld.info",
+  //   },
+  //   headers: {
+  //     "X-RapidAPI-Key": "8f37eceeb3mshbb6f8daefc3d4a8p17f595jsn76bdef89f611",
+  //     "X-RapidAPI-Host":
+  //       "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
+  //   },
+  // };
 
   //UseEffect is used to fetch data from RAPID API when the browser loads
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.request(options);
-        const new_quote = response.data.text;
-        setQuote(new_quote);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.request(options);
+  //       const new_quote = response.data.text;
+  //       setQuote(new_quote);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
-
+  //   fetchData();
+  // }, []);
 
   //Apex Chart Configurations :
   const [chartOptions] = useState({
@@ -79,7 +76,6 @@ const Dashboard: React.FC = () => {
     },
   });
 
-
   //Chart Data :
   const [chartSeries] = useState([
     {
@@ -88,54 +84,52 @@ const Dashboard: React.FC = () => {
     },
   ]);
 
-  
   return (
     <div className={`${isDarkMode ? "" : "light-mode"} dashboard_right_second`}>
       <div
         className={`${isDarkMode ? "lifetime_data" : "lifetime_data_light"}`}
       >
         {/* <div className={"test"}> */}
-          <div className="test2">
-            <div className="test3">
+        <div className="test2">
+          <div className="test3">
+            <div className="test4">
+              <h5 className="test5">Website Analytics</h5>
+              <p className="test6">Total 28.5% Conversion Rate</p>
+            </div>
 
-              <div className="test4">
-                <h5 className="test5">Website Analytics</h5>
-                <p className="test6">Total 28.5% Conversion Rate</p>
-              </div>
-
-              <div className="test7">
-                <div className="test8">
-                  <div className="test9">
-                    {/* <p className="test10">Spending</p> */}
-                  </div>
-                  <div className="test11">
-                    <span className="test12">12h</span>
-                    <span>Spend</span>
-                  </div>
-                  <div className="test11">
-                    <span className="test12">12h</span>
-                    <span>Spend</span>
-                  </div>
-                  <div className="test11">
-                    <span className="test12">12h</span>
-                    <span>Spend</span>
-                  </div>
-                  <div className="test11">
-                    <span className="test12">12h</span>
-                    <span>Spend</span>
-                  </div>
+            <div className="test7">
+              <div className="test8">
+                <div className="test9">
+                  {/* <p className="test10">Spending</p> */}
+                </div>
+                <div className="test11">
+                  <span className="test12">12h</span>
+                  <span>Spend</span>
+                </div>
+                <div className="test11">
+                  <span className="test12">12h</span>
+                  <span>Spend</span>
+                </div>
+                <div className="test11">
+                  <span className="test12">12h</span>
+                  <span>Spend</span>
+                </div>
+                <div className="test11">
+                  <span className="test12">12h</span>
+                  <span>Spend</span>
                 </div>
               </div>
+            </div>
 
-              <div className="test13">
-                <img src={lifetime_data_image} alt="" className="test14" />
-              </div>
+            <div className="test13">
+              <img src={lifetime_data_image} alt="" className="test14" />
+            </div>
 
-              {/* <div className="lifetime_data_image">
+            {/* <div className="lifetime_data_image">
                 <img src={lifetime_data_image} alt="" />
               </div> */}
-            </div>
           </div>
+        </div>
         {/* </div> */}
       </div>
 
@@ -159,7 +153,7 @@ const Dashboard: React.FC = () => {
       </div>
       <div className="dashboard_QOD">
         <p className="dashboard_QOD_heading">Quote of the Day</p>
-        <p className="dashboard_QOD_quote">{quote}</p>
+        {/* <p className="dashboard_QOD_quote">{quote}</p> */}
       </div>
       <div className="dashboard_main_part"></div>
     </div>
