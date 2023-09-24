@@ -8,6 +8,8 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 // import Select from "@mui/material/Select";
 import image from "./UserAvatar.jpg";
+import { Select } from "@mui/material";
+import CustomSelectComp from "./CustomSelectComp";
 // import InputBase from "@mui/material/InputBase";
 
 const List = () => {
@@ -44,42 +46,38 @@ const List = () => {
     },
   });
 
-  const CustomSelect = styled(TextField)({
-    "& input": {
-      color: "#72778F",
-    },
-    "& label": {
-      color: "#72778F",
-    },
-    "& label.Mui-focused": {
-      color: "#675DD8",
-    },
-    // "& .MuiInput-underline:after": {
-    //   borderBottomColor: "#B2BAC2",
-    // },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "#72778F",
-      },
-      "&:hover fieldset": {
-        borderColor: "#675DD8",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "#675DD8",
-      },
-      "& .MuiSelect-icon": {
-        color: "#72778F",
-      },
-      "& .MuiSelect-select.MuiSelect-select": {
-        color: "#72778F !important",
-      },
-    },
-  });
+  // const CustomSelect = styled(TextField)({
+  //   "& input": {
+  //     color: "#72778F",
+  //   },
+  //   "& label": {
+  //     color: "#72778F",
+  //   },
+  //   "& label.Mui-focused": {
+  //     color: "#675DD8",
+  //   },
+  //   "& .MuiOutlinedInput-root": {
+  //     "& fieldset": {
+  //       borderColor: "#72778F",
+  //     },
+  //     "&:hover fieldset": {
+  //       borderColor: "#675DD8",
+  //     },
+  //     "&.Mui-focused fieldset": {
+  //       borderColor: "#675DD8",
+  //     },
+  //     "& .MuiSelect-icon": {
+  //       color: "#72778F",
+  //     },
+  //     "& .MuiSelect-select.MuiSelect-select": {
+  //       color: "#72778F !important",
+  //     },
+  //   },
+  // });
 
   const CustomMenuItem = styled(MenuItem)({
-    color: "black",
-    // backgroundColor: "#2F3349",
-    // padding: "0"
+    color: "blue",
+    // backgroundColor: "red",
   });
 
   return (
@@ -115,7 +113,7 @@ const List = () => {
                 handleChange(event as React.ChangeEvent<{ value: unknown }>)
               }
             >
-              {/* <CustomMenuItem value="">None</CustomMenuItem> */}
+              <CustomMenuItem value="">None</CustomMenuItem>
               <CustomMenuItem value={10}>Downloaded</CustomMenuItem>
               <CustomMenuItem value={20}>Sent</CustomMenuItem>
               <CustomMenuItem value={30}>Paid</CustomMenuItem>
