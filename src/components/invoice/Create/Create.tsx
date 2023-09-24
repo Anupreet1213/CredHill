@@ -2,10 +2,11 @@ import "./Create.css";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
+import { TextField } from "@mui/material";
 import InsightsIcon from "@mui/icons-material/Insights";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import React from "react";
-
+import { styled } from "@mui/material/styles";
 // import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 // import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 // import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -19,9 +20,75 @@ import React from "react";
 const Create = () => {
   const [age, setAge] = React.useState("0");
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange = (event: SelectChangeEvent<any>) => {
     setAge(event.target.value);
   };
+
+  const CustomMenuItem = styled(MenuItem)({
+    color: "black",
+    // backgroundColor: "#2F3349",
+    // padding: "0"
+  });
+
+  const CssTextField = styled(TextField)({
+    "& input": {
+      color: "#72778F",
+      //   height: "1rem",
+    },
+    "& label": {
+      color: "#72778F",
+    },
+    "& label.Mui-focused": {
+      color: "#675DD8",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#B2BAC2",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "#72778F",
+      },
+      "&:hover fieldset": {
+        borderColor: "#675DD8",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#675DD8",
+      },
+    },
+  });
+
+  const CustomSelect = styled(Select)({
+    "& input": {
+      color: "#72778F",
+    },
+    "& label": {
+      color: "#72778F",
+    },
+    "& label.Mui-focused": {
+      color: "#675DD8",
+    },
+    // "& .MuiInput-underline:after": {
+    //   borderBottomColor: "#B2BAC2",
+    // },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "#72778F",
+      },
+      "&:hover fieldset": {
+        borderColor: "#675DD8",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#675DD8",
+      },
+      "& .MuiSelect-icon": {
+        color: "#72778F",
+      },
+      "& .MuiSelect-select.MuiSelect-select": {
+        color: "#72778F !important",
+      },
+    },
+  });
+
   return (
     <div className="create-invoice">
       <div className="create-invoice-left">
@@ -56,33 +123,33 @@ const Create = () => {
           <div className="create-invoice-invoice-to">
             <FormControl variant="filled" sx={{ m: 1, minWidth: 250 }}>
               <InputLabel id="demo-simple-select-filled-label"></InputLabel>
-              <Select
+              <CustomSelect
                 labelId="demo-simple-select-filled-label"
                 id="demo-simple-select-filled"
                 value={age}
                 onChange={handleChange}
               >
-                <MenuItem value={10}>Jordan Peterson</MenuItem>
-                <MenuItem value={20}>Shwetabh Gangwar</MenuItem>
-                <MenuItem value={30}>Doland Trump</MenuItem>
-              </Select>
+                <CustomMenuItem value={10}>Jordan Peterson</CustomMenuItem>
+                <CustomMenuItem value={20}>Shwetabh Gangwar</CustomMenuItem>
+                <CustomMenuItem value={30}>Doland Trump</CustomMenuItem>
+              </CustomSelect>
             </FormControl>
             <div>
               {age == "10" ? (
-                <div className="invoice-to-details" >
+                <div className="invoice-to-details">
                   Jordan Stevenson Hall-Robbins PLC 7777 Mendez Plains, USA
                   (616) 865-4180 don85@johnson.com
                 </div>
               ) : age == "20" ? (
                 <div className="invoice-to-details">
-                Shwetabh Bhaiya Hall-Robbins PLC 7777 Mendez Plains, USA
-                (616) 865-4180 don85@johnson.com
-              </div>
+                  Shwetabh Bhaiya Hall-Robbins PLC 7777 Mendez Plains, USA (616)
+                  865-4180 don85@johnson.com
+                </div>
               ) : age == "30" ? (
                 <div className="invoice-to-details">
-                Doland Trump is a stupid guy and Hall-Robbins PLC 7777 Mendez Plains, USA
-                (616) 865-4180 don85@johnson.com
-              </div>
+                  Doland Trump is a stupid guy and Hall-Robbins PLC 7777 Mendez
+                  Plains, USA (616) 865-4180 don85@johnson.com
+                </div>
               ) : (
                 ""
               )}
@@ -95,9 +162,59 @@ const Create = () => {
           </div>
         </div>
         <hr />
-
-
-        
+        <div className="invoice-items-info-wrapper">
+          <div>
+            <div className="invoice-items-info-container">
+              <div>
+                <div>
+                  <FormControl variant="filled" sx={{ m: 1, minWidth: 250 }}>
+                    <InputLabel id="demo-simple-select-filled-label"></InputLabel>
+                    <CustomSelect
+                      labelId="demo-simple-select-filled-label"
+                      id="demo-simple-select-filled"
+                      // value={age}
+                      // onChange={handleChange}
+                    >
+                      <CustomMenuItem value={10}>
+                        Jordan Peterson
+                      </CustomMenuItem>
+                      <CustomMenuItem value={20}>
+                        Shwetabh Gangwar
+                      </CustomMenuItem>
+                      <CustomMenuItem value={30}>Doland Trump</CustomMenuItem>
+                    </CustomSelect>
+                  </FormControl>
+                </div>
+                {/* <div> */}
+                  <CssTextField label="Search Invoice" id="custom-css-outlined-input" />
+                {/* </div> */}
+              </div>
+              <div>
+                <div>
+                  <p>Cost</p>
+                  <input type="number" min="1" />
+                </div>
+                <div>
+                  <p>Cost</p>
+                  <input type="number" min="1" />
+                </div>
+              </div>
+              <div>
+                <div>
+                  <p>Qty</p>
+                  <input type="number" min="1" />
+                </div>
+              </div>
+              <div>
+                <div>
+                  <p>Cost</p>
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="create-invoice-right">Heelu</div>
     </div>

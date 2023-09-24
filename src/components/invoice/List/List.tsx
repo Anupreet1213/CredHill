@@ -77,8 +77,9 @@ const List = () => {
   });
 
   const CustomMenuItem = styled(MenuItem)({
-    color: "blue",
-    // backgroundColor: "red",
+    color: "black",
+    // backgroundColor: "#2F3349",
+    // padding: "0"
   });
 
   return (
@@ -114,7 +115,7 @@ const List = () => {
                 handleChange(event as React.ChangeEvent<{ value: unknown }>)
               }
             >
-              <CustomMenuItem value="">None</CustomMenuItem>
+              {/* <CustomMenuItem value="">None</CustomMenuItem> */}
               <CustomMenuItem value={10}>Downloaded</CustomMenuItem>
               <CustomMenuItem value={20}>Sent</CustomMenuItem>
               <CustomMenuItem value={30}>Paid</CustomMenuItem>
