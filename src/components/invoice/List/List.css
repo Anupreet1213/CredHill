@@ -158,3 +158,11 @@
   width: 2.6rem;
   border-radius: 50%;
 }
+
+.custom-select-menu {
+  background-color: red;
+}
+
+body.MuiPopover-root {
+  background-color: transparent !important;
+}
