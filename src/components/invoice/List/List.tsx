@@ -80,6 +80,10 @@ const List = () => {
   //   // backgroundColor: "red",
   //   backgroundColor: "red", // Replace with the color you want
   // });
+  // const CustomMenuItem = styled(MenuItem)({
+  //   color: "blue",
+  //   // backgroundColor: "red",
+  // });
 
   return (
     <div className="invoice-list">
