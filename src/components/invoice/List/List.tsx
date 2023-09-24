@@ -1,12 +1,13 @@
 import "./List.css";
-import { useState, ChangeEvent } from "react";
+import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
-import InputLabel from "@mui/material/InputLabel";
+// import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+// import Select from "@mui/material/Select";
+import image from "./UserAvatar.jpg";
 // import InputBase from "@mui/material/InputBase";
 
 const List = () => {
@@ -202,6 +203,24 @@ const List = () => {
                 </th>
               </tr>
             </thead>
+
+            <tbody>
+              <tr>
+                <td className="invoice-list-td-one">
+                  <span className="invoice-list-td-one-child">#5036</span>
+                </td>
+                <td className="invoice-list-td-two">
+                  <div className="invoice-list-td-two-child">
+                    <img
+                      src={image}
+                      alt="user-avatar"
+                      className="invoice-list-td-two-img"
+                    />
+                    <h4>Cute Kanya</h4>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

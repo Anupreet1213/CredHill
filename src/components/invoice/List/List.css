@@ -133,3 +133,28 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.invoice-list-td-one,
+.invoice-list-td-two {
+  border-bottom: thin solid rgba(208, 212, 241, 0.16);
+  height: 56px;
+  padding: 0 16px;
+}
+
+.invoice-list-td-one-child {
+  color: rgb(115, 103, 240);
+  text-decoration: none;
+  /* background-color: transparent; */
+  line-height: 1.5;
+}
+
+.invoice-list-td-two-child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.invoice-list-td-two-img {
+  width: 2.6rem;
+  border-radius: 50%;
+}
