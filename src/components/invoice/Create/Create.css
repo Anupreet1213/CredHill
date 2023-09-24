@@ -73,10 +73,13 @@
 .create-invoice-invoice-to-wrapper{
     padding: 3rem 2rem ;
     display: flex;
+    /* gap:5rem; */
     justify-content: space-between;
 }
 
-
+.create-invoice-invoice-to{
+    width: 60%;
+}
 
 .invoice-to-details{
     max-width: 60%;
