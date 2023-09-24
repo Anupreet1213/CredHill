@@ -4,6 +4,7 @@ import { Option, optionClasses } from "@mui/base/Option";
 import { Popper } from "@mui/base/Popper";
 import { styled } from "@mui/system";
 import UnfoldMoreRoundedIcon from "@mui/icons-material/UnfoldMoreRounded";
+import "./CustomSelectComp.css";
 
 export default function CustomSelectComp() {
   const [selectValue, setSelectValue] = React.useState<string>("");
@@ -47,15 +48,6 @@ const CustomSelect = React.forwardRef(function CustomSelect<
   return <Select {...props} ref={ref} slots={slots} />;
 });
 
-const blue = {
-  100: "#DAECFF",
-  200: "#99CCF3",
-  400: "#3399FF",
-  500: "#007FFF",
-  600: "#0072E5",
-  900: "#003A75",
-};
-
 const grey = {
   50: "#f6f8fa",
   100: "#eaeef2",
@@ -81,12 +73,7 @@ const Button = React.forwardRef(function Button<
 ) {
   const { ...other } = props;
   return (
-    <button
-      style={{ border: "1px solid #72778F", color: "#72778F" }}
-      type="button"
-      {...other}
-      ref={ref}
-    >
+    <button id="button" type="button" {...other} ref={ref}>
       {other.children}
       <UnfoldMoreRoundedIcon />
     </button>
@@ -94,7 +81,7 @@ const Button = React.forwardRef(function Button<
 });
 
 const StyledButton = styled(Button, { shouldForwardProp: () => true })(
-  ({ theme }) => `
+  () => `
   font-family: IBM Plex Sans, sans-serif;
   font-size: 0.875rem;
   box-sizing: border-box;

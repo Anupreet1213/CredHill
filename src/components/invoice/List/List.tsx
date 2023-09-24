@@ -1,23 +1,23 @@
 import "./List.css";
-import { useState } from "react";
+// import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
 // import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
+// import MenuItem from "@mui/material/MenuItem";
+// import FormControl from "@mui/material/FormControl";
 // import Select from "@mui/material/Select";
 import image from "./UserAvatar.jpg";
-import { Select } from "@mui/material";
+// import { Select } from "@mui/material";
 import CustomSelectComp from "./CustomSelectComp";
 // import InputBase from "@mui/material/InputBase";
 
 const List = () => {
-  const [age, setAge] = useState<number | "">("");
+  // const [age, setAge] = useState<number | "">("");
 
-  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setAge(event.target.value as number | "");
-  };
+  // const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  //   setAge(event.target.value as number | "");
+  // };
 
   const CssTextField = styled(TextField)({
     "& input": {
@@ -75,11 +75,11 @@ const List = () => {
   //   },
   // });
 
-  const CustomMenuItem = styled(MenuItem)({
-    color: "blue",
-    // backgroundColor: "red",
-    backgroundColor: "red", // Replace with the color you want
-  });
+  // const CustomMenuItem = styled(MenuItem)({
+  //   color: "blue",
+  //   // backgroundColor: "red",
+  //   backgroundColor: "red", // Replace with the color you want
+  // });
 
   return (
     <div className="invoice-list">
