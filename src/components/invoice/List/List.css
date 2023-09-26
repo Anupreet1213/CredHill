@@ -106,25 +106,25 @@
 }
 
 .invoice-list-main-th-one {
-  width: 5vw;
+  width: 7vw;
 }
 .invoice-list-main-th-two {
-  width: 5vw;
+  width: 6vw;
 }
 .invoice-list-main-th-three {
   width: 30vw;
 }
 .invoice-list-main-th-four {
-  width: 8vw;
-}
-.invoice-list-main-th-five {
-  width: 12vw;
-}
-.invoice-list-main-th-six {
   width: 10vw;
 }
+.invoice-list-main-th-five {
+  width: 15vw;
+}
+.invoice-list-main-th-six {
+  width: 12vw;
+}
 .invoice-list-main-th-seven {
-  width: 20vw;
+  width: 15vw;
 }
 
 .invoice-list-main-th-one-child,
@@ -139,55 +139,25 @@
   align-items: center;
 }
 
-.invoice-list-td-one,
-.invoice-list-td-two,
-.invoice-list-td-three,
-.invoice-list-td-four,
-.invoice-list-td-five,
-.invoice-list-td-six,
-.invoice-list-td-seven {
-  border-bottom: thin solid rgba(208, 212, 241, 0.16);
-  height: 56px;
-  padding: 0 16px;
-}
-
-.invoice-list-td-one-child {
-  color: rgb(115, 103, 240);
-  text-decoration: none;
-  /* background-color: transparent; */
-  line-height: 1.5;
-}
-
-.invoice-list-td-three-child {
+.invoice-list-footer {
+  padding: 12px 20px 20px 20px;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: rgb(47, 51, 73);
+  color: rgba(208, 212, 241, 0.68);
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
 }
 
-.invoice-list-td-three-img {
-  width: 2.6rem;
-  border-radius: 50%;
-}
-
-.invoice-list-td-four-child,
-.invoice-list-td-five-child,
-.invoice-list-td-six-child {
-  line-height: 1.5;
-}
-
-.invoice-list-td-two-child {
-  width: 30px;
-  height: 30px;
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
-  line-height: normal;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-  border-radius: 50%;
-
-  color: rgb(255, 159, 67);
-  background-color: #504448;
+.pagination-custom-style {
+  & .MuiPaginationItem-root {
+    background-color: #3b3e55;
+    color: white;
+  }
+  & .MuiPaginationItem-page.Mui-selected {
+    background-color: #7367f0; /* Replace 'your-selected-color-here' with the desired background color for the selected box */
+  }
 }

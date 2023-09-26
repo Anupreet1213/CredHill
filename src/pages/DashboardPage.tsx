@@ -7,6 +7,7 @@ import Dashboard from "../components/dashboard/Dashboard/Dashboard";
 import { useTheme } from "../contexts/ThemeContext";
 import Create from "../components/invoice/Create/Create";
 import List from "../components/invoice/List/List";
+// import CreateTest from "../components/invoice/Create/CreateTest";
 
 const DashboardPage: React.FC = () => {
   // Tells whether sidebar is open or close on desktop
