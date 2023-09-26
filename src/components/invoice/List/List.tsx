@@ -25,7 +25,6 @@ const List = () => {
   const CssTextField = styled(TextField)({
     "& input": {
       color: "#72778F",
-      //   height: "1rem",
     },
     "& label": {
       color: "#72778F",
