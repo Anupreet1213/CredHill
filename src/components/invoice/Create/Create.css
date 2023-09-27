@@ -59,6 +59,15 @@
     padding: 4%;
     background-color: transparent; 
 }
+.create-invoice-bill-details-invoice-number input:hover{
+    width: 55%;
+    border: 0.5px solid #7a3a85 ;
+    color : var(--text-color);
+    border-radius: 5px;
+    outline: none;
+    padding: 4%;
+    background-color: transparent; 
+}
 
 /* .create-invoice-bill-details-invoice-number input::-webkit-inner-spin-button, */
 .create-invoice-bill-details-invoice-number input::-webkit-outer-spin-button {
@@ -92,11 +101,16 @@
 }
 
 .invoice-items-info-container{
-    display: flex;
+    display: flex;  
+    justify-content: space-between;
+    padding:2%;
+    border: 1px solid #585858;
+    border-radius: 5px;
+    /* width: 50%; */
 }
 
 .invoice-items-info-container input{
-    /* width: 55%; */
+    width: 65%;
     border: 0.5px solid #43475E ;
     color : var(--text-color);
     border-radius: 5px;

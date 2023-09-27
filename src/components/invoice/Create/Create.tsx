@@ -186,16 +186,19 @@ const Create = () => {
                   </FormControl>
                 </div>
                 {/* <div> */}
-                  <CssTextField label="Search Invoice" id="custom-css-outlined-input" />
+                <CssTextField
+                  label="Description"
+                  id="custom-css-outlined-input"
+                />
                 {/* </div> */}
               </div>
               <div>
                 <div>
-                  <p>Cost</p>
+                  <p>Cost1</p>
                   <input type="number" min="1" />
                 </div>
                 <div>
-                  <p>Cost</p>
+                  <p>Cost2</p>
                   <input type="number" min="1" />
                 </div>
               </div>
@@ -207,10 +210,8 @@ const Create = () => {
               </div>
               <div>
                 <div>
-                  <p>Cost</p>
-                  
+                  <p>Costyy</p>
                 </div>
-                
               </div>
             </div>
           </div>
