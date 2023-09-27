@@ -97,9 +97,34 @@ const CreateTest = () => {
                         color: "#7C8199",
                       },
                     },
-                    "& .MuiPopover-root .MuiPaper-root": {
-                      backgroundColor: "yellow", // Change the background color here
+                  }}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        "& .MuiPaper-root": {
+                          backgroundColor: "#2F3349",
+                          color: "white",
+                        },
+                        "& .MuiTypography-root": {
+                          color: "white", // Change the text color here
+                        },
+                        "& .MuiPickersDay-dayWithMargin": {
+                          color: "rgb(229,228,226)",
+                          // backgroundColor: "rgba(50, 136, 153)",
+                        },
+                        "& .Mui-selected": {
+                          backgroundColor: "#7367F0 !important",
+                        },
+                        // "& .MuiPickersDay-root:not(.Mui-selected)": {
+                        //   border: "1px solid red !important",
+                        // },
+                      },
                     },
+                    // sx: {
+                    //   "& .MuiPaper-root": {
+                    //     backgroundColor: "yellow",
+                    //   },
+                    // },
                   }}
                 />
               </LocalizationProvider>
