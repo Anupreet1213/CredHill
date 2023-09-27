@@ -7,15 +7,9 @@ import InsightsIcon from "@mui/icons-material/Insights";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import React from "react";
 import { styled } from "@mui/material/styles";
-// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-// import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-// import Select, { SelectChangeEvent } from '@mui/material/Select';
-// import { PopperProps } from "@mui/material";
-// import flatpickr from "flatpickr";
-// import dayjs, { Dayjs } from "dayjs";
-// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-// import { SxProps } from "@mui/material";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 
 const Create = () => {
   const [age, setAge] = React.useState("0");
@@ -26,8 +20,17 @@ const Create = () => {
 
   const CustomMenuItem = styled(MenuItem)({
     color: "black",
-    // backgroundColor: "#2F3349",
-    // padding: "0"
+  });
+  const CustomTextField = styled(TextField)({
+    "& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#43475E",
+    },
+    "& .Mui-disabled input": {
+      WebkitTextFillColor: "#646880",
+    },
+    // "&.custom-classes": {
+    //   height: "100%",
+    // },
   });
 
   const CssTextField = styled(TextField)({
@@ -105,16 +108,68 @@ const Create = () => {
 
           <div className="create-invoice-bill-details">
             <div className="create-invoice-bill-details-invoice-number">
-              <h2>Invoice</h2>
-              <input type="number" min="1" />
+              <p>Invoice</p>
+              <CustomTextField
+                sx={{
+                  width: "200px",
+                }}
+                id="outlined-basic"
+                variant="outlined"
+                disabled
+                value={"# 5036"}
+              />
             </div>
             <div className="create-invoice-bill-details-invoice-number">
-              <h3>Date Issued</h3>
-              <input type="text" min="1" />
+              <p>Date Issued</p>
+
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DatePicker
+                  sx={{
+                    width: "200px",
+                    padding: "0",
+                    "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "#7C8199",
+                      },
+                      "& input": {
+                        color: "#7C8199",
+                      },
+                      "& .MuiSvgIcon-root": {
+                        color: "#7C8199",
+                      },
+                    },
+                  }}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        "& .MuiPaper-root": {
+                          backgroundColor: "#2F3349",
+                          color: "white",
+                        },
+                        "& .MuiTypography-root": {
+                          color: "white",
+                        },
+                        "& .MuiPickersDay-dayWithMargin": {
+                          color: "rgb(229,228,226)",
+                        },
+                        "& .Mui-selected": {
+                          backgroundColor: "#7367F0 !important",
+                        },
+                      },
+                    },
+                  }}
+                />
+              </LocalizationProvider>
             </div>
             <div className="create-invoice-bill-details-invoice-number">
-              <h3>Refrence</h3>
-              <input type="text" min="1" />
+              <p>Refrence</p>
+              <CssTextField
+                sx={{
+                  width: "200px",
+                }}
+                label="Refrence"
+                id="custom-css-outlined-input"
+              />
             </div>
           </div>
         </div>

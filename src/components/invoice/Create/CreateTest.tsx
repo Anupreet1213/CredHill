@@ -115,16 +115,10 @@ const CreateTest = () => {
                         "& .Mui-selected": {
                           backgroundColor: "#7367F0 !important",
                         },
-                        // "& .MuiPickersDay-root:not(.Mui-selected)": {
-                        //   border: "1px solid red !important",
-                        // },
+                     
                       },
                     },
-                    // sx: {
-                    //   "& .MuiPaper-root": {
-                    //     backgroundColor: "yellow",
-                    //   },
-                    // },
+                    
                   }}
                 />
               </LocalizationProvider>

@@ -8,18 +8,18 @@
 
 
 .create-invoice-right{
-    background-color: #222A43;
+    background: rgb(47, 51, 73);
     border-radius: 5px;
     width: 25%;
 }
 .create-invoice-left{
     border-radius: 5px;
     width: 75%;
-    background-color: #222A43;
+    background: rgb(47, 51, 73);
 }
 
 .create-invoice-details{
-    padding: 3rem 2rem ;
+    padding: 3rem 1.5rem ;
     display: flex;
     justify-content: space-between;
 }
@@ -39,7 +39,10 @@
 
 
 .create-invoice-bill-details{
-    width:32%;
+    /* width:45%; */
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
 }
 
 
@@ -47,37 +50,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0.5rem;
+    gap:1rem;
+    /* margin-top: 0.5rem; */
 }
-
-.create-invoice-bill-details-invoice-number input{
-    width: 55%;
-    border: 0.5px solid #43475E ;
-    color : var(--text-color);
-    border-radius: 5px;
-    outline: none;
-    padding: 4%;
-    background-color: transparent; 
-}
-.create-invoice-bill-details-invoice-number input:hover{
-    width: 55%;
-    border: 0.5px solid #7a3a85 ;
-    color : var(--text-color);
-    border-radius: 5px;
-    outline: none;
-    padding: 4%;
-    background-color: transparent; 
-}
-
-/* .create-invoice-bill-details-invoice-number input::-webkit-inner-spin-button, */
-.create-invoice-bill-details-invoice-number input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-
-
-
 
 .create-invoice-invoice-to-wrapper{
     padding: 3rem 2rem ;
@@ -110,7 +85,7 @@
 }
 
 .invoice-items-info-container input{
-    width: 65%;
+    /* width: 65%; */
     border: 0.5px solid #43475E ;
     color : var(--text-color);
     border-radius: 5px;
