@@ -5,8 +5,9 @@ import MobileSidebar from "../components/dashboard/Main/MobileSidebar";
 import Navbar from "../components/dashboard/Main/Navbar";
 import Dashboard from "../components/dashboard/Dashboard/Dashboard";
 import { useTheme } from "../contexts/ThemeContext";
-import Create from "../components/invoice/Create/Create";
+// import Create from "../components/invoice/Create/Create";
 import List from "../components/invoice/List/List";
+import CreateTest from "../components/invoice/Create/CreateTest";
 
 const DashboardPage: React.FC = () => {
   // Tells whether sidebar is open or close on desktop
@@ -72,7 +73,7 @@ const DashboardPage: React.FC = () => {
         ) : rightComponent == 1 ? (
           <div>heeelu</div>
         ) : rightComponent == 2 ? (
-          <Create />
+          <CreateTest />
         ) : (
           <List />
         )}

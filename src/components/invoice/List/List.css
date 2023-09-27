@@ -89,7 +89,8 @@
 .invoice-list-main-th-three,
 .invoice-list-main-th-four,
 .invoice-list-main-th-five,
-.invoice-list-main-th-six {
+.invoice-list-main-th-six,
+.invoice-list-main-th-seven {
   /* background: rgb(47, 51, 73); */
   height: 3rem;
   font-weight: 500;
@@ -105,22 +106,25 @@
 }
 
 .invoice-list-main-th-one {
-  width: 5vw;
+  width: 7vw;
 }
 .invoice-list-main-th-two {
-  width: 25vw;
+  width: 6vw;
 }
 .invoice-list-main-th-three {
-  width: 5vw;
+  width: 30vw;
 }
 .invoice-list-main-th-four {
-  width: 15vw;
+  width: 10vw;
 }
 .invoice-list-main-th-five {
-  width: 20vw;
+  width: 15vw;
 }
 .invoice-list-main-th-six {
-  width: 20vw;
+  width: 12vw;
+}
+.invoice-list-main-th-seven {
+  width: 15vw;
 }
 
 .invoice-list-main-th-one-child,
@@ -128,41 +132,32 @@
 .invoice-list-main-th-three-child,
 .invoice-list-main-th-four-child,
 .invoice-list-main-th-five-child,
-.invoice-list-main-th-six-child {
+.invoice-list-main-th-six-child,
+.invoice-list-main-th-seven-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.invoice-list-td-one,
-.invoice-list-td-two {
-  border-bottom: thin solid rgba(208, 212, 241, 0.16);
-  height: 56px;
-  padding: 0 16px;
-}
-
-.invoice-list-td-one-child {
-  color: rgb(115, 103, 240);
-  text-decoration: none;
-  /* background-color: transparent; */
-  line-height: 1.5;
-}
-
-.invoice-list-td-two-child {
+.invoice-list-footer {
+  padding: 12px 20px 20px 20px;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: rgb(47, 51, 73);
+  color: rgba(208, 212, 241, 0.68);
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
 }
 
-.invoice-list-td-two-img {
-  width: 2.6rem;
-  border-radius: 50%;
-}
-
-.custom-select-menu {
-  background-color: red;
-}
-
-body.MuiPopover-root {
-  background-color: transparent !important;
+.pagination-custom-style {
+  & .MuiPaginationItem-root {
+    background-color: #3b3e55;
+    color: white;
+  }
+  & .MuiPaginationItem-page.Mui-selected {
+    background-color: #7367f0; /* Replace 'your-selected-color-here' with the desired background color for the selected box */
+  }
 }

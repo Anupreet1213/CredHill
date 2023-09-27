@@ -7,10 +7,13 @@ import { styled } from "@mui/material/styles";
 // import MenuItem from "@mui/material/MenuItem";
 // import FormControl from "@mui/material/FormControl";
 // import Select from "@mui/material/Select";
-import image from "./UserAvatar.jpg";
 // import { Select } from "@mui/material";
 import CustomSelectComp from "./CustomSelectComp";
 // import InputBase from "@mui/material/InputBase";
+import MovingIcon from "@mui/icons-material/Moving";
+import ListBody from "./ListBody";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 const List = () => {
   // const [age, setAge] = useState<number | "">("");
@@ -22,7 +25,6 @@ const List = () => {
   const CssTextField = styled(TextField)({
     "& input": {
       color: "#72778F",
-      //   height: "1rem",
     },
     "& label": {
       color: "#72778F",
@@ -85,6 +87,12 @@ const List = () => {
   //   // backgroundColor: "red",
   // });
 
+  const listBodies = [];
+
+  for (let i = 0; i < 20; i++) {
+    listBodies.push(<ListBody key={i} />);
+  }
+
   return (
     <div className="invoice-list">
       <div className="invoice-list-header">
@@ -118,6 +126,11 @@ const List = () => {
                 </th>
                 <th className="invoice-list-main-th-two">
                   <div className="invoice-list-main-th-two-child">
+                    <MovingIcon />
+                  </div>
+                </th>
+                <th className="invoice-list-main-th-three">
+                  <div className="invoice-list-main-th-three-child">
                     <span>Client</span>
                     <span
                       style={{
@@ -131,8 +144,8 @@ const List = () => {
                     </span>
                   </div>
                 </th>
-                <th className="invoice-list-main-th-three">
-                  <div className="invoice-list-main-th-three-child">
+                <th className="invoice-list-main-th-four">
+                  <div className="invoice-list-main-th-four-child">
                     <span>Total</span>
                     <span
                       style={{
@@ -144,8 +157,8 @@ const List = () => {
                     </span>
                   </div>
                 </th>
-                <th className="invoice-list-main-th-four">
-                  <div className="invoice-list-main-th-four-child">
+                <th className="invoice-list-main-th-five">
+                  <div className="invoice-list-main-th-five-child">
                     <span>Issued Date</span>
                     <span
                       style={{
@@ -157,8 +170,8 @@ const List = () => {
                     </span>
                   </div>
                 </th>
-                <th className="invoice-list-main-th-five">
-                  <div className="invoice-list-main-th-five-child">
+                <th className="invoice-list-main-th-six">
+                  <div className="invoice-list-main-th-six-child">
                     <span>Balance</span>
                     <span
                       style={{
@@ -170,8 +183,8 @@ const List = () => {
                     </span>
                   </div>
                 </th>
-                <th className="invoice-list-main-th-six">
-                  <div className="invoice-list-main-th-six-child">
+                <th className="invoice-list-main-th-seven">
+                  <div className="invoice-list-main-th-seven-child">
                     <span>Actions</span>
                     <span
                       style={{
@@ -186,25 +199,20 @@ const List = () => {
               </tr>
             </thead>
 
-            <tbody>
-              <tr>
-                <td className="invoice-list-td-one">
-                  <span className="invoice-list-td-one-child">#5036</span>
-                </td>
-                <td className="invoice-list-td-two">
-                  <div className="invoice-list-td-two-child">
-                    <img
-                      src={image}
-                      alt="user-avatar"
-                      className="invoice-list-td-two-img"
-                    />
-                    <h4>Cute Kanya</h4>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+            {listBodies}
           </table>
         </div>
+      </div>
+      <div className="invoice-list-footer">
+        <p>Showing 1 to 10 of 50 entries</p>
+        <Stack spacing={2}>
+          <Pagination
+            count={10}
+            // variant="outlined"
+            shape="rounded"
+            className="pagination-custom-style"
+          />
+        </Stack>
       </div>
     </div>
   );
