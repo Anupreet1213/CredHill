@@ -1,26 +1,30 @@
 import "./Create.css";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import { TextField } from "@mui/material";
 import InsightsIcon from "@mui/icons-material/Insights";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
 import React from "react";
 import { styled } from "@mui/material/styles";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import CustomSelectComp from "./CustomSelectComp";
+import Select from "react-select";
+
 
 const Create = () => {
-  const [age, setAge] = React.useState("0");
-
-  const handleChange = (event: SelectChangeEvent<any>) => {
-    setAge(event.target.value);
+  const [currentSelection, setSelection] = React.useState(null);
+  const handleChangeSelect = (event:any) => {
+    setSelection(event.target.value);
+    console.log(currentSelection);
   };
 
-  const CustomMenuItem = styled(MenuItem)({
-    color: "black",
-  });
+
+
+  const options = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
+
   const CustomTextField = styled(TextField)({
     "& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
       borderColor: "#43475E",
@@ -60,38 +64,6 @@ const Create = () => {
     },
   });
 
-  const CustomSelect = styled(Select)({
-    "& input": {
-      color: "#72778F",
-    },
-    "& label": {
-      color: "#72778F",
-    },
-    "& label.Mui-focused": {
-      color: "#675DD8",
-    },
-    // "& .MuiInput-underline:after": {
-    //   borderBottomColor: "#B2BAC2",
-    // },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "#72778F",
-      },
-      "&:hover fieldset": {
-        borderColor: "#675DD8",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "#675DD8",
-      },
-      "& .MuiSelect-icon": {
-        color: "#72778F",
-      },
-      "& .MuiSelect-select.MuiSelect-select": {
-        color: "#72778F !important",
-      },
-    },
-  });
-
   return (
     <div className="create-invoice">
       <div className="create-invoice-left">
@@ -112,6 +84,7 @@ const Create = () => {
               <CustomTextField
                 sx={{
                   width: "200px",
+                  color: "white",
                 }}
                 id="outlined-basic"
                 variant="outlined"
@@ -176,7 +149,7 @@ const Create = () => {
         <hr />
         <div className="create-invoice-invoice-to-wrapper">
           <div className="create-invoice-invoice-to">
-            <FormControl variant="filled" sx={{ m: 1, minWidth: 250 }}>
+            {/* <FormControl variant="filled" sx={{ m: 1, minWidth: 250 }}>
               <InputLabel id="demo-simple-select-filled-label"></InputLabel>
               <CustomSelect
                 labelId="demo-simple-select-filled-label"
@@ -188,19 +161,41 @@ const Create = () => {
                 <CustomMenuItem value={20}>Shwetabh Gangwar</CustomMenuItem>
                 <CustomMenuItem value={30}>Doland Trump</CustomMenuItem>
               </CustomSelect>
-            </FormControl>
+            </FormControl> */}
+            {/* <CustomSelectComp setSelection={setSelection}   /> */}
+            {/* <div style={{width:'200px'}}> */}
+            <Select
+              options={options}
+              // defaultValue={currentSelection}
+              placeholder="Invoice To"
+              value={currentSelection}
+              onChange={handleChangeSelect}
+              isSearchable
+              styles={{
+                container: (baseStyles) => ({
+                  ...baseStyles,
+                  width: "200px",
+                  backgroundColor: "#2F3349",
+                }),
+                menu: (baseStyles) => ({
+                  ...baseStyles,
+                  backgroundColor: "#2F3349",
+                }),
+              }}
+            />
+            {/* </div> */}
             <div>
-              {age == "10" ? (
+              {currentSelection == 1 ? (
                 <div className="invoice-to-details">
                   Jordan Stevenson Hall-Robbins PLC 7777 Mendez Plains, USA
                   (616) 865-4180 don85@johnson.com
                 </div>
-              ) : age == "20" ? (
+              ) : currentSelection == 2 ? (
                 <div className="invoice-to-details">
                   Shwetabh Bhaiya Hall-Robbins PLC 7777 Mendez Plains, USA (616)
                   865-4180 don85@johnson.com
                 </div>
-              ) : age == "30" ? (
+              ) : currentSelection == 3 ? (
                 <div className="invoice-to-details">
                   Doland Trump is a stupid guy and Hall-Robbins PLC 7777 Mendez
                   Plains, USA (616) 865-4180 don85@johnson.com
@@ -220,45 +215,46 @@ const Create = () => {
         <div className="invoice-items-info-wrapper">
           <div>
             <div className="invoice-items-info-container">
-              <div>
+              <div className="invoice-items-info-container-first">
                 <div>
-                  <FormControl variant="filled" sx={{ m: 1, minWidth: 250 }}>
-                    <InputLabel id="demo-simple-select-filled-label"></InputLabel>
-                    <CustomSelect
-                      labelId="demo-simple-select-filled-label"
-                      id="demo-simple-select-filled"
-                      // value={age}
-                      // onChange={handleChange}
-                    >
-                      <CustomMenuItem value={10}>
-                        Jordan Peterson
-                      </CustomMenuItem>
-                      <CustomMenuItem value={20}>
-                        Shwetabh Gangwar
-                      </CustomMenuItem>
-                      <CustomMenuItem value={30}>Doland Trump</CustomMenuItem>
-                    </CustomSelect>
-                  </FormControl>
+                  <Select
+                    options={options}
+                    defaultValue={currentSelection}
+                    placeholder="Invoice To"
+                    // onChange={setSelection}
+                    isSearchable
+                    styles={{
+                      container: (baseStyles) => ({
+                        ...baseStyles,
+                        width: "200px",
+                        backgroundColor: "#2F3349",
+                      }),
+                      menu: (baseStyles) => ({
+                        ...baseStyles,
+                        backgroundColor: "#2F3349",
+                      }),
+                    }}
+                  />
                 </div>
-                {/* <div> */}
-                <CssTextField
-                  label="Description"
-                  id="custom-css-outlined-input"
-                />
-                {/* </div> */}
+                <div>
+                  <CssTextField
+                    label="Description"
+                    id="custom-css-outlined-input"
+                  />
+                </div>
               </div>
               <div>
-                <div>
+                <div className="invoice-items-infro-container-inputdivs">
                   <p>Cost1</p>
                   <input type="number" min="1" />
                 </div>
-                <div>
+                <div className="invoice-items-infro-container-inputdivs ">
                   <p>Cost2</p>
                   <input type="number" min="1" />
                 </div>
               </div>
               <div>
-                <div>
+                <div className="invoice-items-infro-container-inputdivs ">
                   <p>Qty</p>
                   <input type="number" min="1" />
                 </div>
@@ -269,6 +265,7 @@ const Create = () => {
                 </div>
               </div>
             </div>
+                    <div className="add-button">Add</div>
           </div>
         </div>
       </div>
