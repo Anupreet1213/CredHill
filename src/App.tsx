@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './pages/LandingPage';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
 // import Dashboard from './pages/Dashboard';
-import { lazy, Suspense } from 'react';
-import ThemeProvider from './contexts/ThemeContext';
+import { lazy, Suspense } from "react";
+import ThemeProvider from "./contexts/ThemeContext";
 
-const DashboardPage = lazy(() => import('./pages/DashboardPage'));
+const DashboardPage = lazy(() => import("./pages/DashboardPage"));
 const App = () => {
   return (
     <ThemeProvider>

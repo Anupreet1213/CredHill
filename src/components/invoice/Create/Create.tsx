@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import { TextField } from "@mui/material";
 import InsightsIcon from "@mui/icons-material/Insights";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import React from "react";
 import { styled } from "@mui/material/styles";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -14,7 +14,9 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 const Create = () => {
   const [age, setAge] = React.useState("0");
 
-  const handleChange = (event: SelectChangeEvent<any>) => {
+  const handleChange = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setAge(event.target.value);
   };
 
