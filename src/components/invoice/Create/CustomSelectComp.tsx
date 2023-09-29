@@ -6,11 +6,16 @@ import { styled } from "@mui/system";
 import UnfoldMoreRoundedIcon from "@mui/icons-material/UnfoldMoreRounded";
 import "./CustomSelectComp.css";
 
-export default function CustomSelectComp() {
+interface customSelectComponentProp {
+  setSelection: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const CustomSelectComp: React.FC<customSelectComponentProp> = ({ setSelection }) => {
   const [selectValue, setSelectValue] = React.useState<string>("");
 
   const handleClick = (value: string) => {
     setSelectValue(value);
+    setSelection(value);
   };
 
   React.useEffect(() => {
@@ -18,13 +23,13 @@ export default function CustomSelectComp() {
   }, [selectValue]);
   return (
     <CustomSelect defaultValue={10}>
-      <StyledOption value={10} onClick={() => handleClick("MS Dhoni")}>
+      <StyledOption value={10} onClick={() => handleClick("M")}>
         MS Dhoni
       </StyledOption>
-      <StyledOption value={20} onClick={() => handleClick("Shwetabh Bhaiya")}>
+      <StyledOption value={20} onClick={() => handleClick("S")}>
         Shwetabh Bhaiya
       </StyledOption>
-      <StyledOption value={30} onClick={() => handleClick("Doland Biden")}>
+      <StyledOption value={30} onClick={() => handleClick("D")}>
         Doland Biden
       </StyledOption>
     </CustomSelect>
@@ -151,3 +156,4 @@ const StyledOption = styled(Option)(
 const StyledPopper = styled(Popper)`
   z-index: 1;
 `;
+export default CustomSelectComp;
