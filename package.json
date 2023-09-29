@@ -12,10 +12,12 @@
     "coverage": "yarn test --coverage --watchAll --collectCoverageFrom='src/components/**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "@emotion/styled": "^11.11.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
+    "@mui/styled-engine": "^5.14.11",
     "@mui/styles": "^5.14.11",
     "@mui/x-date-pickers": "^6.15.0",
     "@testing-library/jest-dom": "^6.1.3",
