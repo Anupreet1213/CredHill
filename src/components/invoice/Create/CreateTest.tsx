@@ -8,6 +8,10 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 // import Select from "react-select";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 const CustomTextField = styled(TextField)({
   "& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
@@ -23,7 +27,7 @@ const CustomTextField = styled(TextField)({
 
 const CreateTest = () => {
   const [itemDetails, setItemDetails] = useState([
-    { id: 1, name: "", cost: 0, quantity: 0, price: 0 },
+    { id: 1, name: "", cost: 0, quantity: 0, price: 0, description: "" },
   ]);
 
   const handleItemChange = (index: number, key: string, value: string) => {
@@ -42,7 +46,14 @@ const CreateTest = () => {
   const addItem = () => {
     setItemDetails((prevItems) => [
       ...prevItems,
-      { id: prevItems.length + 1, name: "", cost: 0, quantity: 0, price: 0 },
+      {
+        id: prevItems.length + 1,
+        name: "",
+        cost: 0,
+        quantity: 0,
+        price: 0,
+        description: "",
+      },
     ]);
   };
 
@@ -52,6 +63,12 @@ const CreateTest = () => {
       newItems.splice(index, 1);
       return newItems;
     });
+  };
+
+  const [age, setAge] = useState("");
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value as string);
   };
 
   const [billedTo] = useState(
@@ -207,17 +224,60 @@ const CreateTest = () => {
                         <label className="invoice_create_label">
                           Select Item
                         </label>
-                        <select
+                        {/* <select
                           className="invoice_create_select_1"
                           onChange={(e) =>
                             handleItemChange(index, "name", e.target.value)
                           }
                         >
-                          <option value="Option1">Option 1</option>
-                          <option value="Option2">Option 2</option>
-                          <option value="Option3">Option 3</option>
-                          <option value="Option4">Option 4</option>
-                        </select>
+                          <option className="create-options" value="Option1">Option 1</option>
+                          <option className="create-options" value="Option2">Option 2</option>
+                          <option className="create-options" value="Option3">Option 3</option>
+                          <option className="create-options" value="Option4">Option 4</option>
+                        </select> */}
+                        <FormControl fullWidth>
+                          <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={age}
+                            onChange={handleChange}
+                            sx={{
+                              width:"80%",
+                              borderColor:"rgba(208, 212, 241, 0.68)",
+                              color:"rgba(208, 212, 241, 0.68)",
+                              '& .MuiSvgIcon-root':{
+                                  fill:"rgba(208, 212, 241, 0.68)",
+                              },
+                              '.MuiOutlinedInput-notchedOutline': {
+                                borderColor: 'rgba(228, 219, 233, 0.25)',
+                              },
+                              '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                borderColor: '#675CD8',
+                                borderWidth: "2px"
+                              },
+                              '&:hover .MuiOutlinedInput-notchedOutline': {
+                                borderColor: 'rgba(228, 219, 233, 0.45)',
+                              },
+                            }}
+                            MenuProps={{
+                              PaperProps: {
+                                sx: {
+                                  color:"rgba(208, 212, 241, 0.68)",
+                                  bgcolor: '#2F3349',
+                                  '& .MuiMenuItem-root': {
+                                    padding: 2,
+                                  },
+                                },
+                              },
+                            }}
+                          >
+                            <MenuItem 
+                           
+                            value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                          </Select>
+                        </FormControl>
                       </div>
                       <div>
                         <label
@@ -226,7 +286,15 @@ const CreateTest = () => {
                         >
                           Description
                         </label>
-                        <TextField />
+                        <TextField
+                          onChange={(e) =>
+                            handleItemChange(
+                              index,
+                              "description",
+                              e.target.value
+                            )
+                          }
+                        />
                       </div>
                     </div>
                     <div className="invoice_create_lt_child2_1_gchild2">
