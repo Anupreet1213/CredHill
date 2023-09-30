@@ -9,10 +9,9 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 // import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 const CustomTextField = styled(TextField)({
   "& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
     borderColor: "#43475E",
@@ -65,10 +64,18 @@ const CreateTest = () => {
     });
   };
 
-  const [age, setAge] = useState("");
+  // const combinedHandleChange = (event:SelectChangeEvent,index:number, key: string, value: string) => {
+  //   handleChange(event);
+  //   handleItemChange(index,key,value);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+  // };
+
+  const [age, setAge] = useState(["0"]);
+
+  const handleChange = (event: SelectChangeEvent, index: number) => {
+    const newAge = [...age];
+    newAge[index] = event.target.value;
+    setAge(newAge);
   };
 
   const [billedTo] = useState(
@@ -239,41 +246,43 @@ const CreateTest = () => {
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={age}
-                            onChange={handleChange}
+                            value={age[index]}
+                            onChange={(e) => {
+                              handleChange(e, index);
+                              handleItemChange(index, "name", e.target.value);
+                            }}
                             sx={{
-                              width:"80%",
-                              borderColor:"rgba(208, 212, 241, 0.68)",
-                              color:"rgba(208, 212, 241, 0.68)",
-                              '& .MuiSvgIcon-root':{
-                                  fill:"rgba(208, 212, 241, 0.68)",
+                              width: "80%",
+                              borderColor: "rgba(208, 212, 241, 0.68)",
+                              color: "rgba(208, 212, 241, 0.68)",
+                              "& .MuiSvgIcon-root": {
+                                fill: "rgba(208, 212, 241, 0.68)",
                               },
-                              '.MuiOutlinedInput-notchedOutline': {
-                                borderColor: 'rgba(228, 219, 233, 0.25)',
+                              ".MuiOutlinedInput-notchedOutline": {
+                                borderColor: "rgba(228, 219, 233, 0.25)",
                               },
-                              '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#675CD8',
-                                borderWidth: "2px"
-                              },
-                              '&:hover .MuiOutlinedInput-notchedOutline': {
-                                borderColor: 'rgba(228, 219, 233, 0.45)',
+                              "&.Mui-focused .MuiOutlinedInput-notchedOutline":
+                                {
+                                  borderColor: "#675CD8",
+                                  borderWidth: "2px",
+                                },
+                              "&:hover .MuiOutlinedInput-notchedOutline": {
+                                borderColor: "rgba(228, 219, 233, 0.45)",
                               },
                             }}
                             MenuProps={{
                               PaperProps: {
                                 sx: {
-                                  color:"rgba(208, 212, 241, 0.68)",
-                                  bgcolor: '#2F3349',
-                                  '& .MuiMenuItem-root': {
+                                  color: "rgba(208, 212, 241, 0.68)",
+                                  bgcolor: "#2F3349",
+                                  "& .MuiMenuItem-root": {
                                     padding: 2,
                                   },
                                 },
                               },
                             }}
                           >
-                            <MenuItem 
-                           
-                            value={10}>Ten</MenuItem>
+                            <MenuItem value={10}>Ten</MenuItem>
                             <MenuItem value={20}>Twenty</MenuItem>
                             <MenuItem value={30}>Thirty</MenuItem>
                           </Select>
