@@ -351,7 +351,13 @@ const CreateTest = () => {
       <div
         className="invoice_create_child_right"
         style={{ marginBottom: "1.5rem" }}
-      ></div>
+      >
+        <div className="invoice_create_child_right_1">
+          <div>Send Invoice</div>
+          <div>Preview</div>
+          <div>Save</div>
+        </div>
+      </div>
     </div>
   );
 };

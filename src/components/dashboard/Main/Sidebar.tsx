@@ -10,6 +10,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DescriptionIcon from "@mui/icons-material/Description";
 import Person2Icon from "@mui/icons-material/Person2";
+import logo from "./naya.png"
 // import LinearScaleIcon from '@mui/icons-material/LinearScale';
 
 interface SidebarProps {
@@ -92,8 +93,9 @@ const Sidebar: React.FC<SidebarProps> = ({
     >
       <div className={open ? "sidebar_header" : "sidebar_header_close"}>
         <div className={open ? "drawer_header" : "drawer_header_close"}>
-          <InsightsIcon />
-          {open ? <h3>Invoicer</h3> : <></>}
+          {/* <InsightsIcon /> */}
+          {open ? <img style={{width:"120px",marginLeft:""}} src={logo} /> : <></>}
+
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
