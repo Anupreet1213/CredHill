@@ -1,6 +1,9 @@
+
+
 .invoice_create {
   display: flex;
   flex-wrap: wrap;
+  font-family: 'Public Sans', sans-serif;
 }
 
 .invoice_create_child_left {
@@ -197,6 +200,24 @@
 } */
 
 
+
+.invoice_create_lt_child3{
+  border-radius: 5px;
+  margin-top: 2%;
+  font-weight: 500;
+  background-color: #7367F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:8rem;
+  color:white;
+  padding:1%;
+
+}
+.invoice_create_lt_child3:hover{
+  background-color: #6d5ef7;
+}
+
 @media (min-width: 600px) {
   .invoice_create_left_first {
     flex-direction: row;
@@ -220,8 +241,13 @@
   }
   .invoice_create_lt_child3 {
     margin: 16px;
+
   }
 }
+
+
+
+
 
 @media (min-width: 960px) {
   .invoice_create_child_left {
