@@ -12,6 +12,10 @@ import CloseIcon from "@mui/icons-material/Close";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
 const CustomTextField = styled(TextField)({
   "& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
     borderColor: "#43475E",
@@ -22,6 +26,18 @@ const CustomTextField = styled(TextField)({
   // "&.custom-classes": {
   //   height: "100%",
   // },
+});
+
+const LeftArrowIcon = styled(ArrowBackIosIcon)({
+  color: "#7C8199",
+  fontSize: "1rem",
+});
+const RightArrowIcon = styled(ArrowForwardIosIcon)({
+  color: "#7C8199",
+  fontSize: "1rem",
+});
+const SwitchViewIcon = styled(KeyboardArrowDownIcon)({
+  color: "#7C8199",
 });
 
 const CreateTest = () => {
@@ -153,6 +169,9 @@ const CreateTest = () => {
                       "& fieldset": {
                         borderColor: "#7C8199",
                       },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#7367F0",
+                      },
                       "& input": {
                         color: "#7C8199",
                       },
@@ -169,10 +188,11 @@ const CreateTest = () => {
                           color: "white",
                         },
                         "& .MuiTypography-root": {
-                          color: "white", // Change the text color here
+                          color: "white",
                         },
                         "& .MuiPickersDay-dayWithMargin": {
                           color: "rgb(229,228,226)",
+                          borderColor: "#7367F0 !important",
                           // backgroundColor: "rgba(50, 136, 153)",
                         },
                         "& .Mui-selected": {
@@ -180,6 +200,12 @@ const CreateTest = () => {
                         },
                       },
                     },
+                  }}
+                  slots={{
+                    // openPickerIcon: OpenPickerIcon,
+                    leftArrowIcon: LeftArrowIcon,
+                    rightArrowIcon: RightArrowIcon,
+                    switchViewIcon: SwitchViewIcon,
                   }}
                 />
               </LocalizationProvider>
