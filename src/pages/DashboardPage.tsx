@@ -8,6 +8,7 @@ import { useTheme } from "../contexts/ThemeContext";
 // import Create from "../components/invoice/Create/Create";
 import List from "../components/invoice/List/List";
 import CreateTest from "../components/invoice/Create/CreateTest";
+// import { Outlet } from "react-router-dom";
 
 const DashboardPage: React.FC = () => {
   // Tells whether sidebar is open or close on desktop
@@ -73,7 +74,9 @@ const DashboardPage: React.FC = () => {
         ) : rightComponent == 1 ? (
           <div>heeelu</div>
         ) : rightComponent == 2 ? (
-          <CreateTest />
+          <>
+            <CreateTest />
+          </>
         ) : (
           <List />
         )}

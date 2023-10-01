@@ -4,14 +4,13 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import HomeIcon from "@mui/icons-material/Home";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-// import InsightsIcon from "@mui/icons-material/Insights";
 import FiberManualRecordOutlinedIcon from "@mui/icons-material/FiberManualRecordOutlined";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DescriptionIcon from "@mui/icons-material/Description";
 import Person2Icon from "@mui/icons-material/Person2";
 import logo from "./naya.png"
-// import LinearScaleIcon from '@mui/icons-material/LinearScale';
+import { useNavigate } from "react-router-dom";
 
 interface SidebarProps {
   open: boolean;
@@ -70,16 +69,24 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const handleRightComponent = (): void => {
     setRightComponent(0);
+    navigate('/dashboard');
+
   };
   const handleRightComponent2 = (): void => {
     setRightComponent(1);
   };
   const handleRightComponent3 = (): void => {
     setRightComponent(2);
+    navigate('/dashboard/create-invoice');
   };
   const handleRightComponent4 = (): void => {
     setRightComponent(3);
+    navigate('/dashboard/invoice-list');
   };
+
+  const navigate = useNavigate();
+
+
 
   const { isDarkMode } = useTheme();
 
@@ -123,6 +130,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
       <div className={open ? "sidebar_dashboard" : "sidebar_dashboard_close"}>
         <div
+        
           className={
             open
               ? rightComponent == 0
@@ -229,7 +237,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 onClick={handleRightComponent3}
               >
                 <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
-                {open ? <span>Create</span> : <></>}
+                {open ? <span >Create</span> : <></>}
               </li>
               <li
                 className={

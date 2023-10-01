@@ -4,6 +4,8 @@ import LandingPage from "./pages/LandingPage";
 import { lazy, Suspense } from "react";
 import ThemeProvider from "./contexts/ThemeContext";
 import "./styles.css";
+import CreateTest from "./components/invoice/Create/CreateTest";
+import List from "./components/invoice/List/List";
 
 const DashboardPage = lazy(() => import("./pages/DashboardPage"));
 const App = () => {
@@ -19,7 +21,10 @@ const App = () => {
         >
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard" element={<DashboardPage />}>
+              <Route path="create-invoice" element={<CreateTest />}></Route>
+              <Route path="invoice-list" element={<List />}></Route>
+            </Route>
           </Routes>
         </Suspense>
       </Router>
