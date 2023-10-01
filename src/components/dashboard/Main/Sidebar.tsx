@@ -76,11 +76,9 @@ const Sidebar: React.FC<SidebarProps> = ({
   };
   const handleRightComponent3 = (): void => {
     setRightComponent(2);
-    navigate("/dashboard/create-invoice");
   };
   const handleRightComponent4 = (): void => {
     setRightComponent(3);
-    navigate("/dashboard/invoice-list");
   };
   const handleRightComponent5 = (): void => {
     setRightComponent(4);
