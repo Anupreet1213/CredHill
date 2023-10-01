@@ -6,6 +6,8 @@
 
 .preview_left {
   padding: 0.75rem;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .preview_left_child {
@@ -88,6 +90,7 @@
   line-height: 1.5;
   max-width: 100%;
   --v-table-row-height: 44px;
+  overflow: auto;
 }
 
 .preview_th_tr1,
