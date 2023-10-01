@@ -286,9 +286,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding:8%;
+  /* padding:8%; */
 }
 .invoice_create_child_right1 div{
   display: flex;
-  padding:5%;
+  padding:6%;
 }
