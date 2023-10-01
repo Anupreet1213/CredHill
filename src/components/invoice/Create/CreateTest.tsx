@@ -6,7 +6,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 // import Select from "react-select";
-import { useState } from "react";
+import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 // import InputLabel from '@mui/material/InputLabel';
 import MenuItem from "@mui/material/MenuItem";
@@ -15,6 +15,29 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
+interface CreateProps {
+  itemDetails: {
+    id: number;
+    name: string;
+    cost: number;
+    quantity: number;
+    price: number;
+    description: string;
+  }[];
+  setItemDetails: React.Dispatch<
+    React.SetStateAction<
+      {
+        id: number;
+        name: string;
+        cost: number;
+        quantity: number;
+        price: number;
+        description: string;
+      }[]
+    >
+  >;
+}
 
 const CustomTextField = styled(TextField)({
   "& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
@@ -40,11 +63,7 @@ const SwitchViewIcon = styled(KeyboardArrowDownIcon)({
   color: "#7C8199",
 });
 
-const CreateTest = () => {
-  const [itemDetails, setItemDetails] = useState([
-    { id: 1, name: "", cost: 0, quantity: 0, price: 0, description: "" },
-  ]);
-
+const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
   const handleItemChange = (index: number, key: string, value: string) => {
     setItemDetails((prevItems) => {
       const newItems = [...prevItems];
@@ -340,6 +359,7 @@ const CreateTest = () => {
                           onChange={(e) =>
                             handleItemChange(index, "cost", e.target.value)
                           }
+                          value={itemDetails}
                         />
                       </div>
                       <div>

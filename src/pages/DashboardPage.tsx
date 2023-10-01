@@ -8,6 +8,7 @@ import { useTheme } from "../contexts/ThemeContext";
 // import Create from "../components/invoice/Create/Create";
 import List from "../components/invoice/List/List";
 import CreateTest from "../components/invoice/Create/CreateTest";
+import Preview from "../components/invoice/Preview/Preview";
 
 const DashboardPage: React.FC = () => {
   // Tells whether sidebar is open or close on desktop
@@ -24,6 +25,10 @@ const DashboardPage: React.FC = () => {
 
   //Sidebar open toggle for mobile
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const [itemDetails, setItemDetails] = useState([
+    { id: 1, name: "", cost: 0, quantity: 0, price: 0, description: "" },
+  ]);
 
   const { isDarkMode } = useTheme();
 
@@ -73,9 +78,14 @@ const DashboardPage: React.FC = () => {
         ) : rightComponent == 1 ? (
           <div>heeelu</div>
         ) : rightComponent == 2 ? (
-          <CreateTest />
-        ) : (
+          <CreateTest
+            itemDetails={itemDetails}
+            setItemDetails={setItemDetails}
+          />
+        ) : rightComponent == 3 ? (
           <List />
+        ) : (
+          <Preview itemDetails={itemDetails} />
         )}
       </div>
     </div>

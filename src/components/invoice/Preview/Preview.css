@@ -1,0 +1,132 @@
+.preview-main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -12px;
+}
+
+.preview_left {
+  padding: 0.75rem;
+}
+
+.preview_left_child {
+  box-shadow: 0 4px 18px rgba(15, 20, 34, 0.1), 0 0 transparent, 0 0 transparent;
+  background-color: rgb(47, 51, 73);
+  color: rgba(208, 212, 241, 0.68);
+  overflow: hidden;
+  overflow-wrap: break-word;
+  position: relative;
+  text-decoration: none;
+  border-color: rgba(208, 212, 241, 0.16);
+  border-style: solid;
+  border-width: 0;
+  border-radius: 6px;
+}
+
+.preview_left_child_1 {
+  line-height: 1.5;
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  text-transform: none;
+  row-gap: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* .preview_left_child_1_2_child1 {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  text-transform: none;
+  color: rgba(208, 212, 241, 0.78);
+} */
+
+.preview_left_child_1_1 {
+  max-width: 30%;
+}
+
+.preview_left_child_1_2_1 {
+  font-size: 1.37rem;
+  line-height: 1.87rem;
+  text-transform: none;
+  color: rgba(208, 212, 241, 0.78);
+}
+
+/* .preview_left_child_1_2{
+
+} */
+
+.preview_hr {
+  opacity: 0.16;
+  border-style: solid;
+  border-width: thin 0 0 0;
+}
+
+.preview_left_child_2 {
+  line-height: 1.5;
+  font-size: 0.93rem;
+  padding: 1.5rem;
+  text-transform: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.preview_left_child_2_1_heading {
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: rgba(208, 212, 241, 0.78);
+}
+
+.preview_left_child_2_1 {
+  max-width: 30%;
+}
+
+.preview_left_child_3 {
+  line-height: 1.5;
+  max-width: 100%;
+  --v-table-row-height: 44px;
+}
+
+.preview_th_tr1,
+.preview_th_tr2,
+.preview_th_tr3,
+.preview_th_tr4,
+.preview_th_tr5 {
+  height: 3rem;
+  font-weight: 500;
+  user-select: none;
+  text-align: start;
+  padding: 0 16px;
+  border-bottom: thin solid rgba(208, 212, 241, 0.16);
+  color: rgba(208, 212, 241, 0.78);
+  font-size: 0.81rem;
+  letter-spacing: 0.06rem;
+}
+
+@media (min-width: 960px) {
+  .preview_left {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 600px) {
+  .preview_left_child_1 {
+    flex-direction: row;
+  }
+  .preview_left_child_1_1 {
+    margin: 16px;
+  }
+  .preview_left_child_1_2 {
+    margin: 16px;
+  }
+  .preview_left_child_2 {
+    flex-direction: row;
+  }
+  .preview_left_child_2_1 {
+    margin: 16px;
+  }
+}

@@ -79,6 +79,9 @@ const Sidebar: React.FC<SidebarProps> = ({
   const handleRightComponent4 = (): void => {
     setRightComponent(3);
   };
+  const handleRightComponent5 = (): void => {
+    setRightComponent(4);
+  };
 
   const { isDarkMode } = useTheme();
 
@@ -93,7 +96,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       <div className={open ? "sidebar_header" : "sidebar_header_close"}>
         <div className={open ? "drawer_header" : "drawer_header_close"}>
           <InsightsIcon />
-          {open ? <h3>Invoicer</h3> : <></>}
+          {open ? <h3>Adest</h3> : <></>}
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -248,9 +251,10 @@ const Sidebar: React.FC<SidebarProps> = ({
                     ? "sidebar_dashboard_child_open"
                     : "sidebar_dashboard_child_close"
                 }
+                onClick={handleRightComponent5}
               >
                 <FiberManualRecordOutlinedIcon style={{ fontSize: "1rem" }} />
-                {open ? <span>Invoice S.</span> : <></>}
+                {open ? <span>Preview</span> : <></>}
               </li>
             </ul>
           </div>
