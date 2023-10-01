@@ -1,7 +1,9 @@
 import { TextField } from "@mui/material";
 import { styled } from "@mui/styles";
 import "./CreateTest.css";
-import InsightsIcon from "@mui/icons-material/Insights";
+// import InsightsIcon from "@mui/icons-material/Insights";
+import logo from "./naya.png";
+
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -46,9 +48,6 @@ const CustomTextField = styled(TextField)({
   "& .Mui-disabled input": {
     WebkitTextFillColor: "#646880",
   },
-  // "&.custom-classes": {
-  //   height: "100%",
-  // },
 });
 
 const LeftArrowIcon = styled(ArrowBackIosIcon)({
@@ -77,6 +76,7 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
     console.log(itemDetails);
   };
 
+  
   const addItem = () => {
     setItemDetails((prevItems) => [
       ...prevItems,
@@ -98,6 +98,15 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
       return newItems;
     });
   };
+
+  const [invoiceToValue,setInvoiceToValue] = useState('');
+  const handleInvoiceTo = (e: SelectChangeEvent)=>{
+    setInvoiceToValue(e.target.value);
+    console.log(invoiceToValue);
+    
+  }
+
+
 
   // const combinedHandleChange = (event:SelectChangeEvent,index:number, key: string, value: string) => {
   //   handleChange(event);
@@ -129,9 +138,10 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                 marginBottom: "1.5rem",
               }}
             >
-              <InsightsIcon
+              {/* <InsightsIcon
                 style={{ marginInlineEnd: "12px", color: "rgb(115, 103, 240)" }}
-              />
+              /> */}
+              <img style={{ width: "130px", marginLeft: "" }} src={logo} />
               <h3
                 style={{
                   fontWeight: "700",
@@ -139,7 +149,7 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                   lineHeight: "1.875rem",
                 }}
               >
-                Invoicer
+                {/* CredHill */}
               </h3>
             </div>
             <p style={{ fontSize: "1rem", lineHeight: "1.7rem" }}>
@@ -151,39 +161,35 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
             <div className="invoice_create_lf_2_child1">
               <span
                 style={{
-                  inlineSize: "6rem",
+                  // inlineSize: "6rem",
                   fontSize: "1.375rem",
                   fontWeight: "500",
                   lineHeight: "1.875rem",
-                  textTransform: "none",
-                  marginInlineEnd: "12px",
+                  // textTransform: "none",
+                  // marginInlineEnd: "12px",
                 }}
               >
                 Invoice
               </span>
-              <CustomTextField
-                id="outlined-basic"
-                variant="outlined"
-                disabled
-                value={"# 5036"}
-              />
+              <CustomTextField disabled value={"#001"} />
             </div>
             <div className="invoice_create_lf_2_child1">
               <span
                 style={{
-                  inlineSize: "6rem",
-                  fontSize: "1.375rem",
+                  // inlineSize: "6rem",
+                  fontSize: "1rem",
                   fontWeight: "500",
                   lineHeight: "1.875rem",
-                  textTransform: "none",
-                  marginInlineEnd: "12px",
+                  // textTransform: "none",
+                  // marginInlineEnd: "12px",
                 }}
               >
-                Invoice
+                Date Issued
               </span>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
                   sx={{
+                    width: "62%",
                     "& .MuiInputBase-root.MuiOutlinedInput-root": {
                       "& fieldset": {
                         borderColor: "#7C8199",
@@ -229,24 +235,127 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                 />
               </LocalizationProvider>
             </div>
+            <div className="invoice_create_lf_2_child1">
+              <span
+                style={{
+                  // inlineSize: "6rem",
+                  fontSize: "1rem",
+                  fontWeight: "500",
+                  lineHeight: "1.875rem",
+                  // textTransform: "none",
+                  // marginInlineEnd: "12px",
+                }}
+              >
+                Approval ID
+              </span>
+              <TextField
+                sx={{
+                  "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#7C8199",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#7367F0",
+                    },
+                    "& input": {
+                      color: "#7C8199",
+                    },
+                    "& .MuiSvgIcon-root": {
+                      color: "#7C8199",
+                    },
+                  },
+                }}
+              />
+            </div>
+            <div className="invoice_create_lf_2_child1">
+              <span
+                style={{
+                  // inlineSize: "6rem",
+                  fontSize: "1rem",
+                  fontWeight: "500",
+                  lineHeight: "1.875rem",
+                  // textTransform: "none",
+                  // marginInlineEnd: "12px",
+                }}
+              >
+                Order Reffered By
+              </span>
+              <TextField
+                sx={{
+                  "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#7C8199",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#7367F0",
+                    },
+                    "& input": {
+                      color: "#7C8199",
+                    },
+                    "& .MuiSvgIcon-root": {
+                      color: "#7C8199",
+                    },
+                  },
+                }}
+              />
+            </div>
           </div>
         </div>
         <hr className="invoice_create_hr1" />
         <div className="invoice_create_left_second">
           <div className="invoice_create_ls_1">
             <h4 className="invoice_create_ls_1_heading">Invoice To:</h4>
-            <select className="invoice_create_select_1">
+            {/* <select className="invoice_create_select_1">
               <option value="create_option">Option 1</option>
               <option value="create_option">Option 2</option>
-            </select>
+            </select> */}
+            <FormControl fullWidth>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={invoiceToValue}
+                onChange={handleInvoiceTo}
+                sx={{
+                  marginBottom:"20px",
+                  width: "100%",
+                  borderColor: "rgba(208, 212, 241, 0.68)",
+                  color: "rgba(208, 212, 241, 0.68)",
+                  "& .MuiSvgIcon-root": {
+                    fill: "rgba(208, 212, 241, 0.68)",
+                  },
+                  ".MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(228, 219, 233, 0.25)",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#675CD8",
+                    borderWidth: "2px",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "rgba(228, 219, 233, 0.45)",
+                  },
+                }}
+                MenuProps={{
+                  PaperProps: {
+                    sx: {
+                      color: "rgba(208, 212, 241, 0.68)",
+                      bgcolor: "#2F3349",
+                      "& .MuiMenuItem-root": {
+                        padding: 2,
+                      },
+                    },
+                  },
+                }}
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
             <p>{billedTo}</p>
           </div>
           <div className="invoice_create_ls_1">
-            <h4 className="invoice_create_ls_1_heading">Invoice To:</h4>
-            <select className="invoice_create_select_1">
-              <option value="create_option">Option 1</option>
-              <option value="create_option">Option 2</option>
-            </select>
+            <h4 className="invoice_create_ls_1_heading">CLient Details</h4>
+
             <p>{billedTo}</p>
           </div>
         </div>
@@ -330,6 +439,22 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                           Description
                         </label>
                         <TextField
+                         sx={{
+                  "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#7C8199",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#7367F0",
+                    },
+                    "& input": {
+                      color: "#7C8199",
+                    },
+                    "& .MuiSvgIcon-root": {
+                      color: "#7C8199",
+                    },
+                  },
+                }}
                           onChange={(e) =>
                             handleItemChange(
                               index,
@@ -349,11 +474,44 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                             handleItemChange(index, "cost", e.target.value)
                           }
                           value={itemDetails[index].cost}
+                          sx={{
+                            "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                              "& fieldset": {
+                                borderColor: "#7C8199",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#7367F0",
+                              },
+                              "& input": {
+                                color: "#7C8199",
+                              },
+                              "& .MuiSvgIcon-root": {
+                                color: "#7C8199",
+                              },
+                            },
+                          }}
                         />
                       </div>
                       <div>
                         <label className="invoice_create_label">Discount</label>
-                        <TextField type="number" />
+                        <TextField 
+                         sx={{
+                          "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                            "& fieldset": {
+                              borderColor: "#7C8199",
+                            },
+                            "&.Mui-focused fieldset": {
+                              borderColor: "#7367F0",
+                            },
+                            "& input": {
+                              color: "#7C8199",
+                            },
+                            "& .MuiSvgIcon-root": {
+                              color: "#7C8199",
+                            },
+                          },
+                        }}
+                        type="number" />
                       </div>
                     </div>
                     <div className="invoice_create_lt_child2_1_gchild3">
@@ -365,6 +523,22 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                             handleItemChange(index, "quantity", e.target.value)
                           }
                           value={itemDetails[index].quantity}
+                          sx={{
+                            "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                              "& fieldset": {
+                                borderColor: "#7C8199",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#7367F0",
+                              },
+                              "& input": {
+                                color: "#7C8199",
+                              },
+                              "& .MuiSvgIcon-root": {
+                                color: "#7C8199",
+                              },
+                            },
+                          }}
                         />
                       </div>
                     </div>
@@ -389,9 +563,9 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
         style={{ marginBottom: "1.5rem" }}
       >
         <div className="invoice_create_child_right_1">
-          <div>Send Invoice</div>
+          {/* <div>Send Invoice</div>
           <div>Preview</div>
-          <div>Save</div>
+          <div>Save</div> */}
         </div>
       </div>
     </div>
