@@ -10,7 +10,6 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DescriptionIcon from "@mui/icons-material/Description";
 import Person2Icon from "@mui/icons-material/Person2";
 import logo from "./naya.png";
-import { useNavigate } from "react-router-dom";
 
 interface SidebarProps {
   open: boolean;
@@ -69,7 +68,6 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const handleRightComponent = (): void => {
     setRightComponent(0);
-    navigate("/dashboard");
   };
   const handleRightComponent2 = (): void => {
     setRightComponent(1);
@@ -83,8 +81,6 @@ const Sidebar: React.FC<SidebarProps> = ({
   const handleRightComponent5 = (): void => {
     setRightComponent(4);
   };
-
-  const navigate = useNavigate();
 
   const { isDarkMode } = useTheme();
 
