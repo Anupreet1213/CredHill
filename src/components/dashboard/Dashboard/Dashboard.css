@@ -274,7 +274,7 @@
 }
 .dashboard_QOD_heading{
     padding: 8% 6% 4% 6%;
-    background-color: #222a43;
+    /* background-color: #222a43; */
     color: #3FFFFF;
     position: sticky;
     top:0;
