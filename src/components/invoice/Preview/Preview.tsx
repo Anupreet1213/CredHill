@@ -1,6 +1,8 @@
 import "./Preview.css";
 import InsightsIcon from "@mui/icons-material/Insights";
 import PreviewEachItem from "./PreviewEachItem";
+import { useReactToPrint } from "react-to-print";
+import { useRef } from "react";
 
 interface PreviewProps {
   itemDetails: {
@@ -14,10 +16,15 @@ interface PreviewProps {
 }
 
 const Preview: React.FC<PreviewProps> = ({ itemDetails }) => {
+  const componentRef = useRef<HTMLDivElement>(null);
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   return (
     <div className="preview-main">
       <div className="preview_left">
-        <div className="preview_left_child">
+        <div className="preview_left_child" ref={componentRef}>
           <div className="preview_left_child_1">
             <div className="preview_left_child_1_1">
               <div
@@ -91,9 +98,9 @@ const Preview: React.FC<PreviewProps> = ({ itemDetails }) => {
           </div>
           <hr className="preview_hr" />
           <div className="preview_left_child_3">
-            <table style={{ width: "100%" }}>
+            <table style={{ width: "100%", borderSpacing: "0" }}>
               <thead>
-                <tr>
+                <tr className="preview_left_thead">
                   <th className="preview_th_tr1">ITEM</th>
                   <th className="preview_th_tr2">DESCRIPTION</th>
                   <th className="preview_th_tr3">COST</th>
@@ -110,7 +117,9 @@ const Preview: React.FC<PreviewProps> = ({ itemDetails }) => {
           </div>
         </div>
       </div>
-      <div className="preview_right"></div>
+      <div className="preview_right">
+        <button onClick={handlePrint}>Khatka</button>
+      </div>
     </div>
   );
 };

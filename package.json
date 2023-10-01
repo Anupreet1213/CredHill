@@ -38,6 +38,7 @@
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.9",
     "react-select": "^5.7.5",
+    "react-to-print": "^2.14.13",
     "styled-components": "^6.0.0-rc.1"
   },
   "devDependencies": {

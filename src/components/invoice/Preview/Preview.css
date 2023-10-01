@@ -130,3 +130,13 @@
     margin: 16px;
   }
 }
+
+@media print {
+  .preview_left_child {
+    background-color: white;
+    color: black;
+  }
+  .preview_left_thead {
+    background-color: #7367f0;
+  }
+}
