@@ -276,22 +276,11 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                         <label className="invoice_create_label">
                           Select Item
                         </label>
-                        {/* <select
-                          className="invoice_create_select_1"
-                          onChange={(e) =>
-                            handleItemChange(index, "name", e.target.value)
-                          }
-                        >
-                          <option className="create-options" value="Option1">Option 1</option>
-                          <option className="create-options" value="Option2">Option 2</option>
-                          <option className="create-options" value="Option3">Option 3</option>
-                          <option className="create-options" value="Option4">Option 4</option>
-                        </select> */}
                         <FormControl fullWidth>
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
-                            value={age[index]}
+                            value={itemDetails[index].name}
                             onChange={(e) => {
                               handleChange(e, index);
                               handleItemChange(index, "name", e.target.value);
@@ -359,6 +348,7 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                           onChange={(e) =>
                             handleItemChange(index, "cost", e.target.value)
                           }
+                          value={itemDetails[index].cost}
                         />
                       </div>
                       <div>
@@ -374,6 +364,7 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                           onChange={(e) =>
                             handleItemChange(index, "quantity", e.target.value)
                           }
+                          value={itemDetails[index].quantity}
                         />
                       </div>
                     </div>
