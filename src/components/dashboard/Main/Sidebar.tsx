@@ -4,13 +4,13 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import HomeIcon from "@mui/icons-material/Home";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import InsightsIcon from "@mui/icons-material/Insights";
 import FiberManualRecordOutlinedIcon from "@mui/icons-material/FiberManualRecordOutlined";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DescriptionIcon from "@mui/icons-material/Description";
 import Person2Icon from "@mui/icons-material/Person2";
-// import LinearScaleIcon from '@mui/icons-material/LinearScale';
+import logo from "./naya.png";
+import { useNavigate } from "react-router-dom";
 
 interface SidebarProps {
   open: boolean;
@@ -69,19 +69,24 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const handleRightComponent = (): void => {
     setRightComponent(0);
+    navigate("/dashboard");
   };
   const handleRightComponent2 = (): void => {
     setRightComponent(1);
   };
   const handleRightComponent3 = (): void => {
     setRightComponent(2);
+    navigate("/dashboard/create-invoice");
   };
   const handleRightComponent4 = (): void => {
     setRightComponent(3);
+    navigate("/dashboard/invoice-list");
   };
   const handleRightComponent5 = (): void => {
     setRightComponent(4);
   };
+
+  const navigate = useNavigate();
 
   const { isDarkMode } = useTheme();
 
@@ -95,8 +100,12 @@ const Sidebar: React.FC<SidebarProps> = ({
     >
       <div className={open ? "sidebar_header" : "sidebar_header_close"}>
         <div className={open ? "drawer_header" : "drawer_header_close"}>
-          <InsightsIcon />
-          {open ? <h3>Adest</h3> : <></>}
+          {/* <InsightsIcon /> */}
+          {open ? (
+            <img style={{ width: "120px", marginLeft: "" }} src={logo} />
+          ) : (
+            <></>
+          )}
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
