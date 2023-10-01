@@ -359,7 +359,6 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                           onChange={(e) =>
                             handleItemChange(index, "cost", e.target.value)
                           }
-                          value={itemDetails}
                         />
                       </div>
                       <div>
