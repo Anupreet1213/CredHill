@@ -99,6 +99,15 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
     });
   };
 
+  const [invoiceToValue,setInvoiceToValue] = useState('');
+  const handleInvoiceTo = (e: SelectChangeEvent)=>{
+    setInvoiceToValue(e.target.value);
+    console.log(invoiceToValue);
+    
+  }
+
+
+
   // const combinedHandleChange = (event:SelectChangeEvent,index:number, key: string, value: string) => {
   //   handleChange(event);
   //   handleItemChange(index,key,value);
@@ -304,6 +313,8 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
               <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
+                value={invoiceToValue}
+                onChange={handleInvoiceTo}
                 sx={{
                   marginBottom:"20px",
                   width: "100%",
