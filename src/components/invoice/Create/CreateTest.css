@@ -8,6 +8,7 @@
 
 .invoice_create_child_left {
   /* width: 100%; */
+  /* flex:0.8; */
   background: rgb(47, 51, 73);
   color: rgba(208, 212, 241, 0.68);
 
@@ -290,13 +291,24 @@
 .invoice_create_child_right{
   display: flex;
   height: 30vh;
-  /* width: ; */
+  /* width: 24.5vw; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* padding:8%; */
 }
-.invoice_create_child_right1 div{
+
+
+.invoice_create_ls_1_invoice_total{
   display: flex;
-  padding:6%;
+  gap:2rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+.invoice_items_attribute {
+  /* display: flex;
+  /* justify-content: right;  */
+  display: flex;
+  flex-direction: column;
+align-items: flex-end;
 }

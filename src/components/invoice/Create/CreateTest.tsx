@@ -73,10 +73,33 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
       }
       return newItems;
     });
-    console.log(itemDetails);
+    // console.log(itemDetails);
   };
 
-  
+  const [invoiceDetails, setInvoiceDetails] = useState({
+    invoiceNo: "#001",
+    dateIssued: "",
+    approvalId: "",
+    orderRef: "",
+  });
+
+  const [newdate, setnewdate] = useState<Date | null>(null);
+
+  // console.log(newdate);
+
+  // const [date,setDate] = useState<Date | null>(null);
+  // console.log(date);
+
+  const handleInvoiceDetails = (name: string, value: any) => {
+    // const newInvoiceDetails = [...invoiceDetails];
+    setInvoiceDetails((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  // console.log(invoiceDetails);
+
   const addItem = () => {
     setItemDetails((prevItems) => [
       ...prevItems,
@@ -99,14 +122,11 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
     });
   };
 
-  const [invoiceToValue,setInvoiceToValue] = useState('');
-  const handleInvoiceTo = (e: SelectChangeEvent)=>{
+  const [invoiceToValue, setInvoiceToValue] = useState("");
+  const handleInvoiceTo = (e: SelectChangeEvent) => {
     setInvoiceToValue(e.target.value);
     console.log(invoiceToValue);
-    
-  }
-
-
+  };
 
   // const combinedHandleChange = (event:SelectChangeEvent,index:number, key: string, value: string) => {
   //   handleChange(event);
@@ -122,9 +142,24 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
     setAge(newAge);
   };
 
-  const [billedTo] = useState(
-    "Jordan Stevenson Hall-Robbins PLC 7777 Mendez Plains, USA 616865-4180 don85@johnson.com"
-  );
+  const [billedTo] = useState([
+    {
+      address:
+        "Jonsons and Jonson PLC 7777 Mendez Plains, USA 616865-4180 don85@johnson.com",
+      GST: "A093220D932",
+      PAN: "APZ120DS0",
+    },
+    {
+      address: "Cipla Limited, Connaught Place, New Delhi don85@johnson.com",
+      GST: "B083220D932",
+      PAN: "XPZ120DS0",
+    },
+    {
+      address: "Sun Pharma PLC, New York, USA 616865-4180 don85@johnson.com",
+      GST: "A0BXV220D932",
+      PAN: "92Z120DS0",
+    },
+  ]);
 
   return (
     <div className="invoice_create">
@@ -171,7 +206,7 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
               >
                 Invoice
               </span>
-              <CustomTextField disabled value={"#001"} />
+              <CustomTextField disabled value={invoiceDetails.invoiceNo} />
             </div>
             <div className="invoice_create_lf_2_child1">
               <span
@@ -188,6 +223,20 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
               </span>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
+                  // value={invoiceDetails.dateIssued}
+                  format="DD/MM/YYYY"
+                  value={newdate}
+                  onChange={(newValue) => {
+                    setnewdate(newValue);
+                  }}
+                  // value={invoiceDetails.dateIssued}
+                  // onChange={
+                  //   (e) =>{
+                  //     handleInvoice("dateIssued",e)
+                  //   }
+                  //   }
+                  // onChange={handleInvoiceDate}
+
                   sx={{
                     width: "62%",
                     "& .MuiInputBase-root.MuiOutlinedInput-root": {
@@ -249,6 +298,11 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                 Approval ID
               </span>
               <TextField
+                // name="approvalId"
+                value={invoiceDetails.approvalId}
+                onChange={(e) => {
+                  handleInvoiceDetails("approvalId", e.target.value);
+                }}
                 sx={{
                   "& .MuiInputBase-root.MuiOutlinedInput-root": {
                     "& fieldset": {
@@ -281,6 +335,10 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                 Order Reffered By
               </span>
               <TextField
+                value={invoiceDetails.orderRef}
+                onChange={(e) => {
+                  handleInvoiceDetails("orderRef", e.target.value);
+                }}
                 sx={{
                   "& .MuiInputBase-root.MuiOutlinedInput-root": {
                     "& fieldset": {
@@ -316,7 +374,7 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                 value={invoiceToValue}
                 onChange={handleInvoiceTo}
                 sx={{
-                  marginBottom:"20px",
+                  marginBottom: "20px",
                   width: "100%",
                   borderColor: "rgba(208, 212, 241, 0.68)",
                   color: "rgba(208, 212, 241, 0.68)",
@@ -346,17 +404,43 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                   },
                 }}
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={1}>Jonsons and Jonsons</MenuItem>
+                <MenuItem value={2}>Cipla Limited</MenuItem>
+                <MenuItem value={3}>Sun Pharma</MenuItem>
               </Select>
             </FormControl>
-            <p>{billedTo}</p>
+            {invoiceToValue == "1" ? (
+              <>
+                <p>GST: {billedTo[0].GST}</p>
+                <p>PAN: {billedTo[0].PAN}</p>
+              </>
+            ) : invoiceToValue == "2" ? (
+              <>
+                <p>GST: {billedTo[1].GST}</p>
+                <p>PAN: {billedTo[1].PAN}</p>
+              </>
+            ) : invoiceToValue == "3" ? (
+              <>
+                <p>GST: {billedTo[2].GST}</p>
+                <p>PAN: {billedTo[2].PAN}</p>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="invoice_create_ls_1">
-            <h4 className="invoice_create_ls_1_heading">CLient Details</h4>
+            <h4 className="invoice_create_ls_1_heading">Client Details</h4>
 
-            <p>{billedTo}</p>
+            {/* <p>{billedTo[0].address}</p> */}
+            {invoiceToValue == "1" ? (
+              <p>{billedTo[0].address}</p>
+            ) : invoiceToValue == "2" ? (
+              <p>{billedTo[1].address}</p>
+            ) : invoiceToValue == "3" ? (
+              <p>{billedTo[2].address}</p>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
         <hr className="invoice_create_hr1" />
@@ -439,22 +523,22 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                           Description
                         </label>
                         <TextField
-                         sx={{
-                  "& .MuiInputBase-root.MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "#7C8199",
-                    },
-                    "&.Mui-focused fieldset": {
-                      borderColor: "#7367F0",
-                    },
-                    "& input": {
-                      color: "#7C8199",
-                    },
-                    "& .MuiSvgIcon-root": {
-                      color: "#7C8199",
-                    },
-                  },
-                }}
+                          sx={{
+                            "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                              "& fieldset": {
+                                borderColor: "#7C8199",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#7367F0",
+                              },
+                              "& input": {
+                                color: "#7C8199",
+                              },
+                              "& .MuiSvgIcon-root": {
+                                color: "#7C8199",
+                              },
+                            },
+                          }}
                           onChange={(e) =>
                             handleItemChange(
                               index,
@@ -493,25 +577,28 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
                         />
                       </div>
                       <div>
-                        <label className="invoice_create_label">Discount</label>
-                        <TextField 
-                         sx={{
-                          "& .MuiInputBase-root.MuiOutlinedInput-root": {
-                            "& fieldset": {
-                              borderColor: "#7C8199",
+                        <label className="invoice_create_label">
+                          Discount (%)
+                        </label>
+                        <TextField
+                          sx={{
+                            "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                              "& fieldset": {
+                                borderColor: "#7C8199",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#7367F0",
+                              },
+                              "& input": {
+                                color: "#7C8199",
+                              },
+                              "& .MuiSvgIcon-root": {
+                                color: "#7C8199",
+                              },
                             },
-                            "&.Mui-focused fieldset": {
-                              borderColor: "#7367F0",
-                            },
-                            "& input": {
-                              color: "#7C8199",
-                            },
-                            "& .MuiSvgIcon-root": {
-                              color: "#7C8199",
-                            },
-                          },
-                        }}
-                        type="number" />
+                          }}
+                          type="number"
+                        />
                       </div>
                     </div>
                     <div className="invoice_create_lt_child2_1_gchild3">
@@ -557,16 +644,60 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
             Add Item
           </div>
         </div>
+        <hr className="invoice_create_hr1" />
+
+        <div className="invoice_create_left_second">
+          <div className="invoice_create_ls_1">
+            <h4 className="invoice_create_ls_1_heading">Special Note:</h4>
+            <TextField
+              // name="approvalId"
+              // value={invoiceDetails.approvalId}
+              // onChange={(e) => {
+              //   handleInvoiceDetails("approvalId", e.target.value);
+              // }}
+              sx={{
+                width: "120%",
+                "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#7C8199",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#7367F0",
+                  },
+                  "& input": {
+                    color: "#7C8199",
+                  },
+                  "& .MuiSvgIcon-root": {
+                    color: "#7C8199",
+                  },
+                },
+              }}
+            />
+          </div>
+          <div className="invoice_create_ls_1_invoice_total">
+            <div className="invoice_items_attribute">
+              <p>Subtotal:</p>
+              <p>Discount:</p>
+              <p>Tax:</p>
+              <p>Total:</p>
+            </div>
+            <div className="invoice_items_value">
+              <p>$ 90009</p>
+              <p>$ 212</p>
+              <p>$ 1000</p>
+              <p>$ 19212</p>
+            </div>
+            {/* <h4 className="invoice_create_ls_1_heading">Client Details</h4> */}
+          </div>
+        </div>
       </div>
       <div
         className="invoice_create_child_right"
         style={{ marginBottom: "1.5rem" }}
       >
-        <div className="invoice_create_child_right_1">
           {/* <div>Send Invoice</div>
           <div>Preview</div>
           <div>Save</div> */}
-        </div>
       </div>
     </div>
   );
