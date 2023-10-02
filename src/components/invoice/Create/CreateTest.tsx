@@ -90,7 +90,7 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
   // const [date,setDate] = useState<Date | null>(null);
   // console.log(date);
 
-  const handleInvoiceDetails = (name: string, value: any) => {
+  const handleInvoiceDetails = (name: string, value: string) => {
     // const newInvoiceDetails = [...invoiceDetails];
     setInvoiceDetails((prevValues) => ({
       ...prevValues,
@@ -691,13 +691,13 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
           </div>
         </div>
       </div>
-      <div
-        className="invoice_create_child_right"
-        style={{ marginBottom: "1.5rem" }}
-      >
-          {/* <div>Send Invoice</div>
-          <div>Preview</div>
-          <div>Save</div> */}
+      <div className="invoice_create_child_right">
+        <div className="create_right_1">
+          <div className="create_right_1_child">
+            <button className="create_right_1_button1">Preview</button>
+            <button className="create_right_1_button2">Save</button>
+          </div>
+        </div>
       </div>
     </div>
   );

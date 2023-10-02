@@ -1,9 +1,7 @@
-
-
 .invoice_create {
   display: flex;
   flex-wrap: wrap;
-  font-family: 'Public Sans', sans-serif;
+  font-family: "Public Sans", sans-serif;
 }
 
 .invoice_create_child_left {
@@ -52,14 +50,13 @@
   /* gap:2rem; */
   /* flex-direction: column; */
 
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
   color: rgba(208, 212, 241, 0.78);
 }
-.invoice_create_lf_2_child1 span{
-  width:45%;
+.invoice_create_lf_2_child1 span {
+  width: 45%;
 }
-
 
 .invoice_create_hr1 {
   opacity: 0.16;
@@ -208,22 +205,19 @@
   background-color: red;
 } */
 
-
-
-.invoice_create_lt_child3{
+.invoice_create_lt_child3 {
   border-radius: 5px;
   margin-top: 2%;
   font-weight: 500;
-  background-color: #7367F0;
+  background-color: #7367f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width:8rem;
-  color:white;
-  padding:1%;
-
+  width: 8rem;
+  color: white;
+  padding: 1%;
 }
-.invoice_create_lt_child3:hover{
+.invoice_create_lt_child3:hover {
   background-color: #6d5ef7;
 }
 
@@ -250,13 +244,15 @@
   }
   .invoice_create_lt_child3 {
     margin: 16px;
-
   }
 }
 
-
-
-
+@media (max-width: 959px) {
+  .invoice_create_child_right {
+    padding: 0 !important;
+    padding-top: 12px !important;
+  }
+}
 
 @media (min-width: 960px) {
   .invoice_create_child_left {
@@ -286,22 +282,24 @@
     flex: 0 0 16.6%;
     max-width: 16.6%;
   }
+  .invoice_create_child_right {
+    flex: 0 0 25%;
+    max-width: 25%;
+    /* margin-top: 200px; */
+  }
 }
 
-.invoice_create_child_right{
-  display: flex;
-  height: 30vh;
-  /* width: 24.5vw; */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* padding:8%; */
+.invoice_create_child_right {
+  padding: 12px;
+  padding-top: 0;
+  /* padding-left: 12px;
+  padding-right: 12px; */
+  width: 100%;
 }
 
-
-.invoice_create_ls_1_invoice_total{
+.invoice_create_ls_1_invoice_total {
   display: flex;
-  gap:2rem;
+  gap: 2rem;
   margin-top: 1rem;
   margin-right: 1rem;
 }
@@ -310,5 +308,83 @@
   /* justify-content: right;  */
   display: flex;
   flex-direction: column;
-align-items: flex-end;
+  align-items: flex-end;
+}
+.create_right_1 {
+  box-shadow: 0 4px 18px rgba(15, 20, 34, 0.1), 0 0 transparent, 0 0 transparent;
+  color: rgba(208, 212, 241, 0.68);
+  /* margin-bottom: 32px; */
+  overflow: hidden;
+  overflow-wrap: break-word;
+  position: relative;
+  text-decoration: none;
+  border-color: rgba(208, 212, 241, 0.16);
+  border-style: solid;
+  border-width: 0;
+  border-radius: 6px;
+
+  /* justify-content: center; */
+}
+
+.create_right_1_child {
+  font-size: 0.93rem;
+  font-weight: 400;
+  padding: 24px;
+  text-transform: none;
+  line-height: 1.5;
+  background: rgb(47, 51, 73);
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.create_right_1_button1 {
+  height: 38px;
+  background-color: rgb(115, 103, 240);
+  /* background-color: #2f3349; */
+  color: rgb(255, 255, 255);
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  box-shadow: 0 2px 6px rgba(15, 20, 34, 0.14), 0 0 transparent, 0 0 transparent;
+  padding: 0 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  justify-content: center;
+  outline: none;
+  text-decoration: none;
+  user-select: none;
+  border-color: rgba(208, 212, 241, 0.16);
+  border-style: solid;
+  border-width: 0;
+}
+.create_right_1_button2 {
+  height: 38px;
+  /* background-color: #2f3349; */
+  background: grey;
+  opacity: 0.4;
+  color: rgb(255, 255, 255);
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  box-shadow: 0 2px 6px rgba(15, 20, 34, 0.14), 0 0 transparent, 0 0 transparent;
+  padding: 0 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  justify-content: center;
+  outline: none;
+  text-decoration: none;
+  user-select: none;
+  border-color: rgba(208, 212, 241, 0.16);
+  border-style: solid;
+  border-width: 0;
+}
+
+.create_right_1_button1:hover {
+  opacity: 0.9;
+  transition-duration: 300ms;
 }
