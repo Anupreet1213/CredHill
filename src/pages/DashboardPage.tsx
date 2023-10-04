@@ -81,6 +81,7 @@ const DashboardPage: React.FC = () => {
           <CreateTest
             itemDetails={itemDetails}
             setItemDetails={setItemDetails}
+            setRightComponent={setRightComponent}
           />
         ) : rightComponent == 3 ? (
           <List />

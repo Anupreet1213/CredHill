@@ -27,6 +27,7 @@ interface CreateProps {
     price: number;
     description: string;
   }[];
+  setRightComponent: React.Dispatch<React.SetStateAction<number>>;
   setItemDetails: React.Dispatch<
     React.SetStateAction<
       {
@@ -62,7 +63,7 @@ const SwitchViewIcon = styled(KeyboardArrowDownIcon)({
   color: "#7C8199",
 });
 
-const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
+const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails, setRightComponent}) => {
   const handleItemChange = (index: number, key: string, value: string) => {
     setItemDetails((prevItems) => {
       const newItems = [...prevItems];
@@ -694,7 +695,9 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails }) => {
       <div className="invoice_create_child_right">
         <div className="create_right_1">
           <div className="create_right_1_child">
-            <button className="create_right_1_button1">Preview</button>
+            <button onClick={()=>{
+              setRightComponent(4);
+            }} className="create_right_1_button1">Preview</button>
             <button className="create_right_1_button2">Save</button>
           </div>
         </div>
