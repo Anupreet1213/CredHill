@@ -17,6 +17,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useTheme } from "styled-components";
 
 interface CreateProps {
   itemDetails: {
@@ -64,6 +65,8 @@ const SwitchViewIcon = styled(KeyboardArrowDownIcon)({
 });
 
 const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails, setRightComponent}) => {
+  // const { isDarkMode } = useTheme();
+
   const handleItemChange = (index: number, key: string, value: string) => {
     setItemDetails((prevItems) => {
       const newItems = [...prevItems];
@@ -165,6 +168,8 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails, setRig
   return (
     <div className="invoice_create">
       <div className="invoice_create_child_left">
+      {/* <div className={`${isDarkMode? "invoice_create_child_left" : "invoice_creat_child_left_light"}`}> */}
+
         <div className="invoice_create_left_first">
           <div className="invoice_create_lf_1">
             <div
