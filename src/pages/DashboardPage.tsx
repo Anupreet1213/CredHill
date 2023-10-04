@@ -30,6 +30,15 @@ const DashboardPage: React.FC = () => {
     { id: 1, name: "", cost: 0, quantity: 0, price: 0, description: "" },
   ]);
 
+  const [newDate, setNewDate] = useState("");
+
+  const [invoiceDetails, setInvoiceDetails] = useState({
+    invoiceNo: "#001",
+    dateIssued: "",
+    approvalId: "",
+    orderRef: "",
+  });
+
   const { isDarkMode } = useTheme();
 
   // Toggle sidebar open and close for mobile's sidebar
@@ -82,11 +91,15 @@ const DashboardPage: React.FC = () => {
             itemDetails={itemDetails}
             setItemDetails={setItemDetails}
             setRightComponent={setRightComponent}
+            invoiceDetails={invoiceDetails}
+            setInvoiceDetails={setInvoiceDetails}
+            newDate={newDate}
+            setNewDate={setNewDate}
           />
         ) : rightComponent == 3 ? (
           <List />
         ) : (
-          <Preview itemDetails={itemDetails} />
+          <Preview itemDetails={itemDetails} invoiceDetails={invoiceDetails} />
         )}
       </div>
     </div>

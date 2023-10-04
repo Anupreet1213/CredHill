@@ -41,6 +41,22 @@ interface CreateProps {
       }[]
     >
   >;
+  invoiceDetails: {
+    invoiceNo: string;
+    dateIssued: string;
+    approvalId: string;
+    orderRef: string;
+  };
+  setInvoiceDetails: React.Dispatch<
+    React.SetStateAction<{
+      invoiceNo: string;
+      dateIssued: string;
+      approvalId: string;
+      orderRef: string;
+    }>
+  >;
+  newDate: string;
+  setNewDate: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const CustomTextField = styled(TextField)({
@@ -68,6 +84,10 @@ const CreateTest: React.FC<CreateProps> = ({
   itemDetails,
   setItemDetails,
   setRightComponent,
+  invoiceDetails,
+  setInvoiceDetails,
+  // newDate,
+  // setNewDate,
 }) => {
   // const { isDarkMode } = useTheme();
 
@@ -84,14 +104,12 @@ const CreateTest: React.FC<CreateProps> = ({
     // console.log(itemDetails);
   };
 
-  const [invoiceDetails, setInvoiceDetails] = useState({
-    invoiceNo: "#001",
-    dateIssued: "",
-    approvalId: "",
-    orderRef: "",
-  });
-
-  const [newdate, setnewdate] = useState<Date | null>(null);
+  // const [invoiceDetails, setInvoiceDetails] = useState({
+  //   invoiceNo: "#001",
+  //   dateIssued: "",
+  //   approvalId: "",
+  //   orderRef: "",
+  // });
 
   // console.log(newdate);
 
@@ -100,10 +118,20 @@ const CreateTest: React.FC<CreateProps> = ({
 
   const handleInvoiceDetails = (name: string, value: string) => {
     // const newInvoiceDetails = [...invoiceDetails];
-    setInvoiceDetails((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
+    if (name === "dateIssued") {
+      // setNewDate(value);
+      const dateStr = new Date(value).toLocaleDateString();
+      setInvoiceDetails((prevValues) => ({
+        ...prevValues,
+        [name]: dateStr,
+      }));
+    } else {
+      setInvoiceDetails((prevValues) => ({
+        ...prevValues,
+        [name]: value,
+      }));
+    }
+    console.log(invoiceDetails);
   };
 
   // console.log(invoiceDetails);
@@ -235,9 +263,12 @@ const CreateTest: React.FC<CreateProps> = ({
                 <DatePicker
                   // value={invoiceDetails.dateIssued}
                   format="DD/MM/YYYY"
-                  value={newdate}
+                  // value={newDate}
                   onChange={(newValue) => {
-                    setnewdate(newValue);
+                    handleInvoiceDetails(
+                      "dateIssued",
+                      newValue?.toString() || ""
+                    );
                   }}
                   // value={invoiceDetails.dateIssued}
                   // onChange={

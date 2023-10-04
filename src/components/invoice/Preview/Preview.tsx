@@ -13,9 +13,15 @@ interface PreviewProps {
     price: number;
     description: string;
   }[];
+  invoiceDetails: {
+    invoiceNo: string;
+    dateIssued: string;
+    approvalId: string;
+    orderRef: string;
+  };
 }
 
-const Preview: React.FC<PreviewProps> = ({ itemDetails }) => {
+const Preview: React.FC<PreviewProps> = ({ itemDetails, invoiceDetails }) => {
   const componentRef = useRef<HTMLDivElement>(null);
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -56,7 +62,9 @@ const Preview: React.FC<PreviewProps> = ({ itemDetails }) => {
               </p>
             </div>
             <div className="preview_left_child_1_2">
-              <h6 className="preview_left_child_1_2_1">Invoice #5036</h6>
+              <h6 className="preview_left_child_1_2_1">
+                Invoice {invoiceDetails.invoiceNo}
+              </h6>
               <p
                 style={{
                   marginTop: "12px",
@@ -65,7 +73,9 @@ const Preview: React.FC<PreviewProps> = ({ itemDetails }) => {
                 }}
               >
                 <span>Date Issued: </span>
-                <span style={{ fontWeight: "500" }}>2023-09-19</span>
+                <span style={{ fontWeight: "500" }}>
+                  {invoiceDetails.dateIssued}
+                </span>
               </p>
               <p
                 style={{
@@ -74,8 +84,22 @@ const Preview: React.FC<PreviewProps> = ({ itemDetails }) => {
                   marginBlockEnd: "1rem",
                 }}
               >
-                <span>Due Date: </span>
-                <span style={{ fontWeight: "500" }}>2023-09-25</span>
+                <span>Approval Id: </span>
+                <span style={{ fontWeight: "500" }}>
+                  {invoiceDetails.approvalId}
+                </span>
+              </p>
+              <p
+                style={{
+                  // marginTop: "12px",
+                  // marginBottom: "12px",
+                  marginBlockEnd: "1rem",
+                }}
+              >
+                <span>Offer Referred By: </span>
+                <span style={{ fontWeight: "500" }}>
+                  {invoiceDetails.orderRef}
+                </span>
               </p>
             </div>
           </div>
