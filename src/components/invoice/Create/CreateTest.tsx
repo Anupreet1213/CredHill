@@ -17,7 +17,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { useTheme } from "styled-components";
+// import { useTheme } from "styled-components";
 
 interface CreateProps {
   itemDetails: {
@@ -64,7 +64,11 @@ const SwitchViewIcon = styled(KeyboardArrowDownIcon)({
   color: "#7C8199",
 });
 
-const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails, setRightComponent}) => {
+const CreateTest: React.FC<CreateProps> = ({
+  itemDetails,
+  setItemDetails,
+  setRightComponent,
+}) => {
   // const { isDarkMode } = useTheme();
 
   const handleItemChange = (index: number, key: string, value: string) => {
@@ -168,7 +172,7 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails, setRig
   return (
     <div className="invoice_create">
       <div className="invoice_create_child_left">
-      {/* <div className={`${isDarkMode? "invoice_create_child_left" : "invoice_creat_child_left_light"}`}> */}
+        {/* <div className={`${isDarkMode? "invoice_create_child_left" : "invoice_creat_child_left_light"}`}> */}
 
         <div className="invoice_create_left_first">
           <div className="invoice_create_lf_1">
@@ -700,9 +704,14 @@ const CreateTest: React.FC<CreateProps> = ({ itemDetails, setItemDetails, setRig
       <div className="invoice_create_child_right">
         <div className="create_right_1">
           <div className="create_right_1_child">
-            <button onClick={()=>{
-              setRightComponent(4);
-            }} className="create_right_1_button1">Preview</button>
+            <button
+              onClick={() => {
+                setRightComponent(4);
+              }}
+              className="create_right_1_button1"
+            >
+              Preview
+            </button>
             <button className="create_right_1_button2">Save</button>
           </div>
         </div>
