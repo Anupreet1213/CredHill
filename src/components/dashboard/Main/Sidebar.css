@@ -68,10 +68,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* justify-content: center; */
   padding: 6% 4% 6% 6%;
   margin-bottom: 10%;
   /* background-color: #121632; */
   /* color: white; */
+}
+.sidebar_header svg{
+  margin-top: 0.8rem;
 }
 
 .sidebar_header_close {
