@@ -10,7 +10,7 @@ const Features: React.FC = () => {
       <div className="featuresLeft">
         <h2>Maintain your records with powerful interactive charts</h2>
         <p>
-          Invoicer helps you to check and maintain your financial records such
+          CredHill helps you to check and maintain your financial records such
           as tax management and inventory saving time manpower
         </p>
         <div className="featuresLeftButton">Get Started</div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { HamburgerMenu } from "./HamburgerMenu";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import logo from "../../../../public/naya.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -24,7 +25,10 @@ const Navbar = () => {
 
   return (
     <div className={`nav ${scrolled ? "scrolled" : ""}`} data-testid="navbar">
-      <div>Logo</div>
+      <div>
+        
+        <img style={{ width: "120px", marginLeft: "" }} src={logo} />
+      </div>
       <ul className="navRight">
         <li className="navRightChild">Home</li>
         <li className="navRightChild">Features</li>

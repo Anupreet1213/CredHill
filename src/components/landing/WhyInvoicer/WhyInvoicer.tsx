@@ -5,9 +5,9 @@ const WhyInvoicer: React.FC = () => {
     <section id="whyInvoicer">
       <div className="whyInvoicerLeft">
         {" "}
-        <h1>Why to choose Invoicer?</h1>
+        <h1>Why to choose CredHill?</h1>
         <p>
-          Invoicer provides solution to create stunningly beautiful invoices,
+          CredHill provides solution to create stunningly beautiful invoices,
           provides record keeping functionalities and other business stats
         </p>
       </div>

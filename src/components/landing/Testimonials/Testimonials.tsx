@@ -14,7 +14,7 @@ const Testimonials = () => {
             <img src={CommentImg} alt="comments" />
           </div>
           <div className="testimonial-child2-ch-1">
-            Invoicer helped me to efficiently manage my business and clients.{" "}
+            CredHill helped me to efficiently manage my business and clients.{" "}
           </div>
           <div className="testimonial-child2-ch-2">
             <div className="testimonial-img"></div>
@@ -26,7 +26,7 @@ const Testimonials = () => {
             <img src={CommentImg} alt="comments" />
           </div>
           <div className="testimonial-child2-ch-1">
-            Invoicer helped me to efficiently manage my business and clients.{" "}
+            CredHill helped me to efficiently manage my business and clients.{" "}
           </div>
           <div className="testimonial-child2-ch-2">
             <div className="testimonial-img"></div>
@@ -38,7 +38,7 @@ const Testimonials = () => {
             <img src={CommentImg} alt="comments" />
           </div>
           <div className="testimonial-child2-ch-1">
-            Invoicer helped me to efficiently manage my business and clients.{" "}
+            CredHill helped me to efficiently manage my business and clients.{" "}
           </div>
           <div className="testimonial-child2-ch-2">
             <div className="testimonial-img"></div>
