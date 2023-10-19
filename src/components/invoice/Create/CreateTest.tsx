@@ -200,8 +200,13 @@ const CreateTest: React.FC<CreateProps> = ({
   return (
     <div className="invoice_create">
       {/* <div className="invoice_create_child_left"> */}
-        <div className={`${isDarkMode? "invoice_create_child_left" : "invoice_create_child_left_light"}`}>
-
+      <div
+        className={`${
+          isDarkMode
+            ? "invoice_create_child_left"
+            : "invoice_create_child_left_light"
+        }`}
+      >
         <div className="invoice_create_left_first">
           <div className="invoice_create_lf_1">
             <div
@@ -591,7 +596,7 @@ const CreateTest: React.FC<CreateProps> = ({
                       </div>
                     </div>
                     <div className="invoice_create_lt_child2_1_gchild2">
-                      <div>
+                      <div style={{ display: "flex", flexDirection: "column" }}>
                         <label className="invoice_create_label">Cost</label>
                         <TextField
                           type="number"
@@ -617,7 +622,7 @@ const CreateTest: React.FC<CreateProps> = ({
                           }}
                         />
                       </div>
-                      <div>
+                      <div style={{ display: "flex", flexDirection: "column" }}>
                         <label className="invoice_create_label">
                           Discount (%)
                         </label>
@@ -643,7 +648,7 @@ const CreateTest: React.FC<CreateProps> = ({
                       </div>
                     </div>
                     <div className="invoice_create_lt_child2_1_gchild3">
-                      <div>
+                      <div style={{ display: "flex", flexDirection: "column" }}>
                         <label className="invoice_create_label">Qty</label>
                         <TextField
                           type="number"
