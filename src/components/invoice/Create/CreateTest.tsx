@@ -738,11 +738,13 @@ const CreateTest: React.FC<CreateProps> = ({
               <p>Total:</p>
             </div>
             <div className="invoice_items_value">
-              <p>{totalPrice}</p>
+              <p>₹{totalPrice}.0</p>
               {/* <p>₹ 212</p> */}
-              <p>₹ 1000</p>
-              <p>₹ 19212</p>
-              <p>₹ 19212</p>
+              <p>₹ {(totalPrice*0.09).toFixed(1)}</p> 
+              <p>₹ {(totalPrice*0.09).toFixed(1)}</p> 
+
+              <p>₹{(totalPrice + 2 * (totalPrice * 0.09)).toFixed(1)}</p>
+
             </div>
             {/* <h4 className="invoice_create_ls_1_heading">Client Details</h4> */}
           </div>
