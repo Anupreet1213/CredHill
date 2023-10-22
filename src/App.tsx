@@ -10,7 +10,7 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 // import { useAuthState } from "react-firebase-hooks/auth";
 // import { useCollectionData } from "react-firebase-hooks/firestore";
-// import Login from "./components/Auth/Login";
+import Login from "./components/Auth/Login";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDs_jRyHTppTqs5ttM8jeIqHRiR65ZDCPo",
@@ -41,9 +41,10 @@ const App = () => {
             <Route path="/" element={<LandingPage />} />
             {/* {user ? ( */}
               <Route path="/dashboard" element={<DashboardPage />} />
-            {/* ) : (
+              <Route path="/login" element={<Login />} />
+             {/* ) : (
               <Route path="/login" element={<Login auth={auth} />} />
-            )} */}
+            )}  */}
           </Routes>
         </Suspense>
       </Router>
