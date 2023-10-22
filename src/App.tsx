@@ -8,9 +8,9 @@ import "./styles.css";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
-import { useAuthState } from "react-firebase-hooks/auth";
+// import { useAuthState } from "react-firebase-hooks/auth";
 // import { useCollectionData } from "react-firebase-hooks/firestore";
-import Login from "./components/Auth/Login";
+// import Login from "./components/Auth/Login";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDs_jRyHTppTqs5ttM8jeIqHRiR65ZDCPo",
@@ -21,12 +21,12 @@ firebase.initializeApp({
   appId: "1:943997581042:web:6bbdfce7c0cf95f17e426b",
   measurementId: "G-8W0FSZ2ZV8",
 });
-const auth = firebase.auth();
+// const auth = firebase.auth();
 
 const DashboardPage = lazy(() => import("./pages/DashboardPage"));
 
 const App = () => {
-  const [user] = useAuthState(auth as never);
+  // const [user] = useAuthState(auth as never);
   return (
     <ThemeProvider>
       <Router>
