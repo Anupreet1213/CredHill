@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { HamburgerMenu } from "./HamburgerMenu";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import logo from "../../../../public/naya.png";
+import logo from "./naya.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
