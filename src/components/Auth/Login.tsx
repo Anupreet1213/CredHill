@@ -43,7 +43,9 @@ const Login = () => {
   //   auth.signInWithPopup(provider);
   // };
 
-  return (
+  return (<div className="loginContainer">
+
+  
     <div className="container" id="container">
       <div className="form-container sign-up">
         <form>
@@ -87,6 +89,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

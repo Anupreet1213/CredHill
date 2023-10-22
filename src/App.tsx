@@ -40,9 +40,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             {/* {user ? ( */}
-              <Route path="/dashboard" element={<DashboardPage />} />
-              <Route path="/login" element={<Login />} />
-             {/* ) : (
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/login" element={<Login />} />
+            {/* ) : (
               <Route path="/login" element={<Login auth={auth} />} />
             )}  */}
           </Routes>
