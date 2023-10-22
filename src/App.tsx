@@ -39,11 +39,11 @@ const App = () => {
         >
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            {user ? (
+            {/* {user ? ( */}
               <Route path="/dashboard" element={<DashboardPage />} />
-            ) : (
+            {/* ) : (
               <Route path="/login" element={<Login auth={auth} />} />
-            )}
+            )} */}
           </Routes>
         </Suspense>
       </Router>

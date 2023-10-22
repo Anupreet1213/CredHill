@@ -91,6 +91,8 @@ const CreateTest: React.FC<CreateProps> = ({
 }) => {
   const { isDarkMode } = useTheme();
 
+  const [totalPrice, setTotalPrice] = useState(0);
+
   const handleItemChange = (index: number, key: string, value: string) => {
     setItemDetails((prevItems) => {
       const newItems = [...prevItems];
@@ -99,8 +101,15 @@ const CreateTest: React.FC<CreateProps> = ({
       if (key === "cost" || key === "quantity") {
         newItems[index].price = newItems[index].cost * newItems[index].quantity;
       }
+      const newTotalPrice = newItems.reduce((total, item) => {
+        return total + (item.price || 0); // Make sure item.price exists
+      }, 0);
+  
+      // Update the total price state
+      setTotalPrice(newTotalPrice);
       return newItems;
     });
+    
     // console.log(itemDetails);
   };
 
@@ -496,7 +505,7 @@ const CreateTest: React.FC<CreateProps> = ({
               <div className="invoice_create_lt_child1">
                 <div className="invoice_create_lt_child1_gChild">
                   <div className="invoice_create_lt_child1_gChild_1">Item</div>
-                  <div className="invoice_create_lt_child1_gChild_2">Cost</div>
+                  <div className="invoice_create_lt_child1_gChild_2">Rate</div>
                   <div className="invoice_create_lt_child1_gChild_3">Qty</div>
                   <div className="invoice_create_lt_child1_gChild_4">Price</div>
                 </div>
@@ -597,7 +606,7 @@ const CreateTest: React.FC<CreateProps> = ({
                     </div>
                     <div className="invoice_create_lt_child2_1_gchild2">
                       <div style={{ display: "flex", flexDirection: "column" }}>
-                        <label className="invoice_create_label">Cost</label>
+                        <label className="invoice_create_label">Rate</label>
                         <TextField
                           type="number"
                           onChange={(e) =>
@@ -676,7 +685,7 @@ const CreateTest: React.FC<CreateProps> = ({
                       </div>
                     </div>
                     <div className="invoice_create_lt_child2_1_gchild4">
-                      <p>${item.price}</p>
+                      <p>₹{item.price}</p>
                     </div>
                   </div>
                 </div>
@@ -723,15 +732,17 @@ const CreateTest: React.FC<CreateProps> = ({
           <div className="invoice_create_ls_1_invoice_total">
             <div className="invoice_items_attribute">
               <p>Subtotal:</p>
-              <p>Discount:</p>
-              <p>Tax:</p>
+              {/* <p>Discount:</p> */}
+              <p>CGST(9%):</p>
+              <p>SGST(9%):</p>
               <p>Total:</p>
             </div>
             <div className="invoice_items_value">
-              <p>$ 90009</p>
-              <p>$ 212</p>
-              <p>$ 1000</p>
-              <p>$ 19212</p>
+              <p>{totalPrice}</p>
+              {/* <p>₹ 212</p> */}
+              <p>₹ 1000</p>
+              <p>₹ 19212</p>
+              <p>₹ 19212</p>
             </div>
             {/* <h4 className="invoice_create_ls_1_heading">Client Details</h4> */}
           </div>
