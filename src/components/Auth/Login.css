@@ -25,6 +25,13 @@
     min-height: 480px;
 }
 
+@media screen and (max-width: 600px) {
+    #container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
 .container p{
     font-size: 14px;
     line-height: 20px;

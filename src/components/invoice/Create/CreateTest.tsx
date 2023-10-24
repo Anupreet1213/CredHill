@@ -633,7 +633,7 @@ const CreateTest: React.FC<CreateProps> = ({
                       </div>
                       <div style={{ display: "flex", flexDirection: "column" }}>
                         <label className="invoice_create_label">
-                          Discount (%)
+                          HSN/SAC
                         </label>
                         <TextField
                           sx={{
@@ -659,6 +659,32 @@ const CreateTest: React.FC<CreateProps> = ({
                     <div className="invoice_create_lt_child2_1_gchild3">
                       <div style={{ display: "flex", flexDirection: "column" }}>
                         <label className="invoice_create_label">Qty</label>
+                        <TextField
+                          type="number"
+                          onChange={(e) =>
+                            handleItemChange(index, "quantity", e.target.value)
+                          }
+                          value={itemDetails[index].quantity}
+                          sx={{
+                            "& .MuiInputBase-root.MuiOutlinedInput-root": {
+                              "& fieldset": {
+                                borderColor: "#7C8199",
+                              },
+                              "&.Mui-focused fieldset": {
+                                borderColor: "#7367F0",
+                              },
+                              "& input": {
+                                color: "#7C8199",
+                              },
+                              "& .MuiSvgIcon-root": {
+                                color: "#7C8199",
+                              },
+                            },
+                          }}
+                        />
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column" }}>
+                        <label className="invoice_create_label">GST(%)</label>
                         <TextField
                           type="number"
                           onChange={(e) =>
