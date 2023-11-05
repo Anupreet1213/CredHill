@@ -5,6 +5,8 @@ import Testimonials from "../components/landing/Testimonials/Testimonials";
 import Features from "../components/landing/Features/Features";
 import AboutUs from "../components/landing/AboutUs/AboutUs";
 import "../styles.css";
+
+// import firebase from "firebase/compat/app";
 // import React from "react";
 
 // interface LandingPageProp{

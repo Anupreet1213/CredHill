@@ -10,7 +10,13 @@ import List from "../components/invoice/List/List";
 import CreateTest from "../components/invoice/Create/CreateTest";
 import Preview from "../components/invoice/Preview/Preview";
 
+// import { useSelector } from "react-redux";
+// import { RootState } from "../redux/types";
+
 const DashboardPage: React.FC = () => {
+  // const user1 = useSelector((state: RootState) => state.user);
+  // console.log(user1);
+
   // Tells whether sidebar is open or close on desktop
   const [open, setOpen] = useState<boolean>(true);
 
