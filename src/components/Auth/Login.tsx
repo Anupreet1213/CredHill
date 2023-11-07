@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+// import { get, ref, set } from "firebase/database";
+import { database } from "../../firebase";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 // import { BsTwitter } from "react-icons/bs";
 
 interface LoginProps {
@@ -15,6 +18,7 @@ const Login: React.FC<LoginProps> = ({ auth }) => {
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [name, setName] = useState<string>("");
 
   useEffect(() => {
     const container = document.getElementById("container");
@@ -43,11 +47,30 @@ const Login: React.FC<LoginProps> = ({ auth }) => {
       }
     };
   }, []);
-  const signInGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider).then(() => {
-      navigate("/dashboard");
-    });
+  const signInGoogle = async () => {
+    try {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      const credential = await auth.signInWithPopup(provider);
+
+      const user = credential.user;
+      if (user) {
+        const userId = user.uid;
+        const userSnapshot = await getDoc(doc(database, "users", userId));
+
+        // Check if user details don't exist in the database before adding
+        if (!userSnapshot.exists()) {
+          await setDoc(doc(database, "users", userId), {
+            name: user.displayName,
+            email: user.email,
+            userId: user.uid,
+            // Add other user details as needed
+          });
+        }
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+    }
   };
 
   // const signInTwitter = () => {
@@ -72,19 +95,32 @@ const Login: React.FC<LoginProps> = ({ auth }) => {
       });
   };
 
-  const signUpWithEmailAndPassword = (e: React.MouseEvent) => {
+  // console.log(auth);
+
+  const signUpWithEmailAndPassword = async (e: React.MouseEvent) => {
     e.preventDefault();
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        navigate("/dashboard");
-      })
-      .catch((error) => {
-        console.error(
-          "Error signing up with email and password:",
-          error.message
-        );
-      });
+    try {
+      const credential = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      // console.log(credential);
+
+      if (credential.user) {
+        const userId = credential.user.uid;
+
+        // Add user details to Firestore unconditionally
+        await setDoc(doc(database, "users", userId), {
+          userId: userId,
+          name: name,
+          email: credential.user.email,
+        });
+      }
+
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Error signing up with email and password:", error);
+    }
   };
 
   const handleForgotPassword = () => {
@@ -117,18 +153,26 @@ const Login: React.FC<LoginProps> = ({ auth }) => {
               </div>
             </div>
             <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" name="name" />
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
             <input
               type="email"
               placeholder="Email"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <input
               type="password"
               placeholder="Password"
               name="password"
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <button onClick={signUpWithEmailAndPassword}>Sign Up</button>
           </form>

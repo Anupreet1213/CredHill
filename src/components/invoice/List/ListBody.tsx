@@ -3,13 +3,36 @@ import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import "./ListBody.css";
+import React from "react";
 
-const ListBody = () => {
+interface ListBodyProps {
+  invoice: {
+    invoiceNo: number;
+    itemDetails: {
+      id: number;
+      name: string;
+      cost: number;
+      quantity: number;
+      price: number;
+      description: string;
+    }[];
+    invoiceDetails: {
+      invoiceNo: string;
+      dateIssued: string;
+      approvalId: string;
+      orderRef: string;
+    };
+  };
+}
+
+const ListBody: React.FC<ListBodyProps> = ({ invoice }) => {
   return (
     <tbody>
       <tr>
         <td className="invoice-list-td-one">
-          <span className="invoice-list-td-one-child">#5036</span>
+          <span className="invoice-list-td-one-child">
+            #{invoice.invoiceNo}
+          </span>
         </td>
         <td className="invoice-list-td-two">
           <div className="invoice-list-td-two-child">

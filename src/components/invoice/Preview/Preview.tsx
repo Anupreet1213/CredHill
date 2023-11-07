@@ -3,6 +3,10 @@ import InsightsIcon from "@mui/icons-material/Insights";
 import PreviewEachItem from "./PreviewEachItem";
 import { useReactToPrint } from "react-to-print";
 import { useRef } from "react";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { database } from "../../../firebase";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/types";
 
 interface PreviewProps {
   itemDetails: {
@@ -26,6 +30,51 @@ const Preview: React.FC<PreviewProps> = ({ itemDetails, invoiceDetails }) => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  const user = useSelector((state: RootState) => state.user);
+
+  const addInvoice = async () => {
+    try {
+      const userId = (user as { uid: string }).uid;
+      const invoicesDocRef = doc(database, "invoices", userId);
+
+      // Fetch the existing document
+      const invoicesDoc = await getDoc(invoicesDocRef);
+
+      // Check if the document exists
+      if (invoicesDoc.exists()) {
+        // If the document exists, update the invoices array
+        const existingInvoices = invoicesDoc.data()?.invoices || [];
+        const nextInvoiceNo = existingInvoices.length + 1;
+        const updatedInvoices = [
+          ...existingInvoices,
+          {
+            invoiceNo: nextInvoiceNo,
+            invoiceDetails,
+            itemDetails,
+          },
+        ];
+
+        // Update the document with the new invoices array
+        await setDoc(invoicesDocRef, { invoices: updatedInvoices });
+      } else {
+        // If the document doesn't exist, create a new one
+        await setDoc(invoicesDocRef, {
+          invoices: [
+            {
+              invoiceNo: 1,
+              invoiceDetails,
+              itemDetails,
+            },
+          ],
+        });
+      }
+
+      console.log("Invoice added successfully!");
+    } catch (error) {
+      console.error("Error adding invoice:", error);
+    }
+  };
 
   return (
     <div className="preview-main">
@@ -143,6 +192,7 @@ const Preview: React.FC<PreviewProps> = ({ itemDetails, invoiceDetails }) => {
       </div>
       <div className="preview_right">
         <button onClick={handlePrint}>Khatka</button>
+        <button onClick={addInvoice}>Save</button>
       </div>
     </div>
   );

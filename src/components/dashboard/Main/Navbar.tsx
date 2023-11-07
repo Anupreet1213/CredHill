@@ -7,9 +7,10 @@ import clickSound from "./switch-on.mp3";
 import clickSound2 from "./switch-off.mp3";
 import image from "./../../invoice/List/UserAvatar.jpg";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../redux/userActions";
 import firebase from "firebase/compat/app";
+import { RootState } from "../../../redux/types";
 
 interface NavbarProps {
   handleDrawerToggle: () => void;
@@ -37,6 +38,11 @@ const Navbar: React.FC<NavbarProps> = ({ handleDrawerToggle }) => {
     await firebase.auth().signOut();
     dispatch(logout());
   };
+
+  const user = useSelector((state: RootState) => state.user);
+
+  const userUrl = (user as { photoURL: string }).photoURL;
+
   return (
     <div
       className={`${isDarkMode ? "" : "light-mode"} dashboard_navbar`}
@@ -45,7 +51,11 @@ const Navbar: React.FC<NavbarProps> = ({ handleDrawerToggle }) => {
       }}
     >
       <audio ref={audioRef} src={clickSound}></audio>
-      <img src={image} alt="user_avatar" className="navbar_user_avatar" />
+      <img
+        src={userUrl ? userUrl : image}
+        alt="user_avatar"
+        className="navbar_user_avatar"
+      />
       <button onClick={handleLogout}>Log Out</button>
       {isDarkMode ? (
         <DarkModeIcon

@@ -14,6 +14,11 @@ import MovingIcon from "@mui/icons-material/Moving";
 import ListBody from "./ListBody";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/types";
+import { doc, getDoc } from "firebase/firestore";
+import { database } from "../../../firebase";
+import { useState } from "react";
 
 const List = () => {
   // const [age, setAge] = useState<number | "">("");
@@ -87,11 +92,47 @@ const List = () => {
   //   // backgroundColor: "red",
   // });
 
-  const listBodies = [];
+  const user = useSelector((state: RootState) => state.user);
 
-  for (let i = 0; i < 20; i++) {
-    listBodies.push(<ListBody key={i} />);
-  }
+  const [invoiceArray, setInvoiceArray] = useState<
+    {
+      invoiceNo: number;
+      itemDetails: {
+        id: number;
+        name: string;
+        cost: number;
+        quantity: number;
+        price: number;
+        description: string;
+      }[];
+      invoiceDetails: {
+        invoiceNo: string;
+        dateIssued: string;
+        approvalId: string;
+        orderRef: string;
+      };
+    }[]
+  >([]);
+
+  const getInvoices = async () => {
+    try {
+      const userId = (user as { uid: string }).uid;
+      const invoicesDocRef = doc(database, "invoices", userId);
+
+      const invoicesDoc = await getDoc(invoicesDocRef);
+
+      if (invoicesDoc.exists()) {
+        const fetchedInvoices = invoicesDoc.data()?.invoices || [];
+        setInvoiceArray(fetchedInvoices);
+      } else {
+        console.log("No invoices found for the user.");
+      }
+    } catch (error) {
+      console.error("Error getting invoices:", error);
+    }
+  };
+
+  console.log("idhar: ", invoiceArray);
 
   return (
     <div className="invoice-list">
@@ -198,8 +239,10 @@ const List = () => {
                 </th>
               </tr>
             </thead>
-
-            {listBodies}
+            {invoiceArray.map((invoice, index) => {
+              return <ListBody key={index} invoice={invoice} />;
+            })}
+            <button onClick={getInvoices}>Khatka</button>
           </table>
         </div>
       </div>
