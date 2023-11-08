@@ -94,6 +94,7 @@ const List = () => {
 
   const user = useSelector((state: RootState) => state.user);
 
+  // Invoice Schema for firebase: 
   const [invoiceArray, setInvoiceArray] = useState<
     {
       invoiceNo: number;
