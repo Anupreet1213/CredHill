@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/types";
 import { doc, getDoc } from "firebase/firestore";
 import { database } from "../../../firebase";
-import React, { useState } from "react";
+import React from "react";
 
 interface ListProps{
   invoiceArray: {
