@@ -5,13 +5,13 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDs_jRyHTppTqs5ttM8jeIqHRiR65ZDCPo",
-  authDomain: "credhill-8259f.firebaseapp.com",
-  projectId: "credhill-8259f",
-  storageBucket: "credhill-8259f.appspot.com",
-  messagingSenderId: "943997581042",
-  appId: "1:943997581042:web:6bbdfce7c0cf95f17e426b",
-  measurementId: "G-8W0FSZ2ZV8",
+  apiKey: "AIzaSyD6UsKzmhANTmjGBIHWIIeSy_XgcpOY3Ks",
+  authDomain: "credhill-ff167.firebaseapp.com",
+  projectId: "credhill-ff167",
+  storageBucket: "credhill-ff167.appspot.com",
+  messagingSenderId: "198235292628",
+  appId: "1:198235292628:web:dfd7bc608227d7036a8c41",
+  measurementId: "G-8Q2EJ6XM0Y"
 };
 
 const app = firebase.initializeApp(firebaseConfig);

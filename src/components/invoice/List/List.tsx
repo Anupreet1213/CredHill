@@ -18,9 +18,46 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/types";
 import { doc, getDoc } from "firebase/firestore";
 import { database } from "../../../firebase";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const List = () => {
+interface ListProps{
+  invoiceArray: {
+        invoiceNo: number;
+        itemDetails: {
+          id: number;
+          name: string;
+          cost: number;
+          quantity: number;
+          price: number;
+          description: string;
+        }[];
+        invoiceDetails: {
+          invoiceNo: string;
+          dateIssued: string;
+          approvalId: string;
+          orderRef: string;
+        };
+      }[],
+      setInvoiceArray: React.Dispatch<React.SetStateAction<{
+        invoiceNo: number;
+        itemDetails: {
+          id: number;
+          name: string;
+          cost: number;
+          quantity: number;
+          price: number;
+          description: string;
+        }[];
+        invoiceDetails: {
+          invoiceNo: string;
+          dateIssued: string;
+          approvalId: string;
+          orderRef: string;
+        };
+      }[]>>
+}
+
+const List:React.FC<ListProps> = ({invoiceArray,setInvoiceArray}) => {
   // const [age, setAge] = useState<number | "">("");
 
   // const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
@@ -53,67 +90,30 @@ const List = () => {
     },
   });
 
-  // const CustomSelect = styled(TextField)({
-  //   "& input": {
-  //     color: "#72778F",
-  //   },
-  //   "& label": {
-  //     color: "#72778F",
-  //   },
-  //   "& label.Mui-focused": {
-  //     color: "#675DD8",
-  //   },
-  //   "& .MuiOutlinedInput-root": {
-  //     "& fieldset": {
-  //       borderColor: "#72778F",
-  //     },
-  //     "&:hover fieldset": {
-  //       borderColor: "#675DD8",
-  //     },
-  //     "&.Mui-focused fieldset": {
-  //       borderColor: "#675DD8",
-  //     },
-  //     "& .MuiSelect-icon": {
-  //       color: "#72778F",
-  //     },
-  //     "& .MuiSelect-select.MuiSelect-select": {
-  //       color: "#72778F !important",
-  //     },
-  //   },
-  // });
-
-  // const CustomMenuItem = styled(MenuItem)({
-  //   color: "blue",
-  //   // backgroundColor: "red",
-  //   backgroundColor: "red", // Replace with the color you want
-  // });
-  // const CustomMenuItem = styled(MenuItem)({
-  //   color: "blue",
-  //   // backgroundColor: "red",
-  // });
-
   const user = useSelector((state: RootState) => state.user);
 
+
   // Invoice Schema for firebase: 
-  const [invoiceArray, setInvoiceArray] = useState<
-    {
-      invoiceNo: number;
-      itemDetails: {
-        id: number;
-        name: string;
-        cost: number;
-        quantity: number;
-        price: number;
-        description: string;
-      }[];
-      invoiceDetails: {
-        invoiceNo: string;
-        dateIssued: string;
-        approvalId: string;
-        orderRef: string;
-      };
-    }[]
-  >([]);
+
+  // const [invoiceArray, setInvoiceArray] = useState<
+  //   {
+  //     invoiceNo: number;
+  //     itemDetails: {
+  //       id: number;
+  //       name: string;
+  //       cost: number;
+  //       quantity: number;
+  //       price: number;
+  //       description: string;
+  //     }[];
+  //     invoiceDetails: {
+  //       invoiceNo: string;
+  //       dateIssued: string;
+  //       approvalId: string;
+  //       orderRef: string;
+  //     };
+  //   }[]
+  // >([]);
 
   const getInvoices = async () => {
     try {

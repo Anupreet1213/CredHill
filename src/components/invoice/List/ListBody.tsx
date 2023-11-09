@@ -4,6 +4,11 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import "./ListBody.css";
 import React from "react";
+import { doc, deleteDoc, getDoc, updateDoc, arrayRemove, setDoc } from "firebase/firestore";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/types";
+import { database } from "../../../firebase";
+import { log } from "console";
 
 interface ListBodyProps {
   invoice: {
@@ -25,7 +30,52 @@ interface ListBodyProps {
   };
 }
 
+
+
 const ListBody: React.FC<ListBodyProps> = ({ invoice }) => {
+
+
+  const user = useSelector((state: RootState) => state.user);
+
+  //Functionality for deleting the invoices 🔽 :   
+
+  const deleteInvoice = async (invoiceNumber: number) => {
+    try {
+      const userId = (user as { uid: string }).uid;
+      const invoicesDocRef = doc(database, "invoices", userId);
+  
+      // Fetch the existing document
+      const invoicesDoc = await getDoc(invoicesDocRef);
+  
+      if (invoicesDoc.exists()) {
+        const existingInvoices = invoicesDoc.data()?.invoices || [];
+        
+        // Find the index of the invoice to delete
+        const indexToDelete = existingInvoices.findIndex(
+          (item: { invoiceNo: number }) => item.invoiceNo === invoiceNumber
+        );
+  
+        if (indexToDelete !== -1) {
+          // If the invoice is found, remove it from the array
+          existingInvoices.splice(indexToDelete, 1);
+  
+          // Update the document with the modified invoices array
+          await setDoc(invoicesDocRef, { invoices: existingInvoices });
+          console.log("Invoice deleted successfully!");
+        } else {
+          console.log(`Invoice with invoiceNumber ${invoiceNumber} not found.`);
+        }
+      } else {
+        console.log("No invoices found for the user.");
+      }
+    } catch (error) {
+      console.error("Error deleting invoice:", error);
+    }
+  };
+  
+
+
+  
   return (
     <tbody>
       <tr>
@@ -75,14 +125,14 @@ const ListBody: React.FC<ListBodyProps> = ({ invoice }) => {
           <span className="invoice-list-td-four-child">$3171</span>
         </td>
         <td className="invoice-list-td-five">
-          <span className="invoice-list-td-five-child">2023-09-19</span>
+          <span className="invoice-list-td-five-child">{invoice.invoiceDetails.dateIssued}</span>
         </td>
         <td className="invoice-list-td-six">
           <span className="invoice-list-td-six-child">$205</span>
         </td>
         <td className="invoice-list-td-seven">
           <div className="invoice-list-td-seven-child">
-            <DeleteOutlineOutlinedIcon />
+            <DeleteOutlineOutlinedIcon onClick={()=>deleteInvoice(invoice.invoiceNo)} />
             <VisibilityOutlinedIcon />
             <MoreVertOutlinedIcon />
           </div>
