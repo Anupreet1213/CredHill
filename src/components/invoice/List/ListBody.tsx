@@ -37,6 +37,7 @@ const ListBody: React.FC<ListBodyProps> = ({ invoice }) => {
 
   const user = useSelector((state: RootState) => state.user);
 
+  //Functionality for deleting the invoices : 
 
   const deleteInvoice = async (invoiceNumber: number) => {
     try {
