@@ -4,11 +4,10 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import "./ListBody.css";
 import React from "react";
-import { doc, deleteDoc, getDoc, updateDoc, arrayRemove, setDoc } from "firebase/firestore";
+import { doc,  getDoc,setDoc } from "firebase/firestore";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/types";
 import { database } from "../../../firebase";
-import { log } from "console";
 
 interface ListBodyProps {
   invoice: {
