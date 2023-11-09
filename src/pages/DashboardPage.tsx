@@ -45,6 +45,26 @@ const DashboardPage: React.FC = () => {
     orderRef: "",
   });
 
+  const [invoiceArray, setInvoiceArray] = useState<
+  {
+    invoiceNo: number;
+    itemDetails: {
+      id: number;
+      name: string;
+      cost: number;
+      quantity: number;
+      price: number;
+      description: string;
+    }[];
+    invoiceDetails: {
+      invoiceNo: string;
+      dateIssued: string;
+      approvalId: string;
+      orderRef: string;
+    };
+  }[]
+>([]);
+
   const { isDarkMode } = useTheme();
 
   // Toggle sidebar open and close for mobile's sidebar
@@ -60,6 +80,9 @@ const DashboardPage: React.FC = () => {
         setMobileOpen(false);
       }
     };
+
+
+
 
     window.addEventListener("resize", handleResize);
 
@@ -103,7 +126,7 @@ const DashboardPage: React.FC = () => {
             setNewDate={setNewDate}
           />
         ) : rightComponent == 3 ? (
-          <List />
+          <List invoiceArray={invoiceArray} setInvoiceArray={setInvoiceArray} />
         ) : (
           <Preview itemDetails={itemDetails} invoiceDetails={invoiceDetails} />
         )}
