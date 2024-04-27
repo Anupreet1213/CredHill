@@ -1,7 +1,7 @@
 
 # Project Title
 
-Invoicer provides solution to create stunningly beautiful invoices, provides record keeping functionalities and other business stats.
+CredHill provides solution to create stunningly beautiful invoices, provides record keeping functionalities and other business stats.
 
 
 
