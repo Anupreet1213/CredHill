@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/types";
+import { Link } from "react-router-dom";
 
 const NavMenuContainer = styled.div`
   /* width: 100%; */
@@ -55,6 +59,7 @@ interface NavMenuProps {
 }
 
 export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
+  const user = useSelector((state: RootState) => state.user);
   return (
     <NavMenuContainer>
       <NavList>
@@ -72,7 +77,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
             },
           }}
         >
-          <Link
+          <ScrollLink
             style={{
               cursor: "pointer",
               fontSize: "1.2rem",
@@ -88,7 +93,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
             }}
           >
             Projects
-          </Link>
+          </ScrollLink>
         </NavLink>
         <NavLink
           initial={false}
@@ -104,7 +109,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
             },
           }}
         >
-          <Link
+          <ScrollLink
             style={{ color: "white" }}
             to={"experience"}
             spy={true}
@@ -116,7 +121,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
             }}
           >
             Achievements
-          </Link>
+          </ScrollLink>
         </NavLink>
         <NavLink
           initial={false}
@@ -132,7 +137,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
             },
           }}
         >
-          <Link
+          <ScrollLink
             style={{ color: "white" }}
             to="techStackNav"
             spy={true}
@@ -144,7 +149,7 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
             }}
           >
             Skills
-          </Link>
+          </ScrollLink>
         </NavLink>
         <NavLink
           initial={false}
@@ -161,9 +166,9 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
             },
           }}
         >
-          <Link
+          <ScrollLink
             style={{ color: "white" }}
-            to={"contactMe"}
+            to={"dashboard"}
             spy={true}
             smooth={true}
             offset={50}
@@ -172,8 +177,8 @@ export function NavMenu({ setOpen, isOpen }: NavMenuProps) {
               setOpen(false);
             }}
           >
-            Socials
-          </Link>
+            <Link to={user ? "/dashboard" : "/login"}>Dashboard</Link>
+          </ScrollLink>
         </NavLink>
       </NavList>
     </NavMenuContainer>

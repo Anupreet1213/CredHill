@@ -1,8 +1,7 @@
 import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
   Navigate,
+  createBrowserRouter,
+  RouterProvider,
 } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 // import Dashboard from './pages/Dashboard';
@@ -31,7 +30,7 @@ firebase.initializeApp({
   storageBucket: "credhill-ff167.appspot.com",
   messagingSenderId: "198235292628",
   appId: "1:198235292628:web:dfd7bc608227d7036a8c41",
-  measurementId: "G-8Q2EJ6XM0Y"
+  measurementId: "G-8Q2EJ6XM0Y",
 });
 const auth = firebase.auth();
 
@@ -45,36 +44,47 @@ const App = () => {
       store.dispatch(setUser(user));
     }
   }, [user]);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <Suspense
+          fallback={
+            <div className="custom-loader-wrapper">
+              <div className="custom-loader"></div>
+            </div>
+          }
+        >
+          <LandingPage />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/dashboard",
+      element: user ? (
+        <Suspense
+          fallback={
+            <div className="custom-loader-wrapper">
+              <div className="custom-loader"></div>
+            </div>
+          }
+        >
+          <DashboardPage />
+        </Suspense>
+      ) : (
+        <Navigate to="/login" />
+      ),
+    },
+    {
+      path: "/login",
+      element: user ? <Navigate to="/" /> : <Login auth={auth} />,
+    },
+  ]);
   return (
     <Provider store={store}>
       <ThemeProvider>
-        <Router>
-          <Suspense
-            fallback={
-              <div className="custom-loader-wrapper">
-                <div className="custom-loader"></div>
-              </div>
-            }
-          >
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              {user ? (
-                <>
-                  <Route path="/dashboard" element={<DashboardPage />} />
-                  <Route path="/login" element={<Navigate to={"/"} />} />
-                </>
-              ) : (
-                <>
-                  <Route path="/login" element={<Login auth={auth} />} />
-                  <Route
-                    path="/dashboard"
-                    element={<Navigate to={"/login"} />}
-                  />
-                </>
-              )}
-            </Routes>
-          </Suspense>
-        </Router>
+        <RouterProvider router={router} />
       </ThemeProvider>
     </Provider>
   );
